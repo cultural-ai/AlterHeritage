@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editing prototype</title>
+  <link rel="stylesheet" href="style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/jsonld@1.8.1/dist/jsonld.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row center_form">
+
+    <form id="prototypeForm">
+      <h1 id="form_heading">Form prototype</h1>
+
+      <div class="row">
+
+        <div class="col">
+      <div class="image-container">
+        <img src="" alt="Placeholder Image" class="img-fluid" id="object-image">
+      </div>
+      </div>
+
+    </div>
+
+      <div class="row form-group">
+        
+          <div class="col field_name">
+            <label for="title">Title</label>
+          </div>
+
+          <div class="col">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="title" value="" aria-label="Object's title" aria-describedby="edit_btn" disabled>
+              <button class="btn btn-outline-secondary btn-sm" type="button" id="edit_btn_title">Edit</button>
+            </div>
+          </div>
+
+        </div>
+
+      <div class="row form-group">
+
+        <div class="col field_name">
+        <label for="message">Description</label>
+        </div>
+
+        <div class="col textarea_col">
+        <textarea class="form-control" id="description" disabled></textarea>
+        </div>
+        <div class="col">
+          <button type="button" id="edit_btn" class="btn btn-outline-secondary btn-sm">Edit</button>
+        </div>
+
+      </div>
+
+      <div class="row form-group">
+
+        <div class="col field_name">
+        <label for="tags">Subject terms</label>
+        </div>
+
+        <div class="col">
+          <div id="subject-terms-container"></div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col control_buttons">
+          <button type="submit" id="save_btn" class="btn btn-success btn-sm" style="display: block;">Save</button>
+        </div>
+        <div class="col control_buttons">
+          <button type="button" id="nxtBtn" class="btn btn-dark btn-sm" style="display: block;">Next</button>
+        </div>
+      </div>
+    </form>
+
+    </div>
+
+  </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="interaction.js"></script>
+</body>
+</html>
