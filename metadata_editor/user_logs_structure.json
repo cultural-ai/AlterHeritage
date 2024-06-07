@@ -1,10 +1,22 @@
 {"user_id":"001",
 "records":["record_01", "record_02", "record_03"],
-"revisions":{
-	"record_01":{"field_id":"title_01","edit_action":"change","user_input":"","edit_time":600, "answers":[{"q_1":"", "q_2":"", "q_3":""}]},
-	"record_02":{"field_id":"description_01","edit_action":"change","user_input":"","edit_time":300},
-	"record_03":{"field_id":"keyword_03","edit_action":"remove","user_input":"","edit_time":10}
-			}
+"session_logs":    [
+     {
+        "record_id": id,
+        "timestamp_open": t0,
+        "actions":[
+            {"field_id":"description",
+             "action": "edit",
+             "timestamp": t1,
+             "new value":""},
+            {"field_id":"description",
+             "action": "submit",
+             "timestamp": t2,
+             "new value":""},
+        ],
+    },
+    ]
+
 }
 
 # for one record, there can be multiple revisions; for example, if a user changes their mind and revert edits or changes something else;
