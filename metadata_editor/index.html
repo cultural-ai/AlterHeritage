@@ -5,82 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Editing prototype</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/jsonld@1.8.1/dist/jsonld.min.js"></script>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="row center_form">
-
-    <form id="prototypeForm">
-      <h1 id="form_heading">Form prototype</h1>
+  <div class="container-fluid">
 
       <div class="row">
-
-        <div class="col">
-      <div class="image-container">
-        <img src="" alt="Placeholder Image" class="img-fluid" id="object-image">
+        <div class="col-md-12 user_id_check">
+          <div class="user_id_text">Enter your ID</div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="user_id_input" value="" aria-label="User ID" aria-describedby="submit_user_id">
+            <button class="btn btn-outline-secondary btn-sm" type="button" id="user_id_btn">Start</button>
+          </div>
+        </div>
       </div>
+
+      <div class="row instruction_above">
+        <div class="col-md-12 general_instructions">
+          <p class="instructions_above">General instructions</p>
+          <div class="row">
+            <div class="col-md-12 object_counter">Progress: Case 1 of 6</div>
+          </div>
+        </div>
       </div>
 
-    </div>
+    <div class="row main_content">
 
-      <div class="row form-group">
-        
-          <div class="col field_name">
-            <label for="title">Title</label>
+      <div class="col-md-6 annotation_column">
+
+        <div class="row">
+          <div class="col-md-12 image-container">
+            <img src="" alt="Placeholder Image" class="img-fluid" id="object-image">
+          </div>
+        </div>
+
+        <div class="object_metadata" id="object_matadata_container">
+
           </div>
 
-          <div class="col">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" id="title" value="" aria-label="Object's title" aria-describedby="edit_btn" disabled>
-              <button class="btn btn-outline-secondary btn-sm" type="button" id="edit_btn_title">Edit</button>
+        </div>
+
+      <div class="col-md-6 instructions_column">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="instructions_sticky">
+            <p id="instructions_text">This archival object contains terms referring to LGBTQ+ people that may be outdated and no longer appropriate. How would you change the metadata of this object to make its representation appropriate and respectful? You can make different adjustments:</p>
+            
+            <div class="row instruction_legend">
+              <div class="col-md-2 instruction_buttons">
+              <button class="btn btn-outline-secondary btn-sm hide_field_btn instruction_btn" type="button" disabled><i class="bi bi-eye-slash-fill"  style="font-size: 1rem;"></i></button>
+              </div>
+              <div class="col-md-10 instruction_button_text">
+                <p id="instructions_text">Hide a field or a keyword on a webpage but preserve it in the metadata</p>
+              </div>
             </div>
+
+            <div class="row instruction_legend">
+              <div class="col-md-2 instruction_buttons">
+                <button class="btn btn-outline-secondary btn-sm remove_field_btn instruction_btn" type="button" disabled><i class="bi bi-x-lg" style="font-size: 1rem;"></i></button>
+              </div>
+              <div class="col-md-10 instruction_button_text">
+                <p id="instructions_text">Remove a field or a keyword from both the webpage and metadata</p>
+              </div>
+            </div>
+
+            <div class="row instruction_legend">
+              <div class="col-md-2 instruction_buttons">
+                <button class="btn btn-outline-secondary btn-sm note-button instruction_btn" type="button" disabled><i class="bi bi-pencil" style="font-size: 1rem;"></i></button>
+              </div>
+              <div class="col-md-10 instruction_button_text">
+                <p id="instructions_text">Add a note to a keyword</p>
+              </div>
+            </div>
+
+          </div>
+          </div>
+        </div>
+
+        <div class="row controls">
+
+          <div class="col-md-9 pagination_btns">
+            <nav aria-label="...">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">6</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
           </div>
 
+          <div class="col-md-3 submit_btn_place">
+            <button type="button" class="btn btn-outline-secondary btn-m submit_btn">Submit</button>
+          </div>
+          
         </div>
 
-      <div class="row form-group">
-
-        <div class="col field_name">
-        <label for="message">Description</label>
-        </div>
-
-        <div class="col textarea_col">
-        <textarea class="form-control" id="description" disabled></textarea>
-        </div>
-        <div class="col">
-          <button type="button" id="edit_btn" class="btn btn-outline-secondary btn-sm">Edit</button>
-        </div>
-
-      </div>
-
-      <div class="row form-group">
-
-        <div class="col field_name">
-        <label for="tags">Subject terms</label>
-        </div>
-
-        <div class="col">
-          <div id="subject-terms-container"></div>
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="col control_buttons">
-          <button type="submit" id="save_btn" class="btn btn-success btn-sm" style="display: block;">Save</button>
-        </div>
-        <div class="col control_buttons">
-          <button type="button" id="nxtBtn" class="btn btn-dark btn-sm" style="display: block;">Next</button>
+        <div class="row">
+          <div class="col-md-12 open_questions">
+            <div id="q1">Question 1</div>
+            <div id="q2">Question 2</div>
+            <div id="q3">Question 3</div>
+            <div id="q4">Question 4</div>
+            <div id="q5">Question 5</div>
+          </div>
         </div>
       </div>
-    </form>
-
     </div>
-
   </div>
 
 
