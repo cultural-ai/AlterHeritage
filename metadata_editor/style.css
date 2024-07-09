@@ -162,19 +162,19 @@ h1#form_heading {
 }
 
 .field_btns {
-    flex-wrap: nowrap !important;
+    padding-left: 0px !important;
     display: flex;
 }
 
 .hide_field_btn {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     margin-right: 6px;
 }
 
 .remove_field_btn {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     margin-right: 6px;
     border-color: #ef6868 !important;
     color: #ef6868 !important;
@@ -282,4 +282,46 @@ h1#form_heading {
     height: 36px !important;
     margin-left: 8px;
     margin-bottom: 4px;
+}
+
+.add_note_btn {
+    padding: 4px !important;
+    font-size: 12px !important;
+    border-color: blue !important;
+    color: blue !important;
+    background-color: white !important;
+}
+
+.add_note_btn:hover {
+    border-color: blue !important;
+    color: white !important;
+    background-color: blue !important;
+}
+
+.add_warning_btn {
+    padding: 4px !important;
+    font-size: 12px !important;
+    border-color: darkred !important;
+    color: darkred !important;
+    background-color: white !important;
+}
+
+.add_warning_btn:hover {
+    border-color: darkred !important;
+    color: white !important;
+    background-color: darkred !important;
+}
+
+.col.add_note {
+	max-width: fit-content;
+    padding-right: 0px !important;
+}
+
+.col.add_warning {
+	max-width: fit-content;
+}
+
+.row.under_field_buttons {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }

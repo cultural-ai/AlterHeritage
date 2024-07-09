@@ -45,6 +45,16 @@ function embedObject(singleObjectFields,img_url) {
 
       <div class="col-md-9 field_value_area">
         <textarea class="form-control" id="${field.property}">${field.value}</textarea>
+
+        <div class="row under_field_buttons">
+          <div class="col add_note">
+          <button type="button" class="btn btn-secondary btn-sm add_note_btn"><i class="bi bi bi-pencil" style="font-size: 0.9rem;"></i> add a note</button>
+          </div>
+
+          <div class="col add_warning">
+          <button type="button" class="btn btn-secondary btn-sm add_warning_btn"><i class="bi bi-exclamation-triangle-fill" style="font-size: 0.9rem;"></i> add a warning</button>
+          </div>
+        </div>
       </div>
                 
       <div class="col-md-2 field_btns">
