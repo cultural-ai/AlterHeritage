@@ -72,8 +72,25 @@
 }
 
 .controls {
-    width: 94% !important;
+    width: 100% !important;
     margin-bottom: 20px;
+}
+
+.restore_btn {
+	height: 38px;
+	border-color: #f1f1f1 !important;
+	background-color: #f2f2f2 !important;
+	color: #8a8a8a !important;
+}
+
+.restore_btn:hover {
+    color: black !important;
+	box-shadow: 0 0 0 .25rem rgba(232, 232, 232, 0.26) !important;
+}
+
+.pagination_btns {
+	justify-content: center;
+	display: grid;
 }
 
 .page-link {
@@ -142,8 +159,20 @@ h1#form_heading {
 
 .field_group {
     margin-bottom: 20px;
+    transition: opacity 6s ease-out;
     flex-wrap: nowrap !important;
+    opacity: 1;
+    overflow: hidden; 
+    max-height: 400px;
   }
+
+.hidden {
+    opacity: 0;
+    max-height: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+   
+}
 
 .field_names {
     text-align: end;
@@ -210,28 +239,22 @@ h1#form_heading {
 }
 
 .subject-term {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 12px 12px 12px 6px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    min-width: 66px;
-    text-align: end;
-
+	display: inline-block;
+	margin: 0px 16px 0px 6px;
+	text-align: end;
 }
 
 .subject-term-button {
     width: 20px;
     height: 20px;
-    margin-top: -20px !important;
+    margin-top: -14px !important;
     padding:0px !important;
     background-color: white !important;
 }
 
 .note-button {
     position: absolute;
-    margin-left: -46px;
+    margin-left: -56px;
     border-color: blue !important;
     color: blue !important;
 }
@@ -251,7 +274,7 @@ h1#form_heading {
 .hide-button {
     background-color: #818080;
     position: absolute;
-    margin-left: -24px;
+    margin-left: -34px;
 }
 
 .hide-button:hover {
@@ -262,7 +285,7 @@ h1#form_heading {
 
 .remove-button {
     position: absolute;
-    margin-left: -2px;
+    margin-left: -12px;
     border-color: #ef6868 !important;
     color: #ef6868 !important;
 }
@@ -325,3 +348,31 @@ h1#form_heading {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+.form-control:disabled {
+	color: #f1f1f1 !important;
+	background-color: #f1f1f1 !important;
+    pointer-events: none;
+    filter:blur(4px);
+}
+
+.keyword_text {
+	margin-bottom: 0px !important;
+	background-color: #f1f1f1;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	min-width: 66px;
+	text-align: end;
+	padding: 5px 10px;
+}
+
+.kw_hidden {
+    color: #f1f1f1;
+    filter: blur(4px);
+    position: relative;
+    z-index: -1;
+    pointer-events: none;
+}
+
+  
+  
