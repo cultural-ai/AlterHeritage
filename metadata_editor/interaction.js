@@ -1,44 +1,65 @@
 // const jsonldUrl = 'a link to objects';
 
-const localPath = 'objects/objects_sample.json';
+// const localPath = 'objects/objects_sample.json';
+
+const path = 'objects/';
+
+let userData;
+let originalData;
 
 // fetching JSON-LD; for now, locally
 
-const object_index = 0;
+const objectIndex = 0;
 
-load_object(localPath,object_index);
+document.addEventListener('DOMContentLoaded', async() => {
+  const userId = getUserId();
 
-function load_object(localPath,index){
-  fetch(localPath)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(jsonData => {
-      const data = jsonData;
+  if (!userId) {
+    alert('User ID not found');
+    return;
+  }
 
-      const objectsN = getObjectsN(data);
-      console.log(`Number of objects: ${objectsN}`);
+  pathUserFile = `${path}user_${userId}.json`;
+  userData = await loadObjects(pathUserFile);
 
-      const objectFields = data.objects.map(object => objectFieldsParse(object));
+  pathOriginalFile = `${path}original_${userId}.json`;
+  originalData = await loadObjects(pathOriginalFile);
 
-      const img_url = data.objects[index].img;
+  console.log(userData);
 
-      embedObject(objectFields[index],img_url);
-    });
+  embedObject(userData,0); // initially, displaying the first object of user data
+
+});
+
+function getUserId() {
+  return window.location.hash.substring(1); // Get the part after the '#'
 }
 
-function embedObject(singleObjectFields,img_url) {
+async function loadObjects(path) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Failed to fetch data:', error);
+  }
+}
+
+function embedObject(data,objectIndex) {
 
   const imgContainer = document.getElementById('object-image');
+  img_url = data.objects[objectIndex].img;
   imgContainer.src = img_url;
 
   const objectMetadataContainer = document.getElementById('object_matadata_container');
 
   // clearing previous object's fields
   objectMetadataContainer.innerHTML = '';
+
+  singleObjectFields = data.objects[objectIndex].fields;
 
   singleObjectFields.forEach(field => {
     const fieldDiv = document.createElement('div');
@@ -75,6 +96,10 @@ function embedObject(singleObjectFields,img_url) {
       </div>
       `;
       objectMetadataContainer.appendChild(fieldDiv);
+
+      if(field.hidden === 'True') {
+        hideField(field.property);
+      }
     }
 
     if (field.type === 'keywords') {
@@ -156,6 +181,7 @@ function subjectTermButton(iconElement, className) {
 function addSubjectTerm(text,index) {
   const term = document.createElement('span');
   term.className = 'subject-term';
+  term.id = `span_keyword_${index}`;
  
   // Create icon elements
   const noteIcon = document.createElement('i');
@@ -201,7 +227,18 @@ function addSubjectTerm(text,index) {
 }
 
 function hideField(fieldId) {
+  const button = document.getElementById(`hide_field_btn_${fieldId}`);
+  const icon = button.querySelector('i');
   const textarea = document.getElementById(fieldId);
+  if (icon.classList.contains('bi-eye-slash-fill')) {
+    icon.classList.remove('bi-eye-slash-fill');
+    icon.classList.add('bi-eye-fill');
+    button.title = button.title.replace('Hide', 'Show'); 
+  } else {
+    icon.classList.remove('bi-eye-fill');
+    icon.classList.add('bi-eye-slash-fill');
+    button.title = button.title.replace('Show', 'Hide'); 
+  }
   if (textarea) {
     textarea.disabled = !textarea.disabled;
   }
@@ -221,18 +258,6 @@ document.getElementById('object_matadata_container').addEventListener('click', f
   if (target.closest('.hide_field_btn')) {
 
     const fieldId = target.closest('.hide_field_btn').getAttribute('field-id');
-    const button = document.getElementById(`hide_field_btn_${fieldId}`);
-    const icon = button.querySelector('i');
-
-    if (icon.classList.contains('bi-eye-slash-fill')) {
-      icon.classList.remove('bi-eye-slash-fill');
-      icon.classList.add('bi-eye-fill');
-      button.title = button.title.replace('Hide', 'Show'); 
-    } else {
-      icon.classList.remove('bi-eye-fill');
-      icon.classList.add('bi-eye-slash-fill');
-      button.title = button.title.replace('Show', 'Hide'); 
-    }
     hideField(fieldId);
   }
   // removing field
@@ -272,14 +297,27 @@ document.getElementById('object_matadata_container').addEventListener('click', f
     hideKeyword(kwId);
   }
   // remove keyword
+  if (target.closest('.remove-button')) {
+    const kwId = target.closest('.remove-button').getAttribute('keyword-id');
+    const kw_to_remove = document.getElementById(`span_${kwId}`);
+    kw_to_remove.classList.add('hidden');
+    kw_to_remove.addEventListener('transitionend', () => {
+      kw_to_remove.remove();
+    }, { once: true });
+  }
+
+  // add keyword
 
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const restoreButton = document.getElementById('restore_btn');
   restoreButton.addEventListener('click', () => {
-  load_object(localPath,object_index);
+  userData.objects[objectIndex].fields = originalData.objects[objectIndex].fields;
+  embedObject(userData,objectIndex)
+  console.log(userData);
   });
+  
 });
 
 

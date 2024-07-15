@@ -34,8 +34,8 @@
 	background-color: #f2f2f2;
 	padding: 12px;
     padding-left: 20px !important;
+    margin: 10px 0px 10px 0px !important;
 	font-size: 14px;
-	margin-bottom: 10px;
 	border-radius: 4px;
 }
 
@@ -74,6 +74,7 @@
 .controls {
     width: 100% !important;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .restore_btn {
@@ -81,6 +82,7 @@
 	border-color: #f1f1f1 !important;
 	background-color: #f2f2f2 !important;
 	color: #8a8a8a !important;
+    font-size: 14px !important;
 }
 
 .restore_btn:hover {
@@ -95,6 +97,7 @@
 
 .page-link {
 	color: #000 !important;
+    font-size: 14px !important;
 }
 
 
@@ -125,6 +128,7 @@
     border-color: #449d5f !important;
     background-color: #449d5f !important;
     color: white !important;
+    font-size: 14px !important;
 }
 
 .submit_btn:hover {
@@ -159,19 +163,14 @@ h1#form_heading {
 
 .field_group {
     margin-bottom: 20px;
-    transition: opacity 6s ease-out;
+    transition: opacity 2s ease-out;
     flex-wrap: nowrap !important;
     opacity: 1;
-    overflow: hidden; 
-    max-height: 400px;
+    overflow: hidden;
   }
 
 .hidden {
     opacity: 0;
-    max-height: 0px;
-    padding: 0px;
-    margin-bottom: 0px;
-   
 }
 
 .field_names {
