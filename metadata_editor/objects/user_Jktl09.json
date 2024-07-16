@@ -16,6 +16,17 @@
 	{"name":"Rechten en licenties: Gebruiksrecht", "property":"edm:rights", "value":"http://rightsstatements.org/vocab/InC/1.0/", "type":"non-editable"}]
 	},
 
+	{"object_id": "http://data.collectienederland.nl/resource/aggregation/archief-eemland-beeldbank/fa30407a-715a-9133-7a0e-a4d7c4a24850",
+	"img":"http://images.memorix.nl/gam/thumb/500x500/fa30407a-715a-9133-7a0e-a4d7c4a24850.jpg",
+	"fields":[
+		{"name":"Titel", "property":"dc:title", "value":"De manifestatie werd ernstig verstoord door relschoppers. Daarover hebben wij een knipselmap en een DVD (nrs. D5343 en D5345). (Het Engelse woord voor …flikker\" (beledigend).) Roze Zaterdag: demonstratiedag voor homosexuelen. Optreden van een wenend \"elfje\". bijzonderheden: Deze dag werd bezocht door ruim vierduizend mensen uit het hele land.", "type":"editable"},
+		{"name":"Onderwerp: Wat", "property":"dc:subject", "value":["homosexualiteit","aktie","Politie","WHAM"], "type":"keywords"},
+		{"name":"Description", "property":"dc:description", "value":"Description of the object. Test", "type":"editable"},
+		{"name":"Identificatie", "property":"dc:identifier", "value":"AFT005000605", "type":"non-editable"},
+		{"name":"Documentatie: Is verwezen door", "property":" dcterms:isReferencedBy", "value":"Van Eeghen 4071", "type":"non-editable"},
+		{"name":"Datering", "property":"dcterms:created", "value":"1982-06-26", "type":"non-editable"}
+	]},
+
 	{"object_id": "https://data.collectienederland.nl/page/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-45.775",
 	"img":"https://lh4.ggpht.com/IwPm7kXQH74rZG_oOx0-CNLE57XaGjJPhqGEonGgl57EMsAnxAyIlePqW0aG0f7rJ1gFU-0V3OlgBc2oj5hYNoEnMKng=s0",
 	"fields":[

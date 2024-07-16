@@ -9,7 +9,7 @@ let originalData;
 
 // fetching JSON-LD; for now, locally
 
-const objectIndex = 0;
+let objectIndex;
 
 document.addEventListener('DOMContentLoaded', async() => {
   const userId = getUserId();
@@ -110,7 +110,8 @@ function setActivePage(pageNumber) {
     nextButton.classList.remove('disabled');
   }
 
-  embedObject(userData, pageNumber - 1);
+  objectIndex = pageNumber - 1;
+  embedObject(userData, objectIndex);
 }
 
 function loadPaginationButtons(numObjects,userId) {
@@ -247,6 +248,8 @@ function embedObject(data,objectIndex) {
       objectMetadataContainer.appendChild(fieldDiv);
 
     }
+
+    setTextareaHeight();
     
   });
 
@@ -266,6 +269,17 @@ function objectFieldsParse(object) {
       type: field.type
   }));
 }
+
+
+// making sure that all text in editable fields is visible when object is loaded
+function setTextareaHeight() {
+  const textareas = document.querySelectorAll('.form-control');
+  textareas.forEach(textarea => {
+    const newTextareaHeight = textarea.scrollHeight + 2;
+    textarea.style.height = `${newTextareaHeight}px`;
+  });
+}
+
 
 // making subject terms button
 function subjectTermButton(iconElement, className) {
@@ -413,7 +427,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   restoreButton.addEventListener('click', () => {
   userData.objects[objectIndex].fields = originalData.objects[objectIndex].fields;
   embedObject(userData,objectIndex)
-  console.log(userData);
   });
   
 });
