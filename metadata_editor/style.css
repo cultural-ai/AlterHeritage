@@ -113,7 +113,6 @@
 
 .page-link:focus {
 	box-shadow: none !important;
-    background-color: #f8f9fa !important;
 }
 
 
@@ -184,26 +183,41 @@ h1#form_heading {
     padding-right: 0px !important;
 }
 
+.form-control {
+	min-height: 100% !important;
+}
+
 .form-control:focus {
 	border-color: #d3d3d3 !important;
 	box-shadow: 0 0 0 .25rem rgb(211, 211, 211) !important;
 }
 
+/* Field buttons */
+
 .field_btns {
-    padding-left: 0px !important;
     display: flex;
+    align-items: flex-start;
+    flex-flow: column;
 }
 
 .hide_field_btn {
-    width: 38px;
-    height: 38px;
-    margin-right: 6px;
+    width: 32px !important;
+    height: 32px;
+    margin: 0px 6px 6px 6px;
+    padding: 0px !important;
+}
+
+.hide_field_btn:disabled {
+    color: #6c757d !important;
+    border-color: #6c757d !important;
+    opacity: unset !important;
 }
 
 .remove_field_btn {
-    width: 38px;
-    height: 38px;
-    margin-right: 6px;
+    width: 32px !important;
+    height: 32px;
+    margin: 0px 6px 6px 0px;
+    padding: 0px !important;
     border-color: #ef6868 !important;
     color: #ef6868 !important;
 }
@@ -231,10 +245,44 @@ h1#form_heading {
     opacity: unset !important;
 }
 
-.hide_field_btn:disabled {
-    color: #6c757d !important;
-    border-color: #6c757d !important;
-    opacity: unset !important;
+.add_note_btn {
+    padding: 0px !important;
+    margin: 0px 6px 0px 6px;
+    font-size: 12px !important;
+    border-color: blue !important;
+    color: blue !important;
+    background-color: white !important;
+    width: 32px !important;
+    height: 32px;
+}
+
+.add_note_btn:hover {
+    border-color: blue !important;
+    color: white !important;
+    background-color: blue !important;
+}
+
+.add_warning_btn {
+    padding: 0px !important;
+    margin: 0px 6px 0px 0px;
+    font-size: 12px !important;
+    border-color: darkred !important;
+    color: darkred !important;
+    background-color: white !important;
+    width: 32px !important;
+    height: 32px;
+}
+
+.add_warning_btn:hover {
+    border-color: darkred !important;
+    color: white !important;
+    background-color: darkred !important;
+}
+
+/* Subject terms */
+
+#field_group_dc\:subject {
+	margin-top: 40px !important;
 }
 
 .subject-term {
@@ -304,34 +352,6 @@ h1#form_heading {
     height: 36px !important;
     margin-left: 8px;
     margin-bottom: 4px;
-}
-
-.add_note_btn {
-    padding: 4px !important;
-    font-size: 12px !important;
-    border-color: blue !important;
-    color: blue !important;
-    background-color: white !important;
-}
-
-.add_note_btn:hover {
-    border-color: blue !important;
-    color: white !important;
-    background-color: blue !important;
-}
-
-.add_warning_btn {
-    padding: 4px !important;
-    font-size: 12px !important;
-    border-color: darkred !important;
-    color: darkred !important;
-    background-color: white !important;
-}
-
-.add_warning_btn:hover {
-    border-color: darkred !important;
-    color: white !important;
-    background-color: darkred !important;
 }
 
 .col.add_note {

@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', async() => {
   pathOriginalFile = `${path}original_${userId}.json`;
   originalData = await loadObjects(pathOriginalFile);
 
-  console.log(userData);
+  numObjects = getObjectsN(userData);
+  setPagination(numObjects,userId);
 
   embedObject(userData,0); // initially, displaying the first object of user data
 
@@ -46,6 +47,101 @@ async function loadObjects(path) {
   } catch (error) {
     console.error('Failed to fetch data:', error);
   }
+}
+
+function setPagination(numObjects,userId) {
+  loadPaginationButtons(numObjects,userId);
+
+  const paginationContainer = document.querySelector('.pagination');
+  const prevButton = paginationContainer.querySelector('.prev-b');
+  const nextButton = paginationContainer.querySelector('.next-b');
+  const pageButtons = paginationContainer.querySelectorAll('.page-n');
+
+  pageButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      setActivePage(index + 1);
+    });
+  });
+
+  prevButton.addEventListener('click', () => {
+    const activePage = paginationContainer.querySelector('.page-item.active');
+    const activeIndex = Array.from(pageButtons).indexOf(activePage) + 1;
+    if (activeIndex > 1) setActivePage(activeIndex - 1);
+  });
+
+  nextButton.addEventListener('click', () => {
+    const activePage = paginationContainer.querySelector('.page-item.active');
+    const activeIndex = Array.from(pageButtons).indexOf(activePage) + 1;
+    if (activeIndex < numObjects) setActivePage(activeIndex + 1);
+  });
+}
+
+function setActivePage(pageNumber) {
+  const paginationContainer = document.querySelector('.pagination');
+  const pageButtons = paginationContainer.querySelectorAll('.page-n');
+
+  pageButtons.forEach((button, index) => {
+    if (index + 1 === pageNumber) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+  });
+
+  const prevButton = paginationContainer.querySelector('.prev-b');
+  const nextButton = paginationContainer.querySelector('.next-b');
+
+  const restoreButton = document.getElementById('restore_btn');
+  restoreButton.textContent = `Restore object ${pageNumber}`;
+
+  const submitButton = document.getElementById('submit_btn');
+  submitButton.textContent = `Submit object ${pageNumber}`;
+
+
+  if (pageNumber === 1) {
+    prevButton.classList.add('disabled');
+  } else {
+    prevButton.classList.remove('disabled');
+  }
+
+  if (pageNumber === pageButtons.length) {
+    nextButton.classList.add('disabled');
+  } else {
+    nextButton.classList.remove('disabled');
+  }
+
+  embedObject(userData, pageNumber - 1);
+}
+
+function loadPaginationButtons(numObjects,userId) {
+  const paginationContainer = document.querySelector('.pagination'); // ul class
+  paginationContainer.innerHTML = ''; // clearing buttons
+
+  const restoreButton = document.getElementById('restore_btn');
+  const submitButton = document.getElementById('submit_btn');
+
+  // previous button
+  const prevButton = document.createElement('li');
+  prevButton.className = 'page-item prev-b disabled';
+  prevButton.innerHTML = `<a class="page-link" href="#${userId}" tabindex="-1"><i class="bi bi-chevron-left" title="Previous"></i></a>`;
+  paginationContainer.appendChild(prevButton);
+
+  // navigation buttons
+  for (let i = 1; i <= numObjects; i++) {
+    const pageButton = document.createElement('li');
+    pageButton.className = 'page-item page-n';
+    if (i === 1) pageButton.classList.add('active'); // the first object is active
+    pageButton.innerHTML = `<a class="page-link" href="#${userId}">${i}</a>`;
+    paginationContainer.appendChild(pageButton);
+    restoreButton.textContent = "Restore object 1";
+    submitButton.textContent = "Submit object 1";
+  }
+
+  // next button
+  const nextButton = document.createElement('li');
+  nextButton.className = 'page-item next-b';
+  nextButton.innerHTML = `<a class="page-link" href="#${userId}"><i class="bi bi-chevron-right" title="Next"></i></a>`;
+  paginationContainer.appendChild(nextButton);
 }
 
 function embedObject(data,objectIndex) {
@@ -74,25 +170,27 @@ function embedObject(data,objectIndex) {
 
       <div class="col-md-9 field_value_area" id="container_${field.property}">
         <textarea class="form-control" id="${field.property}">${field.value}</textarea>
-
-        <div class="row under_field_buttons">
-          <div class="col add_note">
-          <button type="button" class="btn btn-secondary btn-sm add_note_btn"><i class="bi bi bi-pencil" style="font-size: 0.9rem;"></i> add a note</button>
-          </div>
-
-          <div class="col add_warning">
-          <button type="button" class="btn btn-secondary btn-sm add_warning_btn"><i class="bi bi-exclamation-triangle-fill" style="font-size: 0.9rem;"></i> add a warning</button>
-          </div>
-        </div>
       </div>
                 
       <div class="col-md-2 field_btns">
-        <button title="Hide ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id ="hide_field_btn_${field.property}" field-id="${field.property}">
-          <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
-        </button>
-        <button class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
-          <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
-        </button>
+        <div class="row left_btns">
+
+          <button title="Hide ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id ="hide_field_btn_${field.property}" field-id="${field.property}">
+            <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
+          </button>
+          <button title="Remove ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
+            <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
+          </button>
+
+        </div>
+
+        <div class="row right_btns">
+        <button type="button" class="btn btn-secondary btn-sm add_note_btn" title="Add a note to ${field.name}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+        <button type="button" class="btn btn-secondary btn-sm add_warning_btn" title="Add a warning to ${field.name}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+
+        </div>
+
+
       </div>
       `;
       objectMetadataContainer.appendChild(fieldDiv);
