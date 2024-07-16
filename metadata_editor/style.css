@@ -184,12 +184,15 @@ h1#form_heading {
 }
 
 .form-control {
-	min-height: 100% !important;
+	min-height: 70px !important;
+    text-wrap: balance;
 }
 
 .form-control:focus {
-	border-color: #d3d3d3 !important;
-	box-shadow: 0 0 0 .25rem rgb(211, 211, 211) !important;
+	border-color: #6c757d !important;
+	box-shadow: none !important;
+    border-style: solid !important;
+    border: 1px;
 }
 
 /* Field buttons */
@@ -198,6 +201,25 @@ h1#form_heading {
     display: flex;
     align-items: flex-start;
     flex-flow: column;
+}
+
+.add_field {
+	margin: 0px 0px 20px 0px;
+}
+
+.add_field_btn {
+	width: 100%;
+	background-color: #f2f2f2 !important;
+	border-color: #f2f2f2 !important;
+    border-radius: 4px !important;
+    color: #8a8a8a !important;
+}
+
+
+.add_field_btn:hover {
+	background-color: #dfdfdf !important;
+	border-color: #dfdfdf !important;
+	color: #000 !important;
 }
 
 .hide_field_btn {
@@ -262,6 +284,11 @@ h1#form_heading {
     background-color: blue !important;
 }
 
+.add_note_btn.disabled {
+	border-color: #b1b1b1 !important;
+	color: #b1b1b1 !important;
+}
+
 .add_warning_btn {
     padding: 0px !important;
     margin: 0px 6px 0px 0px;
@@ -277,6 +304,30 @@ h1#form_heading {
     border-color: darkred !important;
     color: white !important;
     background-color: darkred !important;
+}
+
+    /* Added elements */
+
+.note_area {
+    margin-top: 10px !important;
+}
+
+.note_col {
+	padding-right: 0px !important;
+}
+
+.note_title {
+    font-size: 14px !important;
+    color: #717171;
+    padding-top: 4px;
+}
+
+.note-form {
+    width: 100% !important;
+    background-color: lightyellow !important;
+    font-size: 14px !important;
+    color: #717171 !important;
+    padding: 4px 0px 4px 10px !important;
 }
 
 /* Subject terms */
@@ -352,6 +403,15 @@ h1#form_heading {
     height: 36px !important;
     margin-left: 8px;
     margin-bottom: 4px;
+    background-color: #f2f2f2 !important;
+	border-color: #f2f2f2 !important;
+    color: #8a8a8a !important;
+}
+
+.add_keyword_btn:hover {
+    background-color: #dfdfdf !important;
+	border-color: #dfdfdf !important;
+	color: #000 !important;
 }
 
 .col.add_note {

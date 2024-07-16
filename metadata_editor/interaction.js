@@ -156,6 +156,15 @@ function embedObject(data,objectIndex) {
   // clearing previous object's fields
   objectMetadataContainer.innerHTML = '';
 
+  const addFieldButtonDiv = document.createElement('div');
+  addFieldButtonDiv.className = 'row add_field';
+  addFieldButtonDiv.innerHTML = `
+  <div class="col-md-12 add_field_col">
+    <button title="Add a new field" class="btn btn-outline-secondary btn-sm add_field_btn" type="button" id ="add_field_btn">
+      <i class="bi bi-plus-lg"></i> Add a new field
+  </div>`
+  objectMetadataContainer.appendChild(addFieldButtonDiv);
+
   singleObjectFields = data.objects[objectIndex].fields;
 
   singleObjectFields.forEach(field => {
@@ -165,32 +174,36 @@ function embedObject(data,objectIndex) {
 
     if (field.type === 'editable') {
       fieldDiv.innerHTML = `
-      <div class="col-md-1 field_names">
+      <div class="col-md-2 field_names">
         <label for="${field.property}">${field.name}</label>
       </div>
 
-      <div class="col-md-9 field_value_area" id="container_${field.property}">
-        <textarea class="form-control" id="${field.property}">${field.value}</textarea>
+      <div class="col-md-8 field_value_area" id="container_${field.property}">
+        <div class="row">
+          <textarea class="form-control" id="${field.property}">${field.value}</textarea>
+        </div>
       </div>
                 
       <div class="col-md-2 field_btns">
-        <div class="row left_btns">
+        <div class="row upper_btns">
 
-          <button title="Hide ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id ="hide_field_btn_${field.property}" field-id="${field.property}">
+          <button title="Hide ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${field.property}" field-id="${field.property}">
             <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
           </button>
+
           <button title="Remove ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
             <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
           </button>
 
         </div>
 
-        <div class="row right_btns">
-        <button type="button" class="btn btn-secondary btn-sm add_note_btn" title="Add a note to ${field.name}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
-        <button type="button" class="btn btn-secondary btn-sm add_warning_btn" title="Add a warning to ${field.name}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+        <div class="row down_btns">
+
+          <button title="Add a note to ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+
+          <button title="Add a warning to ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
 
         </div>
-
 
       </div>
       `;
@@ -361,6 +374,22 @@ function hideKeyword(kwId) {
   p_keyword.classList.toggle('kw_hidden');
 }
 
+function addFieldNote(fieldId) {
+  const noteButton = document.getElementById(`add_note_btn_${fieldId}`);
+  const fieldDiv = document.getElementById(`container_${fieldId}`);
+
+  const note = document.createElement('div');
+  note.className = 'row note_area';
+  note.innerHTML = `
+    <div class="col-md-1 note_title">Note</div>
+    <div class="col-md-11 note_col">
+      <textarea class="note-form form-control" id="dc:title" style="height: 49px;"></textarea>
+    </div>
+  `
+  fieldDiv.appendChild(note)
+  noteButton.classList.toggle('disabled');
+}
+
 // Listener for buttons inside object_matadata_container
 
 document.getElementById('object_matadata_container').addEventListener('click', function(event) {
@@ -383,6 +412,12 @@ document.getElementById('object_matadata_container').addEventListener('click', f
   }
 
   // add note field
+  if (target.closest('.add_note_btn')) {
+
+    const fieldId = target.closest('.add_note_btn').getAttribute('field-id');
+    addFieldNote(fieldId);
+  }
+
   // add warning
 
   // KEYWORDS
