@@ -6,6 +6,7 @@ const path = 'objects/';
 
 let userData;
 let originalData;
+let keywords_count = 100; // for unique ids for user keywords
 
 // fetching JSON-LD; for now, locally
 
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', async() => {
   embedObject(userData,0); // initially, displaying the first object of user data
 
 });
+
+
 
 function getUserId() {
   return window.location.hash.substring(1); // Get the part after the '#'
@@ -232,21 +235,17 @@ function embedObject(data,objectIndex) {
         const term = addSubjectTerm(keyword,index);
         keywordsDiv.appendChild(term);});
 
-      // add a keyword button
-
-      addKeywordButton = document.createElement('button');
-      addKeywordButton.className = `btn btn-outline-secondary btn-sm add_keyword_btn`;
-      addKeywordButton.title = 'Add a keyword';
-
-      const plusIcon = document.createElement('i');
-      plusIcon.className = 'bi bi-plus-lg';
-      plusIcon.style.fontSize = '1rem';
-
-      addKeywordButton.appendChild(plusIcon);
-
-      keywordsDiv.appendChild(addKeywordButton)
-
-    
+      // add a keyword button and a tooltip
+      tooltipAddKeyword = document.createElement('span');
+      tooltipAddKeyword.className = 'add_keyword_tooltip';
+      tooltipAddKeyword.innerHTML = `
+      <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="Add a keyword"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
+      <div class="input-group mb-3 tooltip_hidden" id="keyword_input">
+        <input type="text" class="form-control keyword_input_field" id="user_keyword_area" aria-describedby="tooltip_add_btn">
+        <button class="btn btn-outline-secondary" type="button" id="tooltip_add_btn"><i class="bi bi-check-lg check_add_keyword"></i></button>
+      </div>
+      `
+      keywordsDiv.appendChild(tooltipAddKeyword);
     }
 
     if (field.type === 'non-editable') {
@@ -452,18 +451,60 @@ function removeFieldWarning(fieldId) {
     addWarningButton.classList.remove('disabled');
 }
 
+function displayKeywordInput() {
+
+    const addKeywordButton = document.getElementById('add_keyword_btn');
+    const inputGroup = document.getElementById('keyword_input');
+    inputGroup.classList.remove('tooltip_hidden');
+    addKeywordButton.classList.add('disabled');
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.add_keyword_tooltip')) {
+        inputGroup.classList.add('tooltip_hidden');
+        addKeywordButton.classList.remove('disabled');
+      }
+    });
+}
+
+function addUserKeyword() {
+
+  keywords_count += 1;
+
+  const keywordsDiv = document.getElementById('subject-terms-container');
+  const lastKeyword = keywordsDiv.lastElementChild;
+
+  const addKeywordButton = document.getElementById('add_keyword_btn');
+  const submitKeywordButton = document.getElementById('tooltip_add_btn');
+  const inputGroup = document.getElementById('keyword_input');
+
+  const userKeywordArea = inputGroup.querySelector('#user_keyword_area');
+
+  let user_keyword_index = `user_${keywords_count}`;
+  const newKeyword = userKeywordArea.value.trim();
+
+  userTerm = addSubjectTerm(newKeyword,user_keyword_index);
+  keywordsDiv.insertBefore(userTerm, lastKeyword);
+
+  inputGroup.querySelector('#user_keyword_area').value = '';
+  inputGroup.classList.add('tooltip_hidden');
+  addKeywordButton.classList.remove('disabled');
+
+}
+
 // Listener for buttons inside object_matadata_container
 
 document.getElementById('object_matadata_container').addEventListener('click', function(event) {
   const target = event.target;
   // FIELDS
+  // add field
+
   // hide field
   if (target.closest('.hide_field_btn')) {
 
     const fieldId = target.closest('.hide_field_btn').getAttribute('field-id');
     hideField(fieldId);
   }
-  // removing field
+  // remove field
   if (target.closest('.remove_field_btn')) {
     const fieldId = target.closest('.remove_field_btn').getAttribute('field-id');
     const div_to_remove = document.getElementById(`field_group_${fieldId}`);
@@ -505,11 +546,9 @@ document.getElementById('object_matadata_container').addEventListener('click', f
   // hide keyword
   if (target.closest('.hide-button')) {
     const kwId = target.closest('.hide-button').getAttribute('keyword-id');
-    // Select the button by its ID
     const button = document.getElementById(`hide_button_${kwId}`);
-    // Select the icon element inside the button
     const icon = button.querySelector('i');
-    // Toggle the class of the icon
+
     if (icon.classList.contains('bi-eye-slash-fill')) {
       icon.classList.remove('bi-eye-slash-fill');
       icon.classList.add('bi-eye-fill');
@@ -522,6 +561,7 @@ document.getElementById('object_matadata_container').addEventListener('click', f
 
     hideKeyword(kwId);
   }
+
   // remove keyword
   if (target.closest('.remove-button')) {
     const kwId = target.closest('.remove-button').getAttribute('keyword-id');
@@ -532,7 +572,22 @@ document.getElementById('object_matadata_container').addEventListener('click', f
     }, { once: true });
   }
 
-  // add keyword
+  // add keyword input group
+  if (target.closest('.add_keyword_btn')) {
+    displayKeywordInput();
+  };
+
+  // add user keyword
+  if (target.closest('#tooltip_add_btn')) {
+    addUserKeyword();
+  };
+
+ // if (!target.closest('#keyword_input')) {
+ //   const inputGroup = document.getElementById('keyword_input');
+ //   inputGroup.classList.add('tooltip_hidden');
+ //   const addKeywordButton = document.getElementById('add_keyword_btn');
+ //   addKeywordButton.classList.remove('disabled');
+ // };
 
 });
 
@@ -544,15 +599,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
   
 });
-
-
-// toggling edit/save buttons and enable/disable form fields
-//document.getElementById('edit_btn_title').addEventListener('click', function() {
- //   document.getElementById('title').removeAttribute('disabled');
- //   });
-    //document.getElementById('saveBtn').style.display = 'inline-block';
-
-// document.getElementById('save_btn').addEventListener('click', function(event) {
- //   event.preventDefault(); // Prevent form submission
-    // For this prototype, we're just going to prevent the submission
-//  });

@@ -403,9 +403,13 @@ h1#form_heading {
 	margin-top: 40px !important;
 }
 
+#subject-terms-container {
+	display: inline-block;
+}
+
 .subject-term {
 	display: inline-block;
-	margin: 0px 16px 0px 6px;
+	margin: 0px 16px 30px 6px;
 	text-align: end;
 }
 
@@ -469,7 +473,6 @@ h1#form_heading {
     width: 36px !important;
     height: 36px !important;
     margin-left: 8px;
-    margin-bottom: 4px;
     background-color: #f2f2f2 !important;
 	border-color: #f2f2f2 !important;
     color: #8a8a8a !important;
@@ -480,6 +483,54 @@ h1#form_heading {
 	border-color: #dfdfdf !important;
 	color: #000 !important;
 }
+
+/* button + input group */
+.add_keyword_tooltip {
+	display: inline-flex;
+}
+
+#keyword_input {
+	margin: 0px 0px 0px 6px !important;
+    margin-bottom: 0rem !important;
+}
+
+.input_group {
+    max-width: 110px !important;
+}
+
+.tooltip_hidden {
+    display:none !important;
+}
+
+.keyword_input_field {
+    max-width: 82px !important;
+    min-height: 36px !important;
+    padding: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    border-top-left-radius: 4px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border: 1px solid #ccc !important;
+}
+
+#tooltip_add_btn {
+	height: 36px !important;
+	width: 28px;
+	padding: 0px !important;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid #ccc !important;
+}
+
+#tooltip_add_btn:hover {
+	background-color: #449d5f !important;
+	border-color: #449d5f !important;
+}
+
+.check_add_keyword {
+	padding: 0px !important;
+}
+
 
 .col.add_note {
 	max-width: fit-content;
@@ -506,7 +557,7 @@ h1#form_heading {
 	margin-bottom: 0px !important;
 	background-color: #f1f1f1;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	border-radius: 4px;
 	min-width: 66px;
 	text-align: end;
 	padding: 5px 10px;
