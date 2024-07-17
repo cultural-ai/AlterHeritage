@@ -284,11 +284,6 @@ h1#form_heading {
     background-color: blue !important;
 }
 
-.add_note_btn.disabled {
-	border-color: #b1b1b1 !important;
-	color: #b1b1b1 !important;
-}
-
 .add_warning_btn {
     padding: 0px !important;
     margin: 0px 6px 0px 0px;
@@ -306,28 +301,100 @@ h1#form_heading {
     background-color: darkred !important;
 }
 
-    /* Added elements */
+/* Added elements */
+
+    /* Note */
 
 .note_area {
     margin-top: 10px !important;
 }
 
 .note_col {
-	padding-right: 0px !important;
+	padding: 0px !important;
 }
 
-.note_title {
-    font-size: 14px !important;
-    color: #717171;
-    padding-top: 4px;
+.note_icon_col {
+	padding: 0px 4px 0px 0px !important;
+}
+
+.note_icon {
+    font-size: 1.2rem;
+    color: #808080;
 }
 
 .note-form {
     width: 100% !important;
+    min-height: 60px !important;
     background-color: lightyellow !important;
     font-size: 14px !important;
     color: #717171 !important;
     padding: 4px 0px 4px 10px !important;
+}
+
+.remove_note_col {
+	padding: 0px 0px 0px 4px !important;
+}
+
+.remove_note_btn {
+	width: 22px !important;
+	height: 22px;
+	padding: 0px !important;
+	font-size: 0.8rem;
+	color: #ef6868 !important;
+	border-color: #ef6868 !important;
+}
+
+.remove_note_btn:hover {
+    color: white !important;
+    background-color: #ef6868 !important;
+    border-color: #ef6868 !important;
+}
+
+    /* Warning */
+
+.warning_area {
+    margin-top: 10px !important;
+}
+
+.warning_col {
+    padding: 0px !important;
+}
+
+.warning_icon_col {
+    padding: 0px 4px 0px 0px !important;
+}
+
+.warning_icon {
+    font-size: 1.2rem;
+    color: #8c2020;
+}
+
+.warning-form {
+    width: 100% !important;
+    min-height: 60px !important;
+    background-color: #f28080c4 !important;
+    font-size: 14px !important;
+    color: #8c2020 !important;
+    padding: 4px 0px 4px 10px !important;
+}
+
+.remove_warning_col {
+	padding: 0px 0px 0px 4px !important;
+}
+
+.remove_warning_btn {
+	width: 22px !important;
+	height: 22px;
+	padding: 0px !important;
+	font-size: 0.8rem;
+	color: #ef6868 !important;
+	border-color: #ef6868 !important;
+}
+
+.remove_warning_btn:hover {
+    color: white !important;
+    background-color: #ef6868 !important;
+    border-color: #ef6868 !important;
 }
 
 /* Subject terms */

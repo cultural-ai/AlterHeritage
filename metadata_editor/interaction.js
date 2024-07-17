@@ -9,7 +9,7 @@ let originalData;
 
 // fetching JSON-LD; for now, locally
 
-let objectIndex;
+let objectIndex = 0;
 
 document.addEventListener('DOMContentLoaded', async() => {
   const userId = getUserId();
@@ -201,7 +201,7 @@ function embedObject(data,objectIndex) {
 
           <button title="Add a note to ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
 
-          <button title="Add a warning to ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+          <button title="Add a warning to ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${field.property}" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
 
         </div>
 
@@ -376,18 +376,80 @@ function hideKeyword(kwId) {
 
 function addFieldNote(fieldId) {
   const noteButton = document.getElementById(`add_note_btn_${fieldId}`);
-  const fieldDiv = document.getElementById(`container_${fieldId}`);
+  const fielGroupdDiv = document.getElementById(`field_group_${fieldId}`);
+  const textContainer = fielGroupdDiv.querySelector('.field_value_area'); // select textarea column
 
+  // create note
   const note = document.createElement('div');
   note.className = 'row note_area';
+  note.id = `note_to_${fieldId}`;
   note.innerHTML = `
-    <div class="col-md-1 note_title">Note</div>
-    <div class="col-md-11 note_col">
-      <textarea class="note-form form-control" id="dc:title" style="height: 49px;"></textarea>
+    <div class="col-md-1 note_icon_col"><i class="bi bi-sticky note_icon"></i></div>
+    <div class="col-md-10 note_col">
+      <textarea class="note-form form-control"></textarea>
+    </div>
+    <div class="col-md-1 remove_note_col">
     </div>
   `
-  fieldDiv.appendChild(note)
+  // create remove note button
+  const removeNoteButton = document.createElement('button');
+  removeNoteButton.className = 'btn btn-outline-secondary btn-sm remove_note_btn'; 
+  removeNoteButton.id = `remove_note_btn_${fieldId}`;
+  removeNoteButton.innerHTML = '<i class="bi bi-x-lg"></i>';
+
+  const noteButtonContainer = note.querySelector('.remove_note_col');
+
+  textContainer.appendChild(note);
+  noteButtonContainer.appendChild(removeNoteButton);
   noteButton.classList.toggle('disabled');
+}
+
+function removeFieldNote(fieldId) {
+  // removing the note container
+  const divNoteField = document.getElementById(`note_to_${fieldId}`);
+  divNoteField.remove();
+  // reactivating the add note button
+  const addNoteButton = document.getElementById(`add_note_btn_${fieldId}`);
+  addNoteButton.classList.remove('disabled');
+}
+
+function addFieldWarning(fieldId) {
+  const warningButton = document.getElementById(`add_warning_btn_${fieldId}`);
+  const fielGroupdDiv = document.getElementById(`field_group_${fieldId}`);
+  const textContainer = fielGroupdDiv.querySelector('.field_value_area'); // select textarea column
+
+  // create warning
+  const warning =  document.createElement('div');
+  warning.className = 'row warning_area';
+  warning.id = `warning_to_${fieldId}`;
+  warning.innerHTML = `
+    <div class="col-md-1 warning_icon_col"><i class="bi bi-exclamation-triangle-fill warning_icon"></i></div>
+    <div class="col-md-10 warning_col">
+      <textarea class="warning-form form-control"></textarea>
+    </div>
+    <div class="col-md-1 remove_warning_col">
+    </div>
+  `
+  // create remove warning button
+  const removeWarningButton = document.createElement('button');
+  removeWarningButton.className = 'btn btn-outline-secondary btn-sm remove_warning_btn'; 
+  removeWarningButton.id = `remove_warning_btn_${fieldId}`;
+  removeWarningButton.innerHTML = '<i class="bi bi-x-lg"></i>';
+
+  const warningButtonContainer = warning.querySelector('.remove_warning_col');
+
+  textContainer.appendChild(warning);
+  warningButtonContainer.appendChild(removeWarningButton);
+  warningButton.classList.toggle('disabled');
+}
+
+function removeFieldWarning(fieldId) {
+    // removing the warning container
+    const divWarningField = document.getElementById(`warning_to_${fieldId}`);
+    divWarningField.remove();
+    // reactivating the add warning button
+    const addWarningButton = document.getElementById(`add_warning_btn_${fieldId}`);
+    addWarningButton.classList.remove('disabled');
 }
 
 // Listener for buttons inside object_matadata_container
@@ -413,12 +475,29 @@ document.getElementById('object_matadata_container').addEventListener('click', f
 
   // add note field
   if (target.closest('.add_note_btn')) {
-
     const fieldId = target.closest('.add_note_btn').getAttribute('field-id');
     addFieldNote(fieldId);
   }
 
+  // remove note + reactivate add note button
+  if (target.closest('.remove_note_btn')) {
+    const buttonId = target.closest('.remove_note_btn').id;
+    const fieldId = buttonId.replace('remove_note_btn_','');
+    removeFieldNote(fieldId);
+  }
+
   // add warning
+  if (target.closest('.add_warning_btn')) {
+    const fieldId = target.closest('.add_warning_btn').getAttribute('field-id');
+    addFieldWarning(fieldId);
+  }
+
+  // remove warning + reactivate add warning button
+  if (target.closest('.remove_warning_btn')) {
+    const buttonId = target.closest('.remove_warning_btn').id;
+    const fieldId = buttonId.replace('remove_warning_btn_','');
+    removeFieldWarning(fieldId);
+  }
 
   // KEYWORDS
   // add note keyword
