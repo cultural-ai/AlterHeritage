@@ -326,6 +326,15 @@ function addSubjectTerm(text,index) {
   noteButton.setAttribute('keyword-id', `keyword_${index}`);
   noteButton.title = "Add a note";
   term.appendChild(noteButton);
+
+  const noteTooltip = document.createElement('div');
+  noteTooltip.className = 'add_note_tooltip add_note_tooltip_hidden';
+  noteTooltip.id = `note_to_keyword_${index}`;
+  noteTooltip.innerHTML = `
+    <textarea class="form-control add_note_text"></textarea>
+    <i class="bi bi-caret-down-fill triangle_icon"></i>
+  `;
+  term.appendChild(noteTooltip);
   
   //hide button
   const hideButton = subjectTermButton(hideIcon, 'hide-button');
@@ -505,6 +514,17 @@ function addUserKeyword() {
   
 }
 
+function addNoteKeyword(kwId) {
+  const tooltip = document.getElementById(`note_to_${kwId}`);
+  tooltip.classList.toggle('add_note_tooltip_hidden');
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest(`#note_to_${kwId}`) && !event.target.closest(`#note_button_${kwId}`)) {
+      tooltip.classList.add('add_note_tooltip_hidden');
+    }
+  });
+}
+
 // Listener for buttons inside object_matadata_container
 
 document.getElementById('object_matadata_container').addEventListener('click', function(event) {
@@ -522,7 +542,7 @@ document.getElementById('object_matadata_container').addEventListener('click', f
   if (target.closest('.remove_field_btn')) {
     const fieldId = target.closest('.remove_field_btn').getAttribute('field-id');
     const div_to_remove = document.getElementById(`field_group_${fieldId}`);
-    div_to_remove.classList.add('hidden');
+    div_to_remove.classList.add('removing');
     div_to_remove.addEventListener('transitionend', () => {
       div_to_remove.remove();
     }, { once: true });
@@ -556,6 +576,10 @@ document.getElementById('object_matadata_container').addEventListener('click', f
 
   // KEYWORDS
   // add note keyword
+  if(target.closest('.note-button')) {
+    const kwId = target.closest('.note-button').getAttribute('keyword-id');
+    addNoteKeyword(kwId);
+  }
 
   // hide keyword
   if (target.closest('.hide-button')) {
@@ -580,7 +604,7 @@ document.getElementById('object_matadata_container').addEventListener('click', f
   if (target.closest('.remove-button')) {
     const kwId = target.closest('.remove-button').getAttribute('keyword-id');
     const kw_to_remove = document.getElementById(`span_${kwId}`);
-    kw_to_remove.classList.add('hidden');
+    kw_to_remove.classList.add('removing');
     kw_to_remove.addEventListener('transitionend', () => {
       kw_to_remove.remove();
     }, { once: true });

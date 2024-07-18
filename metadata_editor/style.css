@@ -162,13 +162,12 @@ h1#form_heading {
 
 .field_group {
     margin-bottom: 20px;
-    transition: opacity 2s ease-out;
+    transition: opacity 1s ease-out;
     flex-wrap: nowrap !important;
-    opacity: 1;
     overflow: hidden;
   }
 
-.hidden {
+.removing {
     opacity: 0;
 }
 
@@ -408,10 +407,13 @@ h1#form_heading {
 }
 
 .subject-term {
-	display: inline-block;
+	display: inline-grid;
 	margin: 0px 16px 30px 6px;
 	text-align: end;
+    transition: opacity 1s ease-out;
+    justify-items: end;
 }
+
 
 .subject-term-button {
     width: 20px;
@@ -423,7 +425,7 @@ h1#form_heading {
 
 .note-button {
     position: absolute;
-    margin-left: -56px;
+    margin-right: 48px;
     border-color: blue !important;
     color: blue !important;
 }
@@ -441,9 +443,8 @@ h1#form_heading {
 }
 
 .hide-button {
-    background-color: #818080;
     position: absolute;
-    margin-left: -34px;
+    margin-right: 26px;
 }
 
 .hide-button:hover {
@@ -454,7 +455,7 @@ h1#form_heading {
 
 .remove-button {
     position: absolute;
-    margin-left: -12px;
+    margin-right: 4px;
     border-color: #ef6868 !important;
     color: #ef6868 !important;
 }
@@ -558,7 +559,7 @@ h1#form_heading {
 	background-color: #f1f1f1;
 	border: 1px solid #ccc;
 	border-radius: 4px;
-	min-width: 66px;
+	min-width: 72px;
 	text-align: end;
 	padding: 5px 10px;
 }
@@ -571,5 +572,40 @@ h1#form_heading {
     pointer-events: none;
 }
 
+/* add keyword note */
+
+.add_note_tooltip {
+	position: absolute;
+	margin-top: -94px;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	margin-right: -32px;
+    width: 180px;
+}
+
+.add_note_tooltip_hidden {
+    display:none;
+}
+
+
+.add_note_text {
+	resize: none;
+	background-color: #ffffe0e8 !important;
+	font-size: 12px !important;
+	padding: 4px 4px 4px 8px !important;
+	color: #444 !important;
+	border: 1px solid #ccc !important;
+}
+
+.add_note_text:focus {
+	border: 1px solid #ccc !important;
+}
+
+.triangle_icon {
+	position: absolute;
+	margin-top: 76px;
+	color: #ccc;
+}
   
   
