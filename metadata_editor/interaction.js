@@ -242,7 +242,7 @@ function embedObject(data,objectIndex) {
       <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="Add a keyword"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
       <div class="input-group mb-3 tooltip_hidden" id="keyword_input">
         <input type="text" class="form-control keyword_input_field" id="user_keyword_area" aria-describedby="tooltip_add_btn">
-        <button class="btn btn-outline-secondary" type="button" id="tooltip_add_btn"><i class="bi bi-check-lg check_add_keyword"></i></button>
+        <button class="btn btn-outline-secondary" type="button" id="tooltip_add_btn" disabled="true"><i class="bi bi-check-lg check_add_keyword"></i></button>
       </div>
       `
       keywordsDiv.appendChild(tooltipAddKeyword);
@@ -385,7 +385,7 @@ function addFieldNote(fieldId) {
   note.innerHTML = `
     <div class="col-md-1 note_icon_col"><i class="bi bi-sticky note_icon"></i></div>
     <div class="col-md-10 note_col">
-      <textarea class="note-form form-control"></textarea>
+      <textarea class="note-form form-control" placeholder="Note"></textarea>
     </div>
     <div class="col-md-1 remove_note_col">
     </div>
@@ -424,7 +424,7 @@ function addFieldWarning(fieldId) {
   warning.innerHTML = `
     <div class="col-md-1 warning_icon_col"><i class="bi bi-exclamation-triangle-fill warning_icon"></i></div>
     <div class="col-md-10 warning_col">
-      <textarea class="warning-form form-control"></textarea>
+      <textarea class="warning-form form-control" placeholder="Warning"></textarea>
     </div>
     <div class="col-md-1 remove_warning_col">
     </div>
@@ -455,9 +455,22 @@ function displayKeywordInput() {
 
     const addKeywordButton = document.getElementById('add_keyword_btn');
     const inputGroup = document.getElementById('keyword_input');
-    inputGroup.classList.remove('tooltip_hidden');
-    addKeywordButton.classList.add('disabled');
+    const submitKeywordButton = document.getElementById('tooltip_add_btn');
+    inputGroup.classList.remove('tooltip_hidden'); //displaying input group
+    addKeywordButton.classList.add('disabled'); // adding another keyword is not possible while the input group is displayed
 
+    const userKeywordArea = inputGroup.querySelector('input');
+
+    // toggling disabled for the check button (do not allow adding an empty keyword)
+    userKeywordArea.addEventListener('input', () => {
+      if (userKeywordArea.value.trim() !== '') {
+        submitKeywordButton.disabled = false;
+      } else {
+        submitKeywordButton.disabled = true;
+      }
+    })
+
+    // toggling the input group if there's click outside of it
     document.addEventListener('click', (event) => {
       if (!event.target.closest('.add_keyword_tooltip')) {
         inputGroup.classList.add('tooltip_hidden');
@@ -468,16 +481,16 @@ function displayKeywordInput() {
 
 function addUserKeyword() {
 
-  keywords_count += 1;
+  keywords_count += 1; // counter for unique keyword IDs
 
+  // getting the add button to add a new keyword before it
   const keywordsDiv = document.getElementById('subject-terms-container');
   const lastKeyword = keywordsDiv.lastElementChild;
 
   const addKeywordButton = document.getElementById('add_keyword_btn');
   const submitKeywordButton = document.getElementById('tooltip_add_btn');
   const inputGroup = document.getElementById('keyword_input');
-
-  const userKeywordArea = inputGroup.querySelector('#user_keyword_area');
+  const userKeywordArea = inputGroup.querySelector('input');
 
   let user_keyword_index = `user_${keywords_count}`;
   const newKeyword = userKeywordArea.value.trim();
@@ -485,10 +498,11 @@ function addUserKeyword() {
   userTerm = addSubjectTerm(newKeyword,user_keyword_index);
   keywordsDiv.insertBefore(userTerm, lastKeyword);
 
-  inputGroup.querySelector('#user_keyword_area').value = '';
+  inputGroup.querySelector('#user_keyword_area').value = ''; // reset the input
+  submitKeywordButton.disabled = true; // disable the check button again
   inputGroup.classList.add('tooltip_hidden');
-  addKeywordButton.classList.remove('disabled');
-
+  addKeywordButton.classList.remove('disabled'); // reactivating the add button
+  
 }
 
 // Listener for buttons inside object_matadata_container
@@ -581,13 +595,6 @@ document.getElementById('object_matadata_container').addEventListener('click', f
   if (target.closest('#tooltip_add_btn')) {
     addUserKeyword();
   };
-
- // if (!target.closest('#keyword_input')) {
- //   const inputGroup = document.getElementById('keyword_input');
- //   inputGroup.classList.add('tooltip_hidden');
- //   const addKeywordButton = document.getElementById('add_keyword_btn');
- //   addKeywordButton.classList.remove('disabled');
- // };
 
 });
 
