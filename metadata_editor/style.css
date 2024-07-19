@@ -560,8 +560,9 @@ h1#form_heading {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	min-width: 72px;
-	text-align: end;
+	text-align: center;
 	padding: 5px 10px;
+    cursor: default;
 }
 
 .kw_hidden {
@@ -608,4 +609,17 @@ h1#form_heading {
 	color: #ccc;
 }
   
+.kw_note_icon {
+    position: absolute;
+    margin-top: 16px;
+    margin-left: -16px;
+    color: #6c757d;
+}
   
+
+.added_note_tooltip {
+    --bs-tooltip-bg: #d3d3d3 !important;
+    --bs-tooltip-color: rgb(26, 26, 26) !important;
+    font-size: 12px !important;
+    margin-top: 4px !important;
+}

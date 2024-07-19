@@ -235,6 +235,9 @@ function embedObject(data,objectIndex) {
         const term = addSubjectTerm(keyword,index);
         keywordsDiv.appendChild(term);});
 
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
       // add a keyword button and a tooltip
       tooltipAddKeyword = document.createElement('span');
       tooltipAddKeyword.className = 'add_keyword_tooltip';
@@ -353,7 +356,10 @@ function addSubjectTerm(text,index) {
   const keyword_text = document.createElement('p');
   keyword_text.className = 'keyword_text';
   keyword_text.id = `keyword_${index}`;
-  keyword_text.textContent = text;
+  keyword_text.setAttribute('data-bs-toggle','tooltip');
+  keyword_text.setAttribute('data-bs-placement','bottom');
+  keyword_text.setAttribute('data-bs-custom-class','added_note_tooltip');
+  keyword_text.innerHTML = `<i class="bi bi-sticky-fill kw_note_icon tooltip_hidden"></i>${text}`;
   term.appendChild(keyword_text);
 
   return term;
@@ -392,7 +398,7 @@ function addFieldNote(fieldId) {
   note.className = 'row note_area';
   note.id = `note_to_${fieldId}`;
   note.innerHTML = `
-    <div class="col-md-1 note_icon_col"><i class="bi bi-sticky note_icon"></i></div>
+    <div class="col-md-1 note_icon_col"><i class="bi bi-sticky-fill note_icon"></i></div>
     <div class="col-md-10 note_col">
       <textarea class="note-form form-control" placeholder="Note"></textarea>
     </div>
@@ -409,7 +415,7 @@ function addFieldNote(fieldId) {
 
   textContainer.appendChild(note);
   noteButtonContainer.appendChild(removeNoteButton);
-  noteButton.classList.toggle('disabled');
+  noteButton.classList.add('disabled');
 }
 
 function removeFieldNote(fieldId) {
@@ -477,7 +483,7 @@ function displayKeywordInput() {
       } else {
         submitKeywordButton.disabled = true;
       }
-    })
+    });
 
     // toggling the input group if there's click outside of it
     document.addEventListener('click', (event) => {
@@ -511,12 +517,33 @@ function addUserKeyword() {
   submitKeywordButton.disabled = true; // disable the check button again
   inputGroup.classList.add('tooltip_hidden');
   addKeywordButton.classList.remove('disabled'); // reactivating the add button
+
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
   
 }
 
 function addNoteKeyword(kwId) {
   const tooltip = document.getElementById(`note_to_${kwId}`);
   tooltip.classList.toggle('add_note_tooltip_hidden');
+
+  const noteText = tooltip.querySelector('textarea');
+  const p_keyword = document.getElementById(kwId);
+  const noteIcon = p_keyword.querySelector('i');
+
+  noteText.addEventListener('input', () => {
+    const addedNote = noteText.value.trim();
+    if (addedNote !== '') {
+      noteIcon.classList.remove('tooltip_hidden');
+      p_keyword.setAttribute('data-bs-title',addedNote);
+    }
+    else {
+      noteIcon.classList.add('tooltip_hidden');
+      p_keyword.removeAttribute('data-bs-title');
+    }
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  });
 
   document.addEventListener('click', (event) => {
     if (!event.target.closest(`#note_to_${kwId}`) && !event.target.closest(`#note_button_${kwId}`)) {
