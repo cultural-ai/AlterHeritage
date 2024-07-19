@@ -7,6 +7,7 @@ const path = 'objects/';
 let userData;
 let originalData;
 let keywords_count = 100; // for unique ids for user keywords
+let fields_count = 100; // for unique ids for user fields
 
 // fetching JSON-LD; for now, locally
 
@@ -154,11 +155,12 @@ function embedObject(data,objectIndex) {
   img_url = data.objects[objectIndex].img;
   imgContainer.src = img_url;
 
-  const objectMetadataContainer = document.getElementById('object_matadata_container');
+  const objectMetadataContainer = document.getElementById('object_metadata_container');
 
   // clearing previous object's fields
   objectMetadataContainer.innerHTML = '';
 
+  // add a new field buton
   const addFieldButtonDiv = document.createElement('div');
   addFieldButtonDiv.className = 'row add_field';
   addFieldButtonDiv.innerHTML = `
@@ -167,6 +169,36 @@ function embedObject(data,objectIndex) {
       <i class="bi bi-plus-lg"></i> Add a new field
   </div>`
   objectMetadataContainer.appendChild(addFieldButtonDiv);
+
+  // add the field group input
+  const fieldInputGroup = document.createElement('div');
+  fieldInputGroup.className = 'row field_input_group div_hidden';
+  fieldInputGroup.id = 'add_new_field_group';
+  fieldInputGroup.innerHTML = `
+    <div class="col-md-2 field_names">
+
+      <input type="text" class="form-control field_name_input" placeholder="Field name">
+      
+    </div>
+
+    <div class="col-md-8 field_value_area">
+
+    <div class="row">
+      <textarea class="form-control field_value_input"></textarea>
+    </div>
+
+    </div>
+
+    <div class="col-md-2 field_button_input">
+
+      <button title="Add field" class="btn btn-outline-secondary btn-sm check_add_field_btn" type="button" disabled="true">
+        <i class="bi bi-check-lg check_add_field_icon"></i>
+      </button>
+
+    </div>
+      `;
+
+  objectMetadataContainer.appendChild(fieldInputGroup);
 
   singleObjectFields = data.objects[objectIndex].fields;
 
@@ -243,7 +275,7 @@ function embedObject(data,objectIndex) {
       tooltipAddKeyword.className = 'add_keyword_tooltip';
       tooltipAddKeyword.innerHTML = `
       <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="Add a keyword"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
-      <div class="input-group mb-3 tooltip_hidden" id="keyword_input">
+      <div class="input-group mb-3 div_hidden" id="keyword_input">
         <input type="text" class="form-control keyword_input_field" id="user_keyword_area" aria-describedby="tooltip_add_btn">
         <button class="btn btn-outline-secondary" type="button" id="tooltip_add_btn" disabled="true"><i class="bi bi-check-lg check_add_keyword"></i></button>
       </div>
@@ -359,10 +391,108 @@ function addSubjectTerm(text,index) {
   keyword_text.setAttribute('data-bs-toggle','tooltip');
   keyword_text.setAttribute('data-bs-placement','bottom');
   keyword_text.setAttribute('data-bs-custom-class','added_note_tooltip');
-  keyword_text.innerHTML = `<i class="bi bi-sticky-fill kw_note_icon tooltip_hidden"></i>${text}`;
+  keyword_text.innerHTML = `<i class="bi bi-sticky-fill kw_note_icon div_hidden"></i>${text}`;
   term.appendChild(keyword_text);
 
   return term;
+}
+
+function displayFieldInputGroup() {
+
+  const fieldGroup = document.getElementById('add_new_field_group');
+  fieldGroup.classList.toggle('div_hidden');
+
+  // check if the field name and value are both non-empty to active button
+  const fieldName = fieldGroup.querySelector('input');
+  const fieldValue = fieldGroup.querySelector('textarea');
+  const submitFieldButton = fieldGroup.querySelector('button');
+
+  fieldName.addEventListener('input', () => {
+    if (fieldName.value.trim() !== '' && fieldValue.value.trim() !== '') {
+      submitFieldButton.disabled = false;
+    }
+    else {
+      submitFieldButton.disabled = true;
+    }
+  });
+
+  fieldValue.addEventListener('input', () => {
+    if (fieldName.value.trim() !== '' && fieldValue.value.trim() !== '') {
+      submitFieldButton.disabled = false;
+    }
+    else {
+      submitFieldButton.disabled = true;
+    }
+  });
+
+  // toggling the input group if there's click outside of it
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.field_input_group') && !event.target.closest('.add_field_col')) {
+      fieldGroup.classList.add('div_hidden');
+    }
+  });
+}
+
+function addField() {
+  const objectMetadataContainer = document.getElementById('object_metadata_container');
+  const firstField = objectMetadataContainer.children[2]; // inserting a new field about the first one and below the input group
+
+  const fieldGroup = document.getElementById('add_new_field_group');
+
+  const submitFieldButton = fieldGroup.querySelector('button');
+  const fieldNameInput = fieldGroup.querySelector('input');
+  const fieldValueInput = fieldGroup.querySelector('textarea');
+  const fieldName = fieldNameInput.value.trim();
+  const fieldValue = fieldValueInput.value.trim();
+
+  const fieldDiv = document.createElement('div');
+  fieldDiv.className = 'row field_group';
+  fieldDiv.id = `field_group_${fieldName.replace(' ','').toLowerCase()}${fields_count}`;
+  userFieldID = `${fieldName.replace(' ','').toLowerCase()}${fields_count}`;
+
+  fieldDiv.innerHTML = `
+      <div class="col-md-2 field_names">
+        <label for="${userFieldID}">${fieldName}</label>
+      </div>
+
+      <div class="col-md-8 field_value_area" id="container_${userFieldID}">
+        <div class="row">
+          <textarea class="form-control" id="${userFieldID}">${fieldValue}</textarea>
+        </div>
+      </div>
+                
+      <div class="col-md-2 field_btns">
+        <div class="row upper_btns">
+
+          <button title="Hide ${fieldName}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${userFieldID}" field-id="${userFieldID}">
+            <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
+          </button>
+
+          <button title="Remove ${fieldName}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${userFieldID}">
+            <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
+          </button>
+
+        </div>
+
+        <div class="row down_btns">
+
+          <button title="Add a note to ${fieldName}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+
+          <button title="Add a warning to ${fieldName}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+
+        </div>
+
+      </div>
+      `;
+
+      objectMetadataContainer.insertBefore(fieldDiv,firstField);
+
+      submitFieldButton.disabled = true; // disable submit new field button
+      fieldNameInput.value = ''; // clearing the filed input field
+      fieldValueInput.value = '';
+
+  fields_count += 1;
+
 }
 
 function hideField(fieldId) {
@@ -471,7 +601,7 @@ function displayKeywordInput() {
     const addKeywordButton = document.getElementById('add_keyword_btn');
     const inputGroup = document.getElementById('keyword_input');
     const submitKeywordButton = document.getElementById('tooltip_add_btn');
-    inputGroup.classList.remove('tooltip_hidden'); //displaying input group
+    inputGroup.classList.remove('div_hidden'); //displaying input group
     addKeywordButton.classList.add('disabled'); // adding another keyword is not possible while the input group is displayed
 
     const userKeywordArea = inputGroup.querySelector('input');
@@ -488,7 +618,7 @@ function displayKeywordInput() {
     // toggling the input group if there's click outside of it
     document.addEventListener('click', (event) => {
       if (!event.target.closest('.add_keyword_tooltip')) {
-        inputGroup.classList.add('tooltip_hidden');
+        inputGroup.classList.add('div_hidden');
         addKeywordButton.classList.remove('disabled');
       }
     });
@@ -515,7 +645,7 @@ function addUserKeyword() {
 
   inputGroup.querySelector('#user_keyword_area').value = ''; // reset the input
   submitKeywordButton.disabled = true; // disable the check button again
-  inputGroup.classList.add('tooltip_hidden');
+  inputGroup.classList.add('div_hidden');
   addKeywordButton.classList.remove('disabled'); // reactivating the add button
 
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -534,11 +664,11 @@ function addNoteKeyword(kwId) {
   noteText.addEventListener('input', () => {
     const addedNote = noteText.value.trim();
     if (addedNote !== '') {
-      noteIcon.classList.remove('tooltip_hidden');
+      noteIcon.classList.remove('div_hidden');
       p_keyword.setAttribute('data-bs-title',addedNote);
     }
     else {
-      noteIcon.classList.add('tooltip_hidden');
+      noteIcon.classList.add('div_hidden');
       p_keyword.removeAttribute('data-bs-title');
     }
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -552,61 +682,69 @@ function addNoteKeyword(kwId) {
   });
 }
 
-// Listener for buttons inside object_matadata_container
+// Listener for buttons inside object_metadata_container
 
-document.getElementById('object_matadata_container').addEventListener('click', function(event) {
+document.getElementById('object_metadata_container').addEventListener('click', function(event) {
   const target = event.target;
   // FIELDS
-  // add field
+
+  // display field input group
+  if (target.closest('.add_field_btn')) {
+    displayFieldInputGroup();
+  };
+
+  // add user field
+  if (target.closest('.check_add_field_btn')) {
+    addField();
+  };
 
   // hide field
   if (target.closest('.hide_field_btn')) {
-
     const fieldId = target.closest('.hide_field_btn').getAttribute('field-id');
     hideField(fieldId);
-  }
+  };
+
   // remove field
   if (target.closest('.remove_field_btn')) {
     const fieldId = target.closest('.remove_field_btn').getAttribute('field-id');
     const div_to_remove = document.getElementById(`field_group_${fieldId}`);
     div_to_remove.classList.add('removing');
     div_to_remove.addEventListener('transitionend', () => {
-      div_to_remove.remove();
-    }, { once: true });
-  }
+    div_to_remove.remove();}, { once: true });
+  };
 
   // add note field
   if (target.closest('.add_note_btn')) {
     const fieldId = target.closest('.add_note_btn').getAttribute('field-id');
     addFieldNote(fieldId);
-  }
+  };
 
   // remove note + reactivate add note button
   if (target.closest('.remove_note_btn')) {
     const buttonId = target.closest('.remove_note_btn').id;
     const fieldId = buttonId.replace('remove_note_btn_','');
     removeFieldNote(fieldId);
-  }
+  };
 
   // add warning
   if (target.closest('.add_warning_btn')) {
     const fieldId = target.closest('.add_warning_btn').getAttribute('field-id');
     addFieldWarning(fieldId);
-  }
+  };
 
   // remove warning + reactivate add warning button
   if (target.closest('.remove_warning_btn')) {
     const buttonId = target.closest('.remove_warning_btn').id;
     const fieldId = buttonId.replace('remove_warning_btn_','');
     removeFieldWarning(fieldId);
-  }
+  };
 
   // KEYWORDS
   // add note keyword
   if(target.closest('.note-button')) {
     const kwId = target.closest('.note-button').getAttribute('keyword-id');
     addNoteKeyword(kwId);
-  }
+  };
 
   // hide keyword
   if (target.closest('.hide-button')) {
@@ -625,7 +763,7 @@ document.getElementById('object_matadata_container').addEventListener('click', f
     }
 
     hideKeyword(kwId);
-  }
+  };
 
   // remove keyword
   if (target.closest('.remove-button')) {
@@ -633,9 +771,8 @@ document.getElementById('object_matadata_container').addEventListener('click', f
     const kw_to_remove = document.getElementById(`span_${kwId}`);
     kw_to_remove.classList.add('removing');
     kw_to_remove.addEventListener('transitionend', () => {
-      kw_to_remove.remove();
-    }, { once: true });
-  }
+      kw_to_remove.remove();}, { once: true });
+  };
 
   // add keyword input group
   if (target.closest('.add_keyword_btn')) {
@@ -649,6 +786,7 @@ document.getElementById('object_matadata_container').addEventListener('click', f
 
 });
 
+// restore object
 document.addEventListener('DOMContentLoaded', (event) => {
   const restoreButton = document.getElementById('restore_btn');
   restoreButton.addEventListener('click', () => {

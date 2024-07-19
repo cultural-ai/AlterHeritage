@@ -9,21 +9,9 @@
     padding-left: 20px !important;
 }
 
-.user_id_check {
-    width: 12% !important;
-    margin-bottom: 20px;
-    margin-top: 20px !important;
+.object_metadata {
+	font-size: 14px !important;
 }
-
-.user_id_text {
-    margin-bottom: 10px;
-
-}
-
-.object_counter {
-    margin-bottom: 10px;
-}
-
 
 .instruction_above {
     padding-left: 8px !important;
@@ -162,6 +150,7 @@ h1#form_heading {
 
 .field_group {
     margin-bottom: 20px;
+    margin-top: 20px !important;
     transition: opacity 1s ease-out;
     flex-wrap: nowrap !important;
     overflow: hidden;
@@ -183,6 +172,7 @@ h1#form_heading {
 }
 
 .form-control {
+    font-size: 14px !important;
 	min-height: 70px !important;
     text-wrap: balance;
 }
@@ -200,6 +190,10 @@ h1#form_heading {
     display: flex;
     align-items: flex-start;
     flex-flow: column;
+}
+
+.add_field_col {
+	padding: 0px !important;
 }
 
 .add_field {
@@ -301,6 +295,40 @@ h1#form_heading {
 }
 
 /* Added elements */
+
+    /* Field */
+
+.field_input_group {
+    transition: opacity 1s ease-out;
+}
+
+.field_name_input {
+    min-height: 32px !important;
+    height: 32px !important;
+    font-size: 14px !important;
+    padding: 4px !important;
+}
+
+.field_button_input {
+	padding: 0px 0px 0px 6px !important;
+}
+
+.check_add_field_icon {
+	font-size: 1.2rem;
+}
+
+.check_add_field_btn {
+    width: 32px !important;
+    height: 32px;
+    padding: 0px !important;
+    border: 1px solid #ccc !important;
+}
+
+.check_add_field_btn:hover {
+    border-color: #449d5f !important;
+    background-color: #449d5f !important;
+    color: white !important;
+}
 
     /* Note */
 
@@ -499,7 +527,7 @@ h1#form_heading {
     max-width: 110px !important;
 }
 
-.tooltip_hidden {
+.div_hidden {
     display:none !important;
 }
 
