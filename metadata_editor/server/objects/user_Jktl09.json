@@ -10,7 +10,7 @@
           "property": "dc:title",
           "value": "Travestieten, Old Delhi, India (1977)",
           "type": "editable",
-          "hidden": "False",
+          "hidden": "True",
           "removed": "False",
           "has_note": "",
           "has_warning": "",
