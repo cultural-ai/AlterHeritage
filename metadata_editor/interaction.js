@@ -2,10 +2,11 @@
 
 // const localPath = 'objects/objects_sample.json';
 
-const path = 'objects/';
+const path = 'server/objects/';
 
 let userData;
 let originalData;
+let userFilename;
 let keywords_count = 100; // for unique ids for user keywords
 let fields_count = 100; // for unique ids for user fields
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', async() => {
   }
 
   pathUserFile = `${path}user_${userId}.json`;
+  userFilename = `user_${userId}.json`;
   userData = await loadObjects(pathUserFile);
 
   pathOriginalFile = `${path}original_${userId}.json`;
@@ -207,7 +209,7 @@ function embedObject(data,objectIndex) {
     fieldDiv.className = 'row field_group';
     fieldDiv.id = `field_group_${field.property}`;
 
-    if (field.type === 'editable') {
+    if (field.type === 'editable' && field.removed === 'False') {
       fieldDiv.innerHTML = `
       <div class="col-md-2 field_names">
         <label for="${field.property}">${field.name}</label>
@@ -244,9 +246,18 @@ function embedObject(data,objectIndex) {
       `;
       objectMetadataContainer.appendChild(fieldDiv);
 
-      if(field.hidden === 'True') {
+      if (field.hidden === 'True') {
         hideField(field.property);
       }
+
+      if (field.has_note !== '') {
+        addFieldNote(field.property,field.has_note);
+      }
+
+      if (field.has_warning !== '') {
+        addFieldWarning(field.property,field.has_warning);
+      }
+
     }
 
     if (field.type === 'keywords') {
@@ -261,11 +272,26 @@ function embedObject(data,objectIndex) {
 
       objectMetadataContainer.appendChild(fieldDiv);
 
-      const keywords = field.value;
       const keywordsDiv = document.getElementById('subject-terms-container');
-      keywords.forEach((keyword, index) => {
-        const term = addSubjectTerm(keyword,index);
-        keywordsDiv.appendChild(term);});
+
+      Object.keys(field.value).forEach((key,index) => {
+        let keyword = field.value[key];
+        kwId = `keyword_${index}`;
+        // add a keyword if it's not removed
+        if (keyword.removed === 'False') {
+          const term = addSubjectTerm(key,index);
+          keywordsDiv.appendChild(term);
+        }
+        // check if hidden
+        if (keyword.hidden === 'True') {
+          hideKeyword(kwId);
+        }
+        // check if has a note
+        if (keyword.has_note !== '') {
+          addNoteKeyword(kwId,keyword.has_note);
+        }
+
+      });
 
       const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
       const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
@@ -448,7 +474,7 @@ function addField() {
   const fieldDiv = document.createElement('div');
   fieldDiv.className = 'row field_group';
   fieldDiv.id = `field_group_${fieldName.replace(' ','').toLowerCase()}${fields_count}`;
-  userFieldID = `${fieldName.replace(' ','').toLowerCase()}${fields_count}`;
+  const userFieldID = `${fieldName.replace(' ','').toLowerCase()}${fields_count}`;
 
   fieldDiv.innerHTML = `
       <div class="col-md-2 field_names">
@@ -485,13 +511,29 @@ function addField() {
       </div>
       `;
 
-      objectMetadataContainer.insertBefore(fieldDiv,firstField);
+  objectMetadataContainer.insertBefore(fieldDiv,firstField);
 
-      submitFieldButton.disabled = true; // disable submit new field button
-      fieldNameInput.value = ''; // clearing the filed input field
-      fieldValueInput.value = '';
-
+  submitFieldButton.disabled = true; // disable submit new field button
+  fieldNameInput.value = ''; // clearing the filed input field
+  fieldValueInput.value = '';
   fields_count += 1;
+
+  // modify user data
+  const userAddedField = {
+    "name": fieldName,
+    "property": userFieldID,
+    "value": fieldValue,
+    "type": "editable",
+    "hidden": "False",
+    "removed": "False",
+    "has_note": "",
+    "has_warning": "",
+    "by_user": "True"
+  };
+
+  userData.objects[objectIndex].fields.unshift(userAddedField);
+  console.log(userAddedField);
+  console.log(userData);
 
 }
 
@@ -514,11 +556,24 @@ function hideField(fieldId) {
 }
 
 function hideKeyword(kwId) {
+  const button = document.getElementById(`hide_button_${kwId}`);
+  const icon = button.querySelector('i');
+
+  if (icon.classList.contains('bi-eye-slash-fill')) {
+    icon.classList.remove('bi-eye-slash-fill');
+    icon.classList.add('bi-eye-fill');
+    button.title = button.title.replace('Hide', 'Show'); 
+  } else {
+    icon.classList.remove('bi-eye-fill');
+    icon.classList.add('bi-eye-slash-fill');
+    button.title = button.title.replace('Show', 'Hide'); 
+  }
+
   const p_keyword = document.getElementById(kwId);
   p_keyword.classList.toggle('kw_hidden');
 }
 
-function addFieldNote(fieldId) {
+function addFieldNote(fieldId, noteValue) {
   const noteButton = document.getElementById(`add_note_btn_${fieldId}`);
   const fielGroupdDiv = document.getElementById(`field_group_${fieldId}`);
   const textContainer = fielGroupdDiv.querySelector('.field_value_area'); // select textarea column
@@ -530,7 +585,7 @@ function addFieldNote(fieldId) {
   note.innerHTML = `
     <div class="col-md-1 note_icon_col"><i class="bi bi-sticky-fill note_icon"></i></div>
     <div class="col-md-10 note_col">
-      <textarea class="note-form form-control" placeholder="Note"></textarea>
+      <textarea class="note-form form-control" placeholder="Note">${noteValue}</textarea>
     </div>
     <div class="col-md-1 remove_note_col">
     </div>
@@ -557,7 +612,7 @@ function removeFieldNote(fieldId) {
   addNoteButton.classList.remove('disabled');
 }
 
-function addFieldWarning(fieldId) {
+function addFieldWarning(fieldId, warningValue) {
   const warningButton = document.getElementById(`add_warning_btn_${fieldId}`);
   const fielGroupdDiv = document.getElementById(`field_group_${fieldId}`);
   const textContainer = fielGroupdDiv.querySelector('.field_value_area'); // select textarea column
@@ -569,7 +624,7 @@ function addFieldWarning(fieldId) {
   warning.innerHTML = `
     <div class="col-md-1 warning_icon_col"><i class="bi bi-exclamation-triangle-fill warning_icon"></i></div>
     <div class="col-md-10 warning_col">
-      <textarea class="warning-form form-control" placeholder="Warning"></textarea>
+      <textarea class="warning-form form-control" placeholder="Warning">${warningValue}</textarea>
     </div>
     <div class="col-md-1 remove_warning_col">
     </div>
@@ -653,13 +708,21 @@ function addUserKeyword() {
   
 }
 
-function addNoteKeyword(kwId) {
+function addNoteKeyword(kwId,noteValue) {
   const tooltip = document.getElementById(`note_to_${kwId}`);
   tooltip.classList.toggle('add_note_tooltip_hidden');
 
   const noteText = tooltip.querySelector('textarea');
   const p_keyword = document.getElementById(kwId);
   const noteIcon = p_keyword.querySelector('i');
+
+  // checking if there was a note added before
+  if (noteValue !== '') {
+    noteText.value = noteValue;
+    noteIcon.classList.remove('div_hidden');
+    p_keyword.setAttribute('data-bs-title',noteValue);
+    tooltip.classList.add('add_note_tooltip_hidden');
+  }
 
   noteText.addEventListener('input', () => {
     const addedNote = noteText.value.trim();
@@ -681,6 +744,24 @@ function addNoteKeyword(kwId) {
     }
   });
 }
+
+async function saveUserData() {
+  fetch(`/save/${userFilename}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert(result); // Notify the user
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
+
 
 // Listener for buttons inside object_metadata_container
 
@@ -716,7 +797,7 @@ document.getElementById('object_metadata_container').addEventListener('click', f
   // add note field
   if (target.closest('.add_note_btn')) {
     const fieldId = target.closest('.add_note_btn').getAttribute('field-id');
-    addFieldNote(fieldId);
+    addFieldNote(fieldId,''); // empty note value bc it's a new one
   };
 
   // remove note + reactivate add note button
@@ -729,7 +810,7 @@ document.getElementById('object_metadata_container').addEventListener('click', f
   // add warning
   if (target.closest('.add_warning_btn')) {
     const fieldId = target.closest('.add_warning_btn').getAttribute('field-id');
-    addFieldWarning(fieldId);
+    addFieldWarning(fieldId,''); // empty warning bc it's a new one
   };
 
   // remove warning + reactivate add warning button
@@ -743,25 +824,12 @@ document.getElementById('object_metadata_container').addEventListener('click', f
   // add note keyword
   if(target.closest('.note-button')) {
     const kwId = target.closest('.note-button').getAttribute('keyword-id');
-    addNoteKeyword(kwId);
+    addNoteKeyword(kwId,'');
   };
 
   // hide keyword
   if (target.closest('.hide-button')) {
     const kwId = target.closest('.hide-button').getAttribute('keyword-id');
-    const button = document.getElementById(`hide_button_${kwId}`);
-    const icon = button.querySelector('i');
-
-    if (icon.classList.contains('bi-eye-slash-fill')) {
-      icon.classList.remove('bi-eye-slash-fill');
-      icon.classList.add('bi-eye-fill');
-      button.title = button.title.replace('Hide', 'Show'); 
-    } else {
-      icon.classList.remove('bi-eye-fill');
-      icon.classList.add('bi-eye-slash-fill');
-      button.title = button.title.replace('Show', 'Hide'); 
-    }
-
     hideKeyword(kwId);
   };
 
@@ -786,12 +854,20 @@ document.getElementById('object_metadata_container').addEventListener('click', f
 
 });
 
-// restore object
+// restore and submit buttons
+
 document.addEventListener('DOMContentLoaded', (event) => {
+  // restore object
   const restoreButton = document.getElementById('restore_btn');
   restoreButton.addEventListener('click', () => {
   userData.objects[objectIndex].fields = originalData.objects[objectIndex].fields;
   embedObject(userData,objectIndex)
   });
+
+  // submit object
+  const submitButton = document.getElementById('submit_btn');
+  submitButton.addEventListener('click', () => {
+    saveUserData();
+    });
   
 });

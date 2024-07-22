@@ -1,0 +1,58 @@
+{"user_id":"Kn09tqW",
+"objects":[
+	{"object_id":"http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb",
+		"img":"https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg",
+		"fields":[
+
+			{"name":"Titel", "property":"dc:title", "value":"Travestieten, Old Delhi, India (1977)", "type":"editable", "hidden":"False", "removed":"False", "has_note":"", "has_warning":"", "by_user":"False"},
+
+			{"name":"Onderwerp: Wat", "property":"dc:subject", "value":{"portret": {"hidden":"False","removed":"False","has_note":"", "by_user":"False"}, "travestiet":{"hidden":"False","removed":"False","has_note":"", "by_user":"False"}}, "type":"keywords"},
+
+			{"name":"Soort object", "property":"dc:type", "value":"Diapositief", "type":"non-editable"},
+
+			{"name":"Identificatie", "property":"dc:identifier", "value":"EVE-1002001-04", "type":"non-editable"},
+
+			{"name":"Vervaardiger", "property":"dc:creator", "value":"Ed van der Elsken", "type":"non-editable"},
+
+			{"name":"Datering", "property":"dcterms:created", "value":"1976", "type":"non-editable"},
+
+			{"name":"Originele context", "property":"edm:isShownAt", "value":"http://collectie.nederlandsfotomuseum.nl/collectie/detail/4b3ded58-5167-626d-96ee-05d83df0a6cb", "type":"non-editable"},
+
+			{"name":"Dataprovider", "property":"edm:dataProvider", "value":" Nederlands Fotomuseum", "type":"non-editable"},
+
+			{"name":"Medium", "property":"dcterms:medium", "value":"Acetaat", "type":"non-editable"},
+
+			{"name":"Afmetingen", "property":"dcterms:extent", "value":"24x36 mm (kb, 35mm)", "type":"non-editable"},
+
+			{"name":"Rechten en licenties: Gebruiksrecht", "property":"edm:rights", "value":"http://rightsstatements.org/vocab/InC/1.0/", "type":"non-editable"}]
+	},
+
+	{"object_id": "http://data.collectienederland.nl/resource/aggregation/archief-eemland-beeldbank/fa30407a-715a-9133-7a0e-a4d7c4a24850",
+		"img":"http://images.memorix.nl/gam/thumb/500x500/fa30407a-715a-9133-7a0e-a4d7c4a24850.jpg",
+		"fields":[
+
+		{"name":"Titel", "property":"dc:title", "value":"De manifestatie werd ernstig verstoord door relschoppers. Daarover hebben wij een knipselmap en een DVD (nrs. D5343 en D5345). (Het Engelse woord voor …flikker\" (beledigend).) Roze Zaterdag: demonstratiedag voor homosexuelen. Optreden van een wenend \"elfje\". bijzonderheden: Deze dag werd bezocht door ruim vierduizend mensen uit het hele land.", "type":"editable", "hidden":"False", "removed":"False", "has_note":"", "has_warning":"", "by_user":"False"},
+
+		{"name":"Onderwerp: Wat", "property":"dc:subject", "value":{"homosexualiteit":{"hidden":"False","removed":"False","has_note":"", "by_user":"False"},"aktie":{"hidden":"False","removed":"False","has_note":"", "by_user":"False"},"Politie":{"hidden":"False","removed":"False","has_note":"", "by_user":"False"},"WHAM":{"hidden":"False","removed":"False","has_note":"", "by_user":"False"}}, "type":"keywords"},
+
+		{"name":"Description", "property":"dc:description", "value":"Description of the object. Test", "type":"editable", "hidden":"False", "removed":"False", "has_note":"", "has_warning":"", "by_user":"False"},
+
+		{"name":"Identificatie", "property":"dc:identifier", "value":"AFT005000605", "type":"non-editable"},
+
+		{"name":"Documentatie: Is verwezen door", "property":" dcterms:isReferencedBy", "value":"Van Eeghen 4071", "type":"non-editable"},
+
+		{"name":"Datering", "property":"dcterms:created", "value":"1982-06-26", "type":"non-editable"}]
+	},
+
+	{"object_id": "https://data.collectienederland.nl/page/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-45.775",
+		"img":"https://lh4.ggpht.com/IwPm7kXQH74rZG_oOx0-CNLE57XaGjJPhqGEonGgl57EMsAnxAyIlePqW0aG0f7rJ1gFU-0V3OlgBc2oj5hYNoEnMKng=s0",
+		"fields":[
+			{"name":"Titel", "property":"dc:title", "value":"Sodomieten met blindheid geslagen", "type":"editable", "hidden":"False", "removed":"False", "has_note":"", "has_warning":"", "by_user":"False"},
+
+			{"name":"Identificatie", "property":"dc:identifier", "value":"RP-P-OB-45.775, http://hdl.handle.net/10934/RM0001.COLLECT.147320", "type":"non-editable"},
+
+			{"name":"Documentatie: Is verwezen door", "property":" dcterms:isReferencedBy", "value":"Van Eeghen 4071", "type":"non-editable"},
+
+			{"name":"Datering", "property":"dcterms:created", "value":"1712", "type":"non-editable"}]
+	}
+	]}
