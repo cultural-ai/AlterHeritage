@@ -832,7 +832,7 @@ async function updateTextareaResponsesInput(objectIndex, textarea_id, textarea_v
   userResponses[objectIndex][qN] = textarea_value;
 }
 
-// Listener for buttons inside object_metadata_container
+// Left column: listener for buttons inside 'object_metadata_container'
 
 document.getElementById('object_metadata_container').addEventListener('click', function(event) {
   const target = event.target;
@@ -923,7 +923,7 @@ document.getElementById('object_metadata_container').addEventListener('click', f
 
 });
 
-// restore and submit buttons
+// Right column listeners: controls and questions; saving user data
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -956,5 +956,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  
 });
