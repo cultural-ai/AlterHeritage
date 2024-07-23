@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Editing prototype</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -37,14 +37,23 @@
         </div>
 
       <div class="col-md-6 instructions_column">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="instructions_sticky">
+        <div class="row instructions_yellow">
+          <div class="col-md-12 instructions_yellow_col">
             <p id="instructions_text">This archival object contains terms referring to LGBTQ+ people that may be outdated and no longer appropriate. How would you change the metadata of this object to make its representation appropriate and respectful? You can make different adjustments:</p>
+
+            <div class="row instruction_legend">
+              <div class="col-md-3 instruction_buttons">
+                <button class="btn btn-outline-secondary btn-sm instruction_btn add_field_instruction_btn" type="button" disabled><i class="bi bi-plus-lg"  style="font-size: 0.68rem;"></i> Add a new field</button>
+              </div>
+              <div class="col-md-9 instruction_button_text">
+                <p id="instructions_text">Add a new field</p>
+              </div>
+            </div>
             
             <div class="row instruction_legend">
               <div class="col-md-2 instruction_buttons">
-              <button class="btn btn-outline-secondary btn-sm hide_field_btn instruction_btn" type="button" disabled><i class="bi bi-eye-slash-fill"  style="font-size: 1rem;"></i></button>
+                <button class="btn btn-outline-secondary btn-sm instruction_btn hide_instruction_btn" type="button" disabled><i class="bi bi-eye-slash-fill"  style="font-size: 1rem;"></i></button>
+                <button class="btn btn-outline-secondary btn-sm instruction_btn show_instruction_btn" type="button" disabled><i class="bi bi-eye-fill"  style="font-size: 1rem;"></i></button>
               </div>
               <div class="col-md-10 instruction_button_text">
                 <p id="instructions_text">Hide a field or a keyword on a webpage but preserve it in the metadata</p>
@@ -53,7 +62,7 @@
 
             <div class="row instruction_legend">
               <div class="col-md-2 instruction_buttons">
-                <button class="btn btn-outline-secondary btn-sm remove_field_btn instruction_btn" type="button" disabled><i class="bi bi-x-lg" style="font-size: 1rem;"></i></button>
+                <button class="btn btn-outline-secondary btn-sm instruction_btn remove_instruction_btn" type="button" disabled><i class="bi bi-x-lg" style="font-size: 1rem;"></i></button>
               </div>
               <div class="col-md-10 instruction_button_text">
                 <p id="instructions_text">Remove a field or a keyword from both the webpage and metadata</p>
@@ -62,14 +71,32 @@
 
             <div class="row instruction_legend">
               <div class="col-md-2 instruction_buttons">
-                <button class="btn btn-outline-secondary btn-sm note-button instruction_btn" type="button" disabled><i class="bi bi-pencil" style="font-size: 1rem;"></i></button>
+                <button class="btn btn-outline-secondary btn-sm instruction_btn note_instruction_btn" type="button" disabled><i class="bi bi-pencil" style="font-size: 1rem;"></i></button>
               </div>
               <div class="col-md-10 instruction_button_text">
                 <p id="instructions_text">Add a note to a keyword</p>
               </div>
             </div>
 
-          </div>
+            <div class="row instruction_legend">
+              <div class="col-md-2 instruction_buttons">
+                <button class="btn btn-outline-secondary btn-sm instruction_btn warning_instruction_btn" type="button" disabled><i class="bi bi-exclamation-triangle-fill" style="font-size: 1rem;"></i></button>
+              </div>
+              <div class="col-md-10 instruction_button_text">
+                <p id="instructions_text">Add a warning to a field</p>
+              </div>
+            </div>
+
+            <div class="row instruction_legend">
+              <div class="col-md-2 instruction_buttons">
+                <button class="btn btn-outline-secondary btn-sm instruction_btn add_keyword_instruction_btn" type="button" disabled><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
+              </div>
+              <div class="col-md-10 instruction_button_text">
+                <p id="instructions_text">Add a new keyword</p>
+              </div>
+            </div>
+
+        
           </div>
         </div>
 
@@ -93,13 +120,121 @@
           
         </div>
 
-        <div class="row">
-          <div class="col-md-12 open_questions">
-            <div id="q1">Question 1</div>
-            <div id="q2">Question 2</div>
-            <div id="q3">Question 3</div>
-            <div id="q4">Question 4</div>
-            <div id="q5">Question 5</div>
+        <div class="row above_questions">
+          <div class="col-md-12 above_questions_col">
+            <p class="above_questions_text">Explaining the questions below. <i class="bi bi-asterisk mandatory_q"></i> Mandatory questions</p>
+          </div>
+        </div>
+
+        <div class="row questions">
+          <div class="col-md-12 questions_col" id="questions_col">
+            <div class="q" id="q1">
+              <p class="q_text">In your opinion, to what extent the representation of LGBTQ+ people in this object is inclusive <b>BEFORE</b> your edits, where 0 is completely non-inclusive and 10 is completely inclusive? <i class="bi bi-asterisk mandatory_q"></i></p>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_1" value="1">
+                <label class="form-check-label" for="q1_1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_2" value="2">
+                <label class="form-check-label" for="q1_2">2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_3" value="3" >
+                <label class="form-check-label" for="q1_3">3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_4" value="4">
+                <label class="form-check-label" for="q1_4">4</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_5" value="5">
+                <label class="form-check-label" for="q1_5">5</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_6" value="6" >
+                <label class="form-check-label" for="q1_6">6</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_7" value="7">
+                <label class="form-check-label" for="q1_7">7</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_8" value="8">
+                <label class="form-check-label" for="q1_8">8</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_9" value="9" >
+                <label class="form-check-label" for="q1_9">9</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question1" id="q1_10" value="10" >
+                <label class="form-check-label" for="q1_10">10</label>
+              </div>
+            </div>
+
+            <div class="q" id="q2">
+              <p class="q_text">In your opinion, to what extent the representation of LGBTQ+ people in this object is inclusive <b>AFTER</b> your edits, where 0 is completely non-inclusive and 10 is completely inclusive? <i class="bi bi-asterisk mandatory_q"></i></p>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_1" value="1">
+                <label class="form-check-label" for="q2_1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_2" value="2">
+                <label class="form-check-label" for="q2_2">2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_3" value="3" >
+                <label class="form-check-label" for="q2_3">3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_4" value="4">
+                <label class="form-check-label" for="q2_4">4</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_5" value="5">
+                <label class="form-check-label" for="q2_5">5</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_6" value="6" >
+                <label class="form-check-label" for="q2_6">6</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_7" value="7">
+                <label class="form-check-label" for="q2_7">7</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_8" value="8">
+                <label class="form-check-label" for="q2_8">8</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_9" value="9" >
+                <label class="form-check-label" for="q2_9">9</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="question2" id="q2_10" value="10" >
+                <label class="form-check-label" for="q2_10">10</label>
+              </div>
+            </div>
+
+            <div class="q" id="q3">
+              <p class="q_text">What are your motivations behind editing this object's metadata? <i class="bi bi-asterisk mandatory_q"></i></p>
+              <textarea class="form-control open_question_input" id="q3_1"></textarea>
+            </div>
+
+            <div class="q" id="q4">
+              <p class="q_text">Do you want to make other edits that are not possible in this interface? If yes, what are these edits?</p>
+              <textarea class="form-control open_question_input" id="q4_1"></textarea>
+            </div>
+
+            <div class="q" id="q5">
+              <p class="q_text">If you have other thoughts you would like to share, leave them below</p>
+              <textarea class="form-control open_question_input" id="q5_1"></textarea>
+            </div>
+
+            
+
           </div>
         </div>
       </div>

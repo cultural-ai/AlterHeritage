@@ -1,20 +1,16 @@
-// const jsonldUrl = 'a link to objects';
-
-// const localPath = 'objects/objects_sample.json';
-
 const path = 'server/objects/';
 
 let userData;
-let originalData;
+let originalData; // for restoring the original metadata
+let userResponses; // responses to questions
 let userFilename;
 let keywords_count = 100; // for unique ids for user keywords
 let fields_count = 100; // for unique ids for user fields
-
-// fetching JSON-LD; for now, locally
-
-let objectIndex = 0;
+let objectIndex = 0; // starting with the 1st object
+let objectId; // for object ID
 
 document.addEventListener('DOMContentLoaded', async() => {
+
   const userId = getUserId();
 
   if (!userId) {
@@ -22,12 +18,15 @@ document.addEventListener('DOMContentLoaded', async() => {
     return;
   }
 
+  pathOriginalFile = `${path}original_${userId}.json`;
+  originalData = await loadObjects(pathOriginalFile);
+
   pathUserFile = `${path}user_${userId}.json`;
   userFilename = `user_${userId}.json`;
   userData = await loadObjects(pathUserFile);
 
-  pathOriginalFile = `${path}original_${userId}.json`;
-  originalData = await loadObjects(pathOriginalFile);
+  pathUserResponses = `${path}responses_${userId}.json`;
+  userResponses = await loadObjects(pathUserResponses);
 
   numObjects = getObjectsN(userData);
   setPagination(numObjects,userId);
@@ -36,10 +35,12 @@ document.addEventListener('DOMContentLoaded', async() => {
 
 });
 
-
-
 function getUserId() {
   return window.location.hash.substring(1); // Get the part after the '#'
+}
+
+function getObjectId(object_index) {
+  return userData['objects'][object_index]['object_id'];
 }
 
 async function loadObjects(path) {
@@ -118,6 +119,7 @@ function setActivePage(pageNumber) {
 
   objectIndex = pageNumber - 1;
   embedObject(userData, objectIndex);
+  // clear
 }
 
 function loadPaginationButtons(numObjects,userId) {
@@ -149,6 +151,61 @@ function loadPaginationButtons(numObjects,userId) {
   nextButton.className = 'page-item next-b';
   nextButton.innerHTML = `<a class="page-link" href="#${userId}"><i class="bi bi-chevron-right" title="Next"></i></a>`;
   paginationContainer.appendChild(nextButton);
+}
+
+function loadQuestions(data,objectIndex) {
+
+  objectId = getObjectId(objectIndex);
+
+  const questionsDiv = document.getElementById('questions_col');
+  const questions = questionsDiv.querySelectorAll('.q'); // selecting all questions div
+
+  // iterating over all questions to change their IDs
+  questions.forEach((question, index) => {
+    qID = `${objectIndex}_q${index + 1}`
+    question.id = qID;
+
+    const qInputs = question.querySelectorAll('input');
+    qInputs.forEach((input, inputIndex) => {
+      input.id = `${qID}_${inputIndex + 1}`;
+      input.name = `question_${qID}_${index + 1}`;
+    });
+
+    const qLabels = question.querySelectorAll('label');
+    qLabels.forEach((label, labelIndex) => {
+      label.setAttribute('for',`${qID}_${labelIndex + 1}`);
+    });
+
+    const qTextareas = question.querySelectorAll('textarea');
+    qTextareas.forEach((textarea) => {
+      textarea.id = `${qID}_text`;
+    });
+  });
+
+  // Filling in previous responses OR empty if no responses
+
+  Object.keys(data[objectId]).forEach(qKey => {
+    const response = data[objectId][qKey];
+
+    // select radio if there are responses to q1 and q2
+    if (response !== '' && (qKey === 'q1' | qKey === 'q2')){
+      inputSelected = document.getElementById(`${objectIndex}_${qKey}_${response}`);
+      inputSelected.checked = true;
+    }
+    // set empty if there are no responses to q1 and q2
+    if (response === '' && (qKey === 'q1' | qKey === 'q2')){
+      const allRadios = questionsDiv.querySelectorAll('input[type="radio"]');
+      allRadios.forEach(radio => {
+        radio.checked = false;
+      });
+    }
+    // fill in / empty textareas with responses to q3–q5
+    if (qKey === 'q3' | qKey === 'q4' | qKey === 'q5') {
+      textareaToFill = document.getElementById(`${objectIndex}_${qKey}_text`);
+      textareaToFill.value = response;
+    }
+  });
+
 }
 
 function embedObject(data,objectIndex) {
@@ -321,10 +378,11 @@ function embedObject(data,objectIndex) {
       objectMetadataContainer.appendChild(fieldDiv);
 
     }
-
-    setTextareaHeight();
-    
   });
+
+  setTextareaHeight();
+
+  loadQuestions(userResponses,objectIndex);
 
 }
 
@@ -762,6 +820,17 @@ async function saveUserData() {
   });
 }
 
+// rewriting responses for question 1 and 2 in browser data
+async function updateRadioInput(objectIndex, radio_id, radio_value) {
+  qN = radio_id.match(/_(\w+)_/)[1]; // question number
+  userResponses[objectIndex][qN] = radio_value;
+}
+
+// rewriting responses for question 3–5 in browser data
+async function updateTextareaResponsesInput(objectIndex, textarea_id, textarea_value) {
+  qN = textarea_id.match(/_(\w+)_/)[1]; // question number
+  userResponses[objectIndex][qN] = textarea_value;
+}
 
 // Listener for buttons inside object_metadata_container
 
@@ -857,6 +926,7 @@ document.getElementById('object_metadata_container').addEventListener('click', f
 // restore and submit buttons
 
 document.addEventListener('DOMContentLoaded', (event) => {
+
   // restore object
   const restoreButton = document.getElementById('restore_btn');
   restoreButton.addEventListener('click', () => {
@@ -869,5 +939,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
   submitButton.addEventListener('click', () => {
     saveUserData();
     });
+
+  // questions radio listener
+  const radioInputs = document.querySelectorAll('.form-check-input');
+  radioInputs.forEach(radio => {
+    radio.addEventListener('change', () => {
+      updateRadioInput(objectIndex, radio.id, radio.value);
+    });
+  });
+
+  // questions textarea input listener
+  const textareaInputs = document.querySelectorAll('.open_question_input');
+  textareaInputs.forEach(textarea => {
+    textarea.addEventListener('input', () => {
+      updateTextareaResponsesInput(objectIndex, textarea.id, textarea.value.trim());
+    });
+  });
+
   
 });
