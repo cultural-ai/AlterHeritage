@@ -595,8 +595,6 @@ function addField() {
   };
 
   userData.objects[objectIndex].fields.unshift(userAddedField);
-  console.log(userAddedField);
-  console.log(userData);
 
 }
 
@@ -627,6 +625,20 @@ function hideField(fieldId) {
     }
   });
   
+}
+
+function removeField(fieldId) {
+
+  const div_to_remove = document.getElementById(`field_group_${fieldId}`);
+  div_to_remove.classList.add('removing');
+  div_to_remove.addEventListener('transitionend', () => {
+  div_to_remove.remove();}, { once: true });
+
+  // modify user data
+  const objectFields =  userData.objects[objectIndex].fields;
+  // make a new list of fields without the removed field
+  const newFieldsList = objectFields.filter(item => item.property !== fieldId);
+  userData.objects[objectIndex].fields = newFieldsList;
 }
 
 function hideKeyword(kwId) {
@@ -675,6 +687,7 @@ function addFieldNote(fieldId, noteValue) {
   textContainer.appendChild(note);
   noteButtonContainer.appendChild(removeNoteButton);
   noteButton.classList.add('disabled');
+
 }
 
 function removeFieldNote(fieldId) {
@@ -851,6 +864,7 @@ function updateTextareaResponsesInput(textarea_id, textarea_value) {
 // Left column: listener for buttons inside 'object_metadata_container'
 
 document.getElementById('object_metadata_container').addEventListener('click', function(event) {
+
   const target = event.target;
   // FIELDS
 
@@ -873,10 +887,7 @@ document.getElementById('object_metadata_container').addEventListener('click', f
   // remove field
   if (target.closest('.remove_field_btn')) {
     const fieldId = target.closest('.remove_field_btn').getAttribute('field-id');
-    const div_to_remove = document.getElementById(`field_group_${fieldId}`);
-    div_to_remove.classList.add('removing');
-    div_to_remove.addEventListener('transitionend', () => {
-    div_to_remove.remove();}, { once: true });
+    removeField(fieldId);
   };
 
   // add note field
