@@ -187,23 +187,28 @@ function loadQuestions(data,objectIndex) {
   Object.keys(data[objectId]).forEach(qKey => {
     const response = data[objectId][qKey];
 
-    // select radio if there are responses to q1 and q2
+    // select radio if there are responses to q1 or q2
     if (response !== '' && (qKey === 'q1' | qKey === 'q2')){
       inputSelected = document.getElementById(`${objectIndex}_${qKey}_${response}`);
       inputSelected.checked = true;
-    }
-    // set empty if there are no responses to q1 and q2
+    };
+
+    // set empty if there are no responses to q1 or q2
     if (response === '' && (qKey === 'q1' | qKey === 'q2')){
-      const allRadios = questionsDiv.querySelectorAll('input[type="radio"]');
+      const allRadios = questionsDiv.querySelectorAll('input[type="radio"]'); 
       allRadios.forEach(radio => {
-        radio.checked = false;
+        if (radio.id.includes(qKey)) { // !NB setting empty all radios of one question (q1 or q2)
+          radio.checked = false;
+        }
       });
-    }
+    };
+
     // fill in / empty textareas with responses to q3–q5
     if (qKey === 'q3' | qKey === 'q4' | qKey === 'q5') {
       textareaToFill = document.getElementById(`${objectIndex}_${qKey}_text`);
       textareaToFill.value = response;
-    }
+    };
+
   });
 
 }
@@ -599,6 +604,7 @@ function hideField(fieldId) {
   const button = document.getElementById(`hide_field_btn_${fieldId}`);
   const icon = button.querySelector('i');
   const textarea = document.getElementById(fieldId);
+
   if (icon.classList.contains('bi-eye-slash-fill')) {
     icon.classList.remove('bi-eye-slash-fill');
     icon.classList.add('bi-eye-fill');
@@ -608,9 +614,19 @@ function hideField(fieldId) {
     icon.classList.add('bi-eye-slash-fill');
     button.title = button.title.replace('Show', 'Hide'); 
   }
+
   if (textarea) {
     textarea.disabled = !textarea.disabled;
   }
+
+  // modify user data
+  userData.objects[objectIndex].fields.forEach( field => {
+    if (field.property === fieldId) {
+      strValue = String(textarea.disabled) // converting a boolean into a string
+      field.hidden = strValue.charAt(0).toUpperCase() + strValue.slice(1);
+    }
+  });
+  
 }
 
 function hideKeyword(kwId) {
@@ -803,7 +819,7 @@ function addNoteKeyword(kwId,noteValue) {
   });
 }
 
-async function saveUserData() {
+async function userSubmit() {
   fetch(`/save/${userFilename}`, {
     method: 'POST',
     headers: {
@@ -821,15 +837,15 @@ async function saveUserData() {
 }
 
 // rewriting responses for question 1 and 2 in browser data
-async function updateRadioInput(objectIndex, radio_id, radio_value) {
+function updateRadioInput(radio_id, radio_value) {
   qN = radio_id.match(/_(\w+)_/)[1]; // question number
-  userResponses[objectIndex][qN] = radio_value;
+  userResponses[objectId][qN] = radio_value;
 }
 
 // rewriting responses for question 3–5 in browser data
-async function updateTextareaResponsesInput(objectIndex, textarea_id, textarea_value) {
+function updateTextareaResponsesInput(textarea_id, textarea_value) {
   qN = textarea_id.match(/_(\w+)_/)[1]; // question number
-  userResponses[objectIndex][qN] = textarea_value;
+  userResponses[objectId][qN] = textarea_value;
 }
 
 // Left column: listener for buttons inside 'object_metadata_container'
@@ -937,14 +953,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // submit object
   const submitButton = document.getElementById('submit_btn');
   submitButton.addEventListener('click', () => {
-    saveUserData();
+    userSubmit();
     });
 
   // questions radio listener
   const radioInputs = document.querySelectorAll('.form-check-input');
   radioInputs.forEach(radio => {
     radio.addEventListener('change', () => {
-      updateRadioInput(objectIndex, radio.id, radio.value);
+      updateRadioInput(radio.id, radio.value);
     });
   });
 
@@ -952,7 +968,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const textareaInputs = document.querySelectorAll('.open_question_input');
   textareaInputs.forEach(textarea => {
     textarea.addEventListener('input', () => {
-      updateTextareaResponsesInput(objectIndex, textarea.id, textarea.value.trim());
+      updateTextareaResponsesInput(textarea.id, textarea.value.trim());
     });
   });
 
