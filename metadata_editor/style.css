@@ -1,3 +1,35 @@
+/* Consent block */
+.before_task {
+    opacity: 100%;
+    transition: opacity 1s ease-out;
+}
+
+.consent_screen {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+.consent_col {
+    background-color: #f2f2f2;
+	padding: 12px;
+    margin: 10px 0px 10px 0px !important;
+	border-radius: 4px;
+    padding-left: 120px !important;
+}
+
+.consent_text {
+    font-size: 16px;
+}
+
+.task_screen {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.making_visible {
+    opacity: 1 !important;
+}
+
 /* Instructions block */
 
 .instruction_above {
@@ -8,10 +40,29 @@
 .general_instructions {
 	background-color: #f2f2f2;
 	padding: 12px;
-    padding-left: 20px !important;
     margin: 10px 0px 10px 0px !important;
 	font-size: 14px;
 	border-radius: 4px;
+}
+
+.accordion {
+    --bs-accordion-bg: #f2f2f2 !important;
+    border: none !important;
+    --bs-accordion-border-width: 0px !important;
+}
+
+.accordion-button {
+    width: 160px !important;
+    background-color: #f2f2f2 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f2f2f2 !important;
+    color: black !important
+}
+
+.accordion-button:focus {
+	box-shadow: none !important;
 }
 
 /* Left column: Object annotation */
@@ -535,11 +586,45 @@
 
 /* Right column: instructions, controls, questions */
 
-.instructions_column {
-    padding-left: 28px !important;
+    /* notifications */
+
+#notification_submitted {
+    position: fixed;
+    top: 12px;
+    right: 8px;
+    width: fit-content;
+    z-index: 1000;
+  }
+  
+.notification_green {
+    font-size: 14px;
+    background-color: #449d5fe3;
+    color: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(130, 130, 130, 0.1);
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.notification_red {
+    font-size: 14px;
+    background-color: #8b0000c0;
+    color: rgb(255, 213, 213);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(130, 130, 130, 0.1);
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
 }
 
     /* instructions */
+
+.instructions_column {
+    padding-left: 28px !important;
+}
 
 .instructions_yellow {
     padding-right: 8px !important;
@@ -626,15 +711,14 @@
 
 .restore_btn {
 	height: 38px;
-	border-color: #f1f1f1 !important;
-	background-color: #f2f2f2 !important;
-	color: #8a8a8a !important;
+	border-color: #ea9561 !important;
+	background-color: #ea9561 !important;
+	color: white !important;
     font-size: 14px !important;
 }
 
 .restore_btn:hover {
-    color: black !important;
-	box-shadow: 0 0 0 .25rem rgba(232, 232, 232, 0.26) !important;
+	box-shadow: 0 0 0 .25rem rgba(241, 93, 13, 0.15) !important;
 }
 
 .pagination_btns {
@@ -677,6 +761,13 @@
 
 .submit_btn:hover {
     box-shadow: 0 0 0 .25rem rgba(68, 157, 95, 0.3) !important;
+}
+
+.disabled_submit_tooltip {
+    --bs-tooltip-bg: #d3d3d3 !important;
+    --bs-tooltip-color: rgb(26, 26, 26) !important;
+    font-size: 12px !important;
+    margin-top: -8px !important;
 }
 
     /* questions */

@@ -12,15 +12,32 @@
 
 <body>
 
-  <div class="container-fluid">
+  <div class="container-fluid task_screen" id="task_screen">
 
-      <div class="row instruction_above">
-        <div class="col-md-12 general_instructions">
-          <p class="instructions_above">General instructions</p>
+    <div class="row instruction_above">
+      <div class="col-md-12 general_instructions">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Instructions 
+              </button>
+            </h2>    
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <p class="instructions_above">Instruction goes here</p>
+              </div>
+            </div>
+        </div>
         </div>
       </div>
+    </div>
+
+    <div id="notification_submitted"></div>
 
     <div class="row main_content">
+
+      
 
       <div class="col-md-6 annotation_column">
 
@@ -115,7 +132,9 @@
           </div>
 
           <div class="col-md-auto submit_btn_place">
-            <button type="button" class="btn btn-outline-secondary btn-m submit_btn" id="submit_btn"></button>
+            <span class="d-inline-block" id="disabled_tooltip" tabindex="0" data-bs-placement="bottom" data-bs-toggle="tooltip" data-bs-custom-class="disabled_submit_tooltip">
+              <button type="button" class="btn btn-outline-secondary btn-m submit_btn" id="submit_btn" disabled=""></button>
+            </span>
           </div>
           
         </div>
@@ -129,7 +148,7 @@
         <div class="row questions">
           <div class="col-md-12 questions_col" id="questions_col">
             <div class="q" id="q1">
-              <p class="q_text">In your opinion, to what extent the representation of LGBTQ+ people in this object is inclusive <b>BEFORE</b> your edits, where 0 is completely non-inclusive and 10 is completely inclusive? <i class="bi bi-asterisk mandatory_q"></i></p>
+              <p class="q_text">In your opinion, to what extent the representation of LGBTQ+ people in this object is inclusive <b>BEFORE</b> your edits, where 1 is completely non-inclusive and 10 is completely inclusive? <i class="bi bi-asterisk mandatory_q"></i></p>
 
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="question1" id="q1_1" value="1">
@@ -174,7 +193,7 @@
             </div>
 
             <div class="q" id="q2">
-              <p class="q_text">In your opinion, to what extent the representation of LGBTQ+ people in this object is inclusive <b>AFTER</b> your edits, where 0 is completely non-inclusive and 10 is completely inclusive? <i class="bi bi-asterisk mandatory_q"></i></p>
+              <p class="q_text">In your opinion, to what extent the representation of LGBTQ+ people in this object is inclusive <b>AFTER</b> your edits, where 1 is completely non-inclusive and 10 is completely inclusive? <i class="bi bi-asterisk mandatory_q"></i></p>
 
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="question2" id="q2_1" value="1">

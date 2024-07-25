@@ -1,11 +1,24 @@
 const path = 'server/objects/';
 
-let userData;
-let originalData; // for restoring the original metadata
-let userResponses; // responses to questions
+// for restoring the original metadata
+let originalData;
+
+// 'user_{userID}.json'
 let userFilename;
-let keywords_count = 100; // for unique ids for user keywords
-let fields_count = 100; // for unique ids for user fields
+let userData;
+
+// responses to questions 'responses_{userID}.json'
+let responsesFilename;
+let userResponses; 
+
+// 'consent_{userID}.json'
+let consentFilename;
+let userConsent;
+
+// counters for unique ids for user keywords and fields
+let keywords_count = 100;
+let fields_count = 100;
+
 let objectIndex = 0; // starting with the 1st object
 let objectId; // for object ID
 
@@ -18,20 +31,70 @@ document.addEventListener('DOMContentLoaded', async() => {
     return;
   }
 
-  pathOriginalFile = `${path}original_${userId}.json`;
-  originalData = await loadObjects(pathOriginalFile);
+  const pathOriginalFile = `${path}original_${userId}.json`;
+  originalData = await requestData(pathOriginalFile);
 
-  pathUserFile = `${path}user_${userId}.json`;
+  const pathUserFile = `${path}user_${userId}.json`;
   userFilename = `user_${userId}.json`;
-  userData = await loadObjects(pathUserFile);
+  userData = await requestData(pathUserFile);
 
-  pathUserResponses = `${path}responses_${userId}.json`;
-  userResponses = await loadObjects(pathUserResponses);
+  const pathUserResponses = `${path}responses_${userId}.json`;
+  responsesFilename = `responses_${userId}.json`;
+  userResponses = await requestData(pathUserResponses);
 
-  numObjects = getObjectsN(userData);
+  const pathUserConsent = `${path}consent_${userId}.json`;
+  consentFilename = `consent_${userId}.json`;
+  userConsent = await requestData(pathUserConsent);
+
+  const numObjects = getObjectsN(userData);
   setPagination(numObjects,userId);
 
-  embedObject(userData,0); // initially, displaying the first object of user data
+  const content = document.getElementById('task_screen');
+  const body = document.body;
+  const firstDiv = body.children[0];
+
+  // check if user has a consent (to show the consent screen only once)
+  if (userConsent[userId] === "False") {
+    // creating the consent screen
+    const consentDiv = document.createElement('div');
+    consentDiv.className = 'container-fluid before_task';
+    consentDiv.id = 'before_task';
+    consentDiv.innerHTML = `
+     <div class="row consent_screen" id="consent_block">
+      <div class="col-md-12 consent_col">
+        <p>Dear participant,<br> Before you begin the task, we would like to inform you that:<br></p>
+          <ol class="consent_points">
+            <li>we do not collect your personal data during the study;</li>
+            <li>all your input remains confidential;</li>
+            <li>your input is being stored on our server;</li>
+            <li>we will use your input in our study only with your consent;</li>
+            <li>due to the nature of the study, you may encounter offensive content during the task.</li>
+          </ol>
+          <p>By pressing the button "Begin", you confirm that you are informed of the points above and provide us with your consent to use your input in out study.<br>
+          For questions, contact email@cwi.nl</p>
+          <button title="Begin" class="btn btn-outline-secondary btn-md consent_btn" type="button" id="consent_btn">Begin</button>
+      </div>
+    </div>
+    `
+    body.insertBefore(consentDiv,firstDiv);
+    
+    const consentButton = document.getElementById('consent_btn');
+    // consent button listener
+    consentButton.addEventListener('click', () => {
+      embedObject(userData,0);
+      consentDiv.classList.add('removing');
+      consentDiv.addEventListener('transitionend', () => {
+        consentDiv.remove();
+        content.classList.add('making_visible');});
+
+    userConsent[userId] = "True"; //rewrite consent
+    submitData(consentFilename,userConsent);
+    });
+  }
+  else {
+    embedObject(userData,0);
+    content.classList.add('making_visible');
+  };
 
 });
 
@@ -43,7 +106,7 @@ function getObjectId(object_index) {
   return userData['objects'][object_index]['object_id'];
 }
 
-async function loadObjects(path) {
+async function requestData(path) {
   try {
     const response = await fetch(path);
     if (!response.ok) {
@@ -51,9 +114,67 @@ async function loadObjects(path) {
     }
     const data = await response.json();
     return data;
+
   } catch (error) {
     console.error('Failed to fetch data:', error);
   }
+}
+
+async function submitData(filename,data) {
+  fetch(`/save/${filename}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => {
+    if (!response.ok && filename.includes('user')) {
+      error_message = `${error} \n Please contact us`;
+      notificationDataSubmitted(error_message,"red"); // a notification pop-up only if *a user* submits the data
+    }
+    if (response.ok && filename.includes('user')) {
+      notificationDataSubmitted("Submitted successfully","green");
+    }
+  })
+  .catch(error => {
+    if (filename.includes('user')){
+      error_message = `${error} \n Please contact us`;
+      notificationDataSubmitted(error_message,"red");
+    }
+  });
+}
+
+function notificationDataSubmitted(message,outcome) {
+  const notificationContainer = document.getElementById('notification_submitted');
+
+  // the notification element dependint on outcome
+  const notification = document.createElement('div');
+
+  if (outcome === "green") {
+    notification.className = 'notification_green';
+  } else {
+  notification.className = 'notification_red';
+  }
+  
+  notification.innerText = message;   
+  notificationContainer.appendChild(notification);
+
+  // slide-in
+  setTimeout(() => {
+    notification.classList.add('making_visible');
+  }, 10);
+
+  // Hide the notification after 3 seconds
+  setTimeout(() => {
+    notification.classList.remove('making_visible');
+    notification.classList.add('removing');
+
+    // Remove the notification from the DOM after it hides
+    notification.addEventListener('transitionend', () => {
+      notification.remove();
+    });
+  }, 4000);
 }
 
 function setPagination(numObjects,userId) {
@@ -99,10 +220,10 @@ function setActivePage(pageNumber) {
   const nextButton = paginationContainer.querySelector('.next-b');
 
   const restoreButton = document.getElementById('restore_btn');
-  restoreButton.textContent = `Restore object ${pageNumber}`;
+  restoreButton.textContent = `Restore #${pageNumber}`;
 
   const submitButton = document.getElementById('submit_btn');
-  submitButton.textContent = `Submit object ${pageNumber}`;
+  submitButton.textContent = `Submit #${pageNumber}`;
 
 
   if (pageNumber === 1) {
@@ -119,7 +240,7 @@ function setActivePage(pageNumber) {
 
   objectIndex = pageNumber - 1;
   embedObject(userData, objectIndex);
-  // clear
+
 }
 
 function loadPaginationButtons(numObjects,userId) {
@@ -142,8 +263,8 @@ function loadPaginationButtons(numObjects,userId) {
     if (i === 1) pageButton.classList.add('active'); // the first object is active
     pageButton.innerHTML = `<a class="page-link" href="#${userId}">${i}</a>`;
     paginationContainer.appendChild(pageButton);
-    restoreButton.textContent = "Restore object 1";
-    submitButton.textContent = "Submit object 1";
+    restoreButton.textContent = "Restore #1";
+    submitButton.textContent = "Submit #1";
   }
 
   // next button
@@ -162,7 +283,7 @@ function loadQuestions(data,objectIndex) {
 
   // iterating over all questions to change their IDs
   questions.forEach((question, index) => {
-    qID = `${objectIndex}_q${index + 1}`
+    const qID = `${objectIndex}_q${index + 1}`
     question.id = qID;
 
     const qInputs = question.querySelectorAll('input');
@@ -205,7 +326,7 @@ function loadQuestions(data,objectIndex) {
 
     // fill in / empty textareas with responses to q3–q5
     if (qKey === 'q3' | qKey === 'q4' | qKey === 'q5') {
-      textareaToFill = document.getElementById(`${objectIndex}_${qKey}_text`);
+      const textareaToFill = document.getElementById(`${objectIndex}_${qKey}_text`);
       textareaToFill.value = response;
     };
 
@@ -216,7 +337,7 @@ function loadQuestions(data,objectIndex) {
 function embedObject(data,objectIndex) {
 
   const imgContainer = document.getElementById('object-image');
-  img_url = data.objects[objectIndex].img;
+  const img_url = data.objects[objectIndex].img;
   imgContainer.src = img_url;
 
   const objectMetadataContainer = document.getElementById('object_metadata_container');
@@ -264,7 +385,7 @@ function embedObject(data,objectIndex) {
 
   objectMetadataContainer.appendChild(fieldInputGroup);
 
-  singleObjectFields = data.objects[objectIndex].fields;
+  const singleObjectFields = data.objects[objectIndex].fields;
 
   singleObjectFields.forEach(field => {
     const fieldDiv = document.createElement('div');
@@ -338,7 +459,7 @@ function embedObject(data,objectIndex) {
 
       Object.keys(field.value).forEach((key,index) => {
         let keyword = field.value[key];
-        kwId = `keyword_${index}`;
+        const kwId = `keyword_${index}`;
         // add a keyword if it's not removed
         if (keyword.removed === 'False') {
           const term = addSubjectTerm(key,index);
@@ -355,20 +476,17 @@ function embedObject(data,objectIndex) {
 
       });
 
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
       // add a keyword button and a tooltip
-      tooltipAddKeyword = document.createElement('span');
-      tooltipAddKeyword.className = 'add_keyword_tooltip';
-      tooltipAddKeyword.innerHTML = `
+      const addKeywordForm = document.createElement('span');
+      addKeywordForm.className = 'add_keyword_tooltip';
+      addKeywordForm.innerHTML = `
       <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="Add a keyword"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
       <div class="input-group mb-3 div_hidden" id="keyword_input">
         <input type="text" class="form-control keyword_input_field" id="user_keyword_area" aria-describedby="tooltip_add_btn">
         <button class="btn btn-outline-secondary" type="button" id="tooltip_add_btn" disabled="true"><i class="bi bi-check-lg check_add_keyword"></i></button>
       </div>
       `
-      keywordsDiv.appendChild(tooltipAddKeyword);
+      keywordsDiv.appendChild(addKeywordForm);
     }
 
     if (field.type === 'non-editable') {
@@ -386,7 +504,6 @@ function embedObject(data,objectIndex) {
   });
 
   setTextareaHeight();
-
   loadQuestions(userResponses,objectIndex);
 
 }
@@ -524,7 +641,7 @@ function displayFieldInputGroup() {
 
 function addField() {
   const objectMetadataContainer = document.getElementById('object_metadata_container');
-  const firstField = objectMetadataContainer.children[2]; // inserting a new field about the first one and below the input group
+  const firstField = objectMetadataContainer.children[2]; // inserting a new field above the first one and below the input group
 
   const fieldGroup = document.getElementById('add_new_field_group');
 
@@ -779,10 +896,10 @@ function addUserKeyword() {
   const inputGroup = document.getElementById('keyword_input');
   const userKeywordArea = inputGroup.querySelector('input');
 
-  let user_keyword_index = `user_${keywords_count}`;
+  const user_keyword_index = `user_${keywords_count}`;
   const newKeyword = userKeywordArea.value.trim();
 
-  userTerm = addSubjectTerm(newKeyword,user_keyword_index);
+  const userTerm = addSubjectTerm(newKeyword,user_keyword_index);
   keywordsDiv.insertBefore(userTerm, lastKeyword);
 
   inputGroup.querySelector('#user_keyword_area').value = ''; // reset the input
@@ -832,32 +949,15 @@ function addNoteKeyword(kwId,noteValue) {
   });
 }
 
-async function userSubmit() {
-  fetch(`/save/${userFilename}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(userData),
-  })
-  .then(response => response.text())
-  .then(result => {
-    alert(result); // Notify the user
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-}
-
 // rewriting responses for question 1 and 2 in browser data
 function updateRadioInput(radio_id, radio_value) {
-  qN = radio_id.match(/_(\w+)_/)[1]; // question number
+  const qN = radio_id.match(/_(\w+)_/)[1]; // question number
   userResponses[objectId][qN] = radio_value;
 }
 
 // rewriting responses for question 3–5 in browser data
 function updateTextareaResponsesInput(textarea_id, textarea_value) {
-  qN = textarea_id.match(/_(\w+)_/)[1]; // question number
+  const qN = textarea_id.match(/_(\w+)_/)[1]; // question number
   userResponses[objectId][qN] = textarea_value;
 }
 
@@ -954,18 +1054,17 @@ document.getElementById('object_metadata_container').addEventListener('click', f
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
+
+  // defining tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
   // restore object
   const restoreButton = document.getElementById('restore_btn');
   restoreButton.addEventListener('click', () => {
   userData.objects[objectIndex].fields = originalData.objects[objectIndex].fields;
   embedObject(userData,objectIndex)
   });
-
-  // submit object
-  const submitButton = document.getElementById('submit_btn');
-  submitButton.addEventListener('click', () => {
-    userSubmit();
-    });
 
   // questions radio listener
   const radioInputs = document.querySelectorAll('.form-check-input');
@@ -982,5 +1081,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
       updateTextareaResponsesInput(textarea.id, textarea.value.trim());
     });
   });
+
+  // submit object
+ const submitButton = document.getElementById('submit_btn');
+  submitButton.addEventListener('click', () => {
+    submitData(userFilename, userData);
+    });
+
+  if (submitButton.disabled) {
+    const disabledDiv = document.getElementById('disabled_tooltip');
+    disabledDiv.setAttribute('data-bs-original-title','Answer the mandatory questions below before submitting');
+  }
 
 });
