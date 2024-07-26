@@ -1,5 +1,7 @@
 
 .DS_Store
 /.ipynb_checkpoints
-metadata_editor/server
+metadata_editor/node_modules
 metadata_editor/server.js
+metadata_editor/package-lock.json
+metadata_editor/package.json
