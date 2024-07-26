@@ -1,4 +1,4 @@
-const path = 'server/objects/';
+const path = './objects/';
 
 // for restoring the original metadata
 let originalData;
