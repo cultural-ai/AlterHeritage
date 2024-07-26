@@ -8,11 +8,11 @@ const port = 5500;
 
 app.use(bodyParser.json());
 
-app.use(express.static('../'));
+app.use(express.static('./http_root'));
 
 // write JSON data to a file
 function writeJsonFile(filename, jsonData, callback) {
-  const filePath = path.join('objects', filename); // relative path
+  const filePath = path.join('./http_root/objects', filename); // relative path
 
   const jsonString = JSON.stringify(jsonData, null, 2);
 
