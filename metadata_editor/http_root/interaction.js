@@ -148,7 +148,7 @@ async function submitData(filename,data) {
 function notificationDataSubmitted(message,outcome) {
   const notificationContainer = document.getElementById('notification_submitted');
 
-  // the notification element dependint on outcome
+  // the notification element depending on outcome
   const notification = document.createElement('div');
 
   if (outcome === "green") {
@@ -165,12 +165,9 @@ function notificationDataSubmitted(message,outcome) {
     notification.classList.add('making_visible');
   }, 10);
 
-  // Hide the notification after 3 seconds
   setTimeout(() => {
     notification.classList.remove('making_visible');
     notification.classList.add('removing');
-
-    // Remove the notification from the DOM after it hides
     notification.addEventListener('transitionend', () => {
       notification.remove();
     });
@@ -333,7 +330,6 @@ function loadQuestions(data,objectIndex) {
   });
 
   // check if questions are answered
-  
   checkSubmitAllowed();
 
 }
@@ -404,7 +400,7 @@ function embedObject(data,objectIndex) {
 
       <div class="col-md-8 field_value_area" id="container_${field.property}">
         <div class="row">
-          <textarea class="form-control" id="${field.property}">${field.value}</textarea>
+          <textarea class="form-control editable_field" id="${field.property}">${field.value}</textarea>
         </div>
       </div>
                 
@@ -506,6 +502,16 @@ function embedObject(data,objectIndex) {
 
     }
   });
+
+  
+  // adding listener for existing editable fields
+  const existingEditableFields = objectMetadataContainer.querySelectorAll('.editable_field');
+
+  existingEditableFields.forEach(editableTextarea => {
+    editableTextarea.addEventListener('input', () => {
+      updateFieldValue(editableTextarea.id, editableTextarea.value.trim()); 
+    });
+  })
 
   setTextareaHeight();
   loadQuestions(userResponses,objectIndex);
@@ -697,6 +703,11 @@ function addField() {
 
   objectMetadataContainer.insertBefore(fieldDiv,firstField);
 
+  // set the new textarea height depending on the amount of text
+  const addedEditableField = document.getElementById(userFieldID);
+  const newTextareaHeight = addedEditableField.scrollHeight + 2;
+  addedEditableField.style.height = `${newTextareaHeight}px`;
+
   submitFieldButton.disabled = true; // disable submit new field button
   fieldNameInput.value = ''; // clearing the filed input field
   fieldValueInput.value = '';
@@ -716,7 +727,11 @@ function addField() {
   };
 
   userData.objects[objectIndex].fields.unshift(userAddedField);
-
+  
+  // add a listener to the newly created field
+  addedEditableField.addEventListener('input', () => {
+      updateFieldValue(userFieldID, addedEditableField.value.trim()); 
+    });
 }
 
 function hideField(fieldId) {
@@ -789,10 +804,11 @@ function addFieldNote(fieldId, noteValue) {
   const note = document.createElement('div');
   note.className = 'row note_area';
   note.id = `note_to_${fieldId}`;
+  const textareaId = `note_text_${fieldId}`;
   note.innerHTML = `
     <div class="col-md-1 note_icon_col"><i class="bi bi-sticky-fill note_icon"></i></div>
     <div class="col-md-10 note_col">
-      <textarea class="note-form form-control" placeholder="Note">${noteValue}</textarea>
+      <textarea id="${textareaId}" class="note-form form-control" placeholder="Note">${noteValue}</textarea>
     </div>
     <div class="col-md-1 remove_note_col">
     </div>
@@ -809,6 +825,12 @@ function addFieldNote(fieldId, noteValue) {
   noteButtonContainer.appendChild(removeNoteButton);
   noteButton.classList.add('disabled');
 
+  // add a listener to the note
+  const noteTextarea = document.getElementById(textareaId);
+  noteTextarea.addEventListener('input', () => {
+    updateFieldNoteValue(fieldId, noteTextarea.value.trim());
+});
+
 }
 
 function removeFieldNote(fieldId) {
@@ -818,6 +840,8 @@ function removeFieldNote(fieldId) {
   // reactivating the add note button
   const addNoteButton = document.getElementById(`add_note_btn_${fieldId}`);
   addNoteButton.classList.remove('disabled');
+  // rewriting the note value
+  updateFieldNoteValue(fieldId, '');
 }
 
 function addFieldWarning(fieldId, warningValue) {
@@ -829,10 +853,11 @@ function addFieldWarning(fieldId, warningValue) {
   const warning =  document.createElement('div');
   warning.className = 'row warning_area';
   warning.id = `warning_to_${fieldId}`;
+  const textareaId = `warning_text_${fieldId}`;
   warning.innerHTML = `
     <div class="col-md-1 warning_icon_col"><i class="bi bi-exclamation-triangle-fill warning_icon"></i></div>
     <div class="col-md-10 warning_col">
-      <textarea class="warning-form form-control" placeholder="Warning">${warningValue}</textarea>
+      <textarea id="${textareaId}" class="warning-form form-control" placeholder="Warning">${warningValue}</textarea>
     </div>
     <div class="col-md-1 remove_warning_col">
     </div>
@@ -848,6 +873,12 @@ function addFieldWarning(fieldId, warningValue) {
   textContainer.appendChild(warning);
   warningButtonContainer.appendChild(removeWarningButton);
   warningButton.classList.toggle('disabled');
+
+  // add a listener to the warning
+  const warningTextarea = document.getElementById(textareaId);
+  warningTextarea.addEventListener('input', () => {
+    updateFieldWarningValue(fieldId, warningTextarea.value.trim());
+});
 }
 
 function removeFieldWarning(fieldId) {
@@ -857,6 +888,8 @@ function removeFieldWarning(fieldId) {
     // reactivating the add warning button
     const addWarningButton = document.getElementById(`add_warning_btn_${fieldId}`);
     addWarningButton.classList.remove('disabled');
+    // rewrite warning value
+    updateFieldWarningValue(fieldId, '');
 }
 
 function displayKeywordInput() {
@@ -949,6 +982,31 @@ function addNoteKeyword(kwId,noteValue) {
   document.addEventListener('click', (event) => {
     if (!event.target.closest(`#note_to_${kwId}`) && !event.target.closest(`#note_button_${kwId}`)) {
       tooltip.classList.add('add_note_tooltip_hidden');
+    }
+  });
+}
+
+// rewriting editable fields value
+function updateFieldValue(textarea_id, textarea_value) {
+  userData.objects[objectIndex].fields.forEach( field => {
+    if (field.property === textarea_id) {
+      field.value = textarea_value;
+    }
+  });
+}
+
+function updateFieldNoteValue(field_id, textarea_value) {
+  userData.objects[objectIndex].fields.forEach( field => {
+    if (field.property === field_id) {
+      field.has_note = textarea_value;
+    }
+  });
+}
+
+function updateFieldWarningValue(field_id, textarea_value) {
+  userData.objects[objectIndex].fields.forEach( field => {
+    if (field.property === field_id) {
+      field.has_warning = textarea_value;
     }
   });
 }
@@ -1103,8 +1161,8 @@ document.getElementById('object_metadata_container').addEventListener('click', f
 document.addEventListener('DOMContentLoaded', (event) => {
 
   // defining tooltips
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
   // questions radio listener
   const radioInputs = document.querySelectorAll('.form-check-input');

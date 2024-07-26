@@ -6,17 +6,6 @@
       "img": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg",
       "fields": [
         {
-          "name": "Field",
-          "property": "field100",
-          "value": "text",
-          "type": "editable",
-          "hidden": "False",
-          "removed": "False",
-          "has_note": "",
-          "has_warning": "",
-          "by_user": "True"
-        },
-        {
           "name": "Titel",
           "property": "dc:title",
           "value": "Travestieten, Old Delhi, India (1977)",
