@@ -332,6 +332,10 @@ function loadQuestions(data,objectIndex) {
 
   });
 
+  // check if questions are answered
+  
+  checkSubmitAllowed();
+
 }
 
 function embedObject(data,objectIndex) {
@@ -961,6 +965,50 @@ function updateTextareaResponsesInput(textarea_id, textarea_value) {
   userResponses[objectId][qN] = textarea_value;
 }
 
+function checkSubmitAllowed() {
+
+  const submitButton = document.getElementById('submit_btn');
+  const disabledDiv = document.getElementById('disabled_tooltip');
+
+  // question 1
+  const q1Div = document.getElementById(`${objectIndex}_q1`);
+  const q1Radios = q1Div.querySelectorAll('input[type="radio"]');
+
+  let q1HasResponse = false;
+  for (let radio of q1Radios) {
+    if (radio.checked) {
+      q1HasResponse = true;
+      break;
+    }
+  }
+
+  // question 2
+  const q2Div = document.getElementById(`${objectIndex}_q2`);
+  const q2Radios = q2Div.querySelectorAll('input[type="radio"]');
+
+  let q2HasResponse = false;
+  for (let radio of q2Radios) {
+    if (radio.checked) {
+      q2HasResponse = true;
+      break;
+    }
+  }
+
+  // question 3
+  const q3Input = document.getElementById(`${objectIndex}_q3_text`);
+  const q3HasResponse = q3Input.value.trim() !== '';
+
+  // check responses and change the submit button state
+  if (q1HasResponse && q2HasResponse && q3HasResponse) {
+        submitButton.removeAttribute('disabled');
+        disabledDiv.removeAttribute('data-bs-original-title');
+      }
+  else {
+        submitButton.setAttribute('disabled','true');
+        disabledDiv.setAttribute('data-bs-original-title','Answer the mandatory questions below before submitting');
+  }
+}
+
 // Left column: listener for buttons inside 'object_metadata_container'
 
 document.getElementById('object_metadata_container').addEventListener('click', function(event) {
@@ -1054,23 +1102,16 @@ document.getElementById('object_metadata_container').addEventListener('click', f
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-
   // defining tooltips
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
-  // restore object
-  const restoreButton = document.getElementById('restore_btn');
-  restoreButton.addEventListener('click', () => {
-  userData.objects[objectIndex].fields = originalData.objects[objectIndex].fields;
-  embedObject(userData,objectIndex)
-  });
 
   // questions radio listener
   const radioInputs = document.querySelectorAll('.form-check-input');
   radioInputs.forEach(radio => {
     radio.addEventListener('change', () => {
       updateRadioInput(radio.id, radio.value);
+      checkSubmitAllowed(); // check if submitting is allowed
     });
   });
 
@@ -1079,18 +1120,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
   textareaInputs.forEach(textarea => {
     textarea.addEventListener('input', () => {
       updateTextareaResponsesInput(textarea.id, textarea.value.trim());
+      // check if submit allowed only if the textarea belongs to the 3rd question
+      if (textarea.id === `${objectIndex}_q3_text`) {
+        checkSubmitAllowed();
+      }
     });
   });
 
   // submit object
  const submitButton = document.getElementById('submit_btn');
+ const disabledDiv = document.getElementById('disabled_tooltip');
   submitButton.addEventListener('click', () => {
     submitData(userFilename, userData);
+    submitData(responsesFilename, userResponses);
     });
 
+    // if the submit button is disabled, show a tooltip
   if (submitButton.disabled) {
-    const disabledDiv = document.getElementById('disabled_tooltip');
     disabledDiv.setAttribute('data-bs-original-title','Answer the mandatory questions below before submitting');
   }
+
+  // restore object
+  const restoreButton = document.getElementById('restore_btn');
+  restoreButton.addEventListener('click', () => {
+  userData.objects[objectIndex].fields = originalData.objects[objectIndex].fields;
+  embedObject(userData,objectIndex)
+  });
 
 });
