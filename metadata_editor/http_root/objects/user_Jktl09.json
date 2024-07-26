@@ -6,6 +6,17 @@
       "img": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg",
       "fields": [
         {
+          "name": "Field",
+          "property": "field100",
+          "value": "text",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "True"
+        },
+        {
           "name": "Titel",
           "property": "dc:title",
           "value": "Travestieten, Old Delhi, India (1977)",
@@ -199,6 +210,35 @@
           "name": "Datering",
           "property": "dcterms:created",
           "value": "1712",
+          "type": "non-editable"
+        }
+      ]
+    },
+    {
+      "object_id": "http://data.collectienederland.nl/resource/document/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-f54a0bec-c0a0-0892-cd60-469d9cc39391",
+      "img": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/3a1ab45e-36a0-a516-21f3-823094bcb3e5.jpg",
+      "fields": [
+        {
+          "name": "Titel",
+          "property": "dc:title",
+          "value": "homo gay flikkers",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Identificatie",
+          "property": "dc:identifier",
+          "value": "EDJ-5532-h2",
+          "type": "non-editable"
+        },
+        {
+          "name": "Datering",
+          "property": "dcterms:created",
+          "value": "1981",
           "type": "non-editable"
         }
       ]

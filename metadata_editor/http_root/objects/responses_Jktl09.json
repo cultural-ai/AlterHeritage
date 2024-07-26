@@ -1,15 +1,15 @@
 {
   "http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb": {
-    "q1": "",
-    "q2": "",
+    "q1": "2",
+    "q2": "6",
     "q3": "",
     "q4": "",
     "q5": ""
   },
   "http://data.collectienederland.nl/resource/aggregation/archief-eemland-beeldbank/fa30407a-715a-9133-7a0e-a4d7c4a24850": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
+    "q1": "2",
+    "q2": "6",
+    "q3": "sdgs",
     "q4": "",
     "q5": ""
   },
@@ -17,6 +17,13 @@
     "q1": "",
     "q2": "",
     "q3": "",
+    "q4": "",
+    "q5": ""
+  },
+  "http://data.collectienederland.nl/resource/document/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-f54a0bec-c0a0-0892-cd60-469d9cc39391": {
+    "q1": "3",
+    "q2": "6",
+    "q3": "sgdg",
     "q4": "",
     "q5": ""
   }
