@@ -15,6 +15,10 @@ let userResponses;
 let consentFilename;
 let userConsent;
 
+// 'submitted_{userID}.json'
+let submittedFilename;
+let userSubmitted;
+
 // counters for unique ids for user keywords and fields
 let keywords_count = 100;
 let fields_count = 100;
@@ -45,6 +49,10 @@ document.addEventListener('DOMContentLoaded', async() => {
   const pathUserConsent = `${path}consent_${userId}.json`;
   consentFilename = `consent_${userId}.json`;
   userConsent = await requestData(pathUserConsent);
+
+  const pathUserSubmitted = `${path}submitted_${userId}.json`;
+  submittedFilename = `submitted_${userId}.json`;
+  userSubmitted = await requestData(pathUserSubmitted);
 
   const numObjects = getObjectsN(userData);
   setPagination(numObjects,userId);
@@ -88,7 +96,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         content.classList.add('making_visible');});
 
     userConsent[userId] = "True"; //rewrite consent
-    submitData(consentFilename,userConsent);
+    submitData(consentFilename, userConsent, false);
     });
   }
   else {
@@ -120,7 +128,10 @@ async function requestData(path) {
   }
 }
 
-async function submitData(filename,data) {
+async function submitData(filename, data, notifyUser) {
+
+  let submitSuccess = false;
+
   fetch(`/save/${filename}`, {
     method: 'POST',
     headers: {
@@ -129,20 +140,26 @@ async function submitData(filename,data) {
     body: JSON.stringify(data),
   })
   .then(response => {
-    if (!response.ok && filename.includes('user')) {
+    if (!response.ok && notifyUser) {
       error_message = `${error} \n Please contact us`;
       notificationDataSubmitted(error_message,"red"); // a notification pop-up only if *a user* submits the data
     }
-    if (response.ok && filename.includes('user')) {
+    if (response.ok && notifyUser) {
       notificationDataSubmitted("Submitted successfully","green");
+    }
+    if (response.ok) {
+      submitSuccess = true;
     }
   })
   .catch(error => {
-    if (filename.includes('user')){
+    if (notifyUser){
       error_message = `${error} \n Please contact us`;
       notificationDataSubmitted(error_message,"red");
     }
   });
+
+  return submitSuccess;
+
 }
 
 function notificationDataSubmitted(message,outcome) {
@@ -174,6 +191,13 @@ function notificationDataSubmitted(message,outcome) {
   }, 4000);
 }
 
+function markObjectSubmitted() {
+  const activePageIcon = document.getElementById(`submit_icon_${objectIndex + 1}`);
+  activePageIcon.style.display = "block";
+  // modify submitted data
+  userSubmitted[objectId] = "True";
+}
+
 function setPagination(numObjects,userId) {
   loadPaginationButtons(numObjects,userId);
 
@@ -199,6 +223,16 @@ function setPagination(numObjects,userId) {
     const activeIndex = Array.from(pageButtons).indexOf(activePage) + 1;
     if (activeIndex < numObjects) setActivePage(activeIndex + 1);
   });
+
+  // setting submitted icons
+
+  Object.entries(userSubmitted).forEach(([key, value], index) => {
+    if (value === "True") {
+      const submitIcon = document.getElementById(`submit_icon_${index + 1}`);
+      submitIcon.style.display = "block";
+    }
+  });
+
 }
 
 function setActivePage(pageNumber) {
@@ -258,7 +292,8 @@ function loadPaginationButtons(numObjects,userId) {
     const pageButton = document.createElement('li');
     pageButton.className = 'page-item page-n';
     if (i === 1) pageButton.classList.add('active'); // the first object is active
-    pageButton.innerHTML = `<a class="page-link" href="#${userId}">${i}</a>`;
+    pageButton.innerHTML = `<a class="page-link" href="#${userId}">${i}</a>
+    <i id="submit_icon_${i}" class="bi bi-check-circle-fill submitted_icon" title="Submitted"></i>`;
     paginationContainer.appendChild(pageButton);
     restoreButton.textContent = "Restore #1";
     submitButton.textContent = "Submit #1";
@@ -1037,7 +1072,6 @@ function addNoteKeyword(kwId,noteValue) {
     
     const addedNote = noteText.value.trim();
     updateKeywordNoteValue(kwId,addedNote);
-    console.log(userData.objects[objectIndex].fields)
 
     // showing/hiding an icon and tooltip
     if (addedNote !== '') {
@@ -1290,9 +1324,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // submit object
  const submitButton = document.getElementById('submit_btn');
  const disabledDiv = document.getElementById('disabled_tooltip');
-  submitButton.addEventListener('click', () => {
-    submitData(userFilename, userData);
-    submitData(responsesFilename, userResponses);
+ submitButton.addEventListener('click', () => {
+  submitSuccessful = submitData(userFilename, userData, true);
+    if (submitSuccessful && userSubmitted[objectId] === "False") {
+      markObjectSubmitted();
+      submitData(submittedFilename, userSubmitted, false);
+    }
+    submitData(responsesFilename, userResponses, false); // do not notify user
     });
 
     // if the submit button is disabled, show a tooltip

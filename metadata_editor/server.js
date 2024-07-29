@@ -13,16 +13,25 @@ app.use(express.static('./http_root'));
 // write JSON data to a file
 function writeJsonFile(filename, jsonData, callback) {
   const filePath = path.join('./http_root/objects', filename); // relative path
+  const tempFilePath = filePath + '.tmp'; // path for a temporary file
 
   const jsonString = JSON.stringify(jsonData, null, 2);
 
-  fs.writeFile(filePath, jsonString, 'utf8', (err) => {
+  // writing to a temporary file first
+  fs.writeFile(tempFilePath, jsonString, 'utf8', (err) => {
     if (err) {
-      console.error('Error writing file:', err);
+      console.error('Error writing temp file:', err);
       callback(err);
     } else {
-      console.log('File saved successfully');
-      callback(null);
+      // renaming the temp file
+      fs.rename(tempFilePath, filePath, (renameErr) => {
+        if (renameErr) {
+          callback(err);
+        }
+        else {
+          callback(null);
+        }
+      });
     }
   });
 }

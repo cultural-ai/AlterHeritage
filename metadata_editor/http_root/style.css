@@ -745,6 +745,14 @@
 	box-shadow: none !important;
 }
 
+.submitted_icon {
+    color: #449d5f;
+    position: absolute;
+    padding-left: 8px;
+    font-size: 1rem;
+    display: none;
+}
+
 .submit_btn_place {
     display: grid;
     justify-items: end;
