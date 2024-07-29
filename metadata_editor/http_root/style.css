@@ -732,8 +732,8 @@
 }
 
 .active > .page-link {
-	background-color: #449d5f !important;
-	border-color: #449d5f !important;
+	background-color: #6c757d !important;
+    border-color: #6c757d !important;
 	color: white !important;
 }
 

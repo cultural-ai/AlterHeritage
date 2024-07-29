@@ -462,7 +462,7 @@ function embedObject(data,objectIndex) {
         const kwId = `keyword_${index}`;
         // add a keyword if it's not removed
         if (keyword.removed === 'False') {
-          const term = addSubjectTerm(key,index);
+          const term = addKeyword(key,index);
           keywordsDiv.appendChild(term);
         }
         // check if hidden
@@ -553,7 +553,7 @@ function subjectTermButton(iconElement, className) {
 }
 
 // adding subject terms
-function addSubjectTerm(text,index) {
+function addKeyword(text,index) {
   const term = document.createElement('span');
   term.className = 'subject-term';
   term.id = `span_keyword_${index}`;
@@ -611,6 +611,35 @@ function addSubjectTerm(text,index) {
   term.appendChild(keyword_text);
 
   return term;
+}
+
+function removeKeyword(kwId) {
+  const kw_to_remove = document.getElementById(`span_${kwId}`);
+  kw_to_remove.classList.add('removing');
+  kw_to_remove.addEventListener('transitionend', () => {
+    kw_to_remove.remove();}, { once: true });
+
+  const p_keyword = document.getElementById(kwId);
+
+  let keywordText = '';
+
+  // text value of a keyword
+  p_keyword.childNodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      keywordText = node.textContent.trim();
+    }
+  });
+
+  // modify user data
+  userData.objects[objectIndex].fields.forEach(field => {
+    if (field.type === 'keywords') { // keywords field
+      for (const key in field.value) {
+        if (key === keywordText) {
+          field.value[key].removed = "True";
+        };
+      }
+    }
+  });
 }
 
 function displayFieldInputGroup() {
@@ -771,10 +800,11 @@ function removeField(fieldId) {
   div_to_remove.remove();}, { once: true });
 
   // modify user data
-  const objectFields =  userData.objects[objectIndex].fields;
-  // make a new list of fields without the removed field
-  const newFieldsList = objectFields.filter(item => item.property !== fieldId);
-  userData.objects[objectIndex].fields = newFieldsList;
+  userData.objects[objectIndex].fields.forEach(field => {
+    if (field.property === fieldId) {
+      field.removed = "True";
+    }
+  });
 }
 
 function hideKeyword(kwId) {
@@ -793,6 +823,30 @@ function hideKeyword(kwId) {
 
   const p_keyword = document.getElementById(kwId);
   p_keyword.classList.toggle('kw_hidden');
+
+  let keywordText = '';
+
+  // text value of a keyword
+  p_keyword.childNodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      keywordText = node.textContent.trim();
+    }
+  });
+
+  // modify user data
+  userData.objects[objectIndex].fields.forEach(field => {
+    if (field.type === 'keywords') { // keywords field
+      for (const key in field.value) {
+        if (key === keywordText) {
+          if (p_keyword.classList.contains('kw_hidden')) {
+            field.value[key].hidden = "True";
+          } else {
+            field.value[key].hidden = "False";
+          }
+        }
+      }
+    }
+  });
 }
 
 function addFieldNote(fieldId, noteValue) {
@@ -936,7 +990,7 @@ function addUserKeyword() {
   const user_keyword_index = `user_${keywords_count}`;
   const newKeyword = userKeywordArea.value.trim();
 
-  const userTerm = addSubjectTerm(newKeyword,user_keyword_index);
+  const userTerm = addKeyword(newKeyword,user_keyword_index);
   keywordsDiv.insertBefore(userTerm, lastKeyword);
 
   inputGroup.querySelector('#user_keyword_area').value = ''; // reset the input
@@ -946,6 +1000,20 @@ function addUserKeyword() {
 
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+  // modify user data
+  const defaultProperties = {
+    "hidden": "False",
+    "removed": "False",
+    "has_note": "",
+    "by_user": "True"
+  };
+
+  userData.objects[objectIndex].fields.forEach(field => {
+    if (field.type === 'keywords') {
+      field.value[newKeyword] = defaultProperties;
+    }
+  });
   
 }
 
@@ -966,7 +1034,12 @@ function addNoteKeyword(kwId,noteValue) {
   }
 
   noteText.addEventListener('input', () => {
+    
     const addedNote = noteText.value.trim();
+    updateKeywordNoteValue(kwId,addedNote);
+    console.log(userData.objects[objectIndex].fields)
+
+    // showing/hiding an icon and tooltip
     if (addedNote !== '') {
       noteIcon.classList.remove('div_hidden');
       p_keyword.setAttribute('data-bs-title',addedNote);
@@ -975,15 +1048,47 @@ function addNoteKeyword(kwId,noteValue) {
       noteIcon.classList.add('div_hidden');
       p_keyword.removeAttribute('data-bs-title');
     }
+    // updating tooltips while listening
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
   });
 
+  // updating tooltips after a keyword is added
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+  // hiding the input note keyword if a click is not in the area
   document.addEventListener('click', (event) => {
     if (!event.target.closest(`#note_to_${kwId}`) && !event.target.closest(`#note_button_${kwId}`)) {
       tooltip.classList.add('add_note_tooltip_hidden');
     }
   });
+}
+
+function updateKeywordNoteValue(kwId,noteValue) {
+
+  // get the keyword text (which is a key)
+  const p_keyword = document.getElementById(kwId);
+  let keywordText = '';
+
+  // text value of a keyword
+  p_keyword.childNodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      keywordText = node.textContent.trim();
+    }
+  });
+
+  // access the keyword object in the user data
+  userData.objects[objectIndex].fields.forEach(field => {
+    if (field.type === 'keywords') { // keywords field
+      for (const key in field.value) {
+        if (key === keywordText) {
+          field.value[key].has_note = noteValue;
+        }
+      }
+    }
+  });
+
 }
 
 // rewriting editable fields value
@@ -1138,10 +1243,7 @@ document.getElementById('object_metadata_container').addEventListener('click', f
   // remove keyword
   if (target.closest('.remove-button')) {
     const kwId = target.closest('.remove-button').getAttribute('keyword-id');
-    const kw_to_remove = document.getElementById(`span_${kwId}`);
-    kw_to_remove.classList.add('removing');
-    kw_to_remove.addEventListener('transitionend', () => {
-      kw_to_remove.remove();}, { once: true });
+    removeKeyword(kwId);
   };
 
   // add keyword input group
