@@ -1325,15 +1325,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
  const submitButton = document.getElementById('submit_btn');
  const disabledDiv = document.getElementById('disabled_tooltip');
  submitButton.addEventListener('click', () => {
-  submitSuccessful = submitData(userFilename, userData, true);
+  // first, check if the submission is successful
+  submitSuccessful = submitData(userFilename, userData, true); // true = notify user
     if (submitSuccessful && userSubmitted[objectId] === "False") {
-      markObjectSubmitted();
-      submitData(submittedFilename, userSubmitted, false);
+      markObjectSubmitted(); // display a corresponding checkmark
+      submitData(submittedFilename, userSubmitted, false); // set objects as submitted, do not notify user
     }
-    submitData(responsesFilename, userResponses, false); // do not notify user
+    submitData(responsesFilename, userResponses, false); // submit responses, do not notify user
     });
 
-    // if the submit button is disabled, show a tooltip
+  // if the submit button is disabled, show a tooltip
   if (submitButton.disabled) {
     disabledDiv.setAttribute('data-bs-original-title','Answer the mandatory questions below before submitting');
   }
@@ -1341,7 +1342,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // restore object
   const restoreButton = document.getElementById('restore_btn');
   restoreButton.addEventListener('click', () => {
-  userData.objects[objectIndex].fields = originalData.objects[objectIndex].fields;
+    // ensuring a deep copy of the origianl data
+  userData.objects[objectIndex].fields = JSON.parse(JSON.stringify(originalData.objects[objectIndex].fields));
   embedObject(userData,objectIndex)
   });
 
