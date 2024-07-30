@@ -306,6 +306,17 @@ function embedObject(data,objectIndex) {
   
   // loading questions and user responses
   loadQuestions(userResponses,objectIndex);
+  
+  // check if all objects have been submitted, notify users if yes
+  
+  const notificationDiv = document.getElementById('all_submitted');
+  const submittedValues = Object.values(userSubmitted);
+  // if all are true
+  const allTrue = submittedValues.every(value => value === 'True');
+  // notify once
+  if (allTrue && notificationDiv === null) {
+    notifyAllSubmitted();
+  }
 
 }
 
@@ -338,10 +349,10 @@ async function submitData(filename, data, notifyUser) {
   .then(response => {
     if (!response.ok && notifyUser) {
       error_message = `${error} \n Please contact us`;
-      notificationDataSubmitted(error_message,"red"); // a notification pop-up only if *a user* submits the data
+      notifyDataSubmitted(error_message,"red"); // a notification pop-up only if *a user* submits the data
     }
     if (response.ok && notifyUser) {
-      notificationDataSubmitted("Submitted successfully","green");
+      notifyDataSubmitted("Submitted successfully","green");
     }
     if (response.ok) {
       submitSuccess = true;
@@ -350,7 +361,7 @@ async function submitData(filename, data, notifyUser) {
   .catch(error => {
     if (notifyUser){
       error_message = `${error} \n Please contact us`;
-      notificationDataSubmitted(error_message,"red");
+      notifyDataSubmitted(error_message,"red");
     }
   });
 
@@ -358,7 +369,7 @@ async function submitData(filename, data, notifyUser) {
 
 }
 
-function notificationDataSubmitted(message,outcome) {
+function notifyDataSubmitted(message,outcome) {
 
   const notificationContainer = document.getElementById('notification_submitted');
 
@@ -386,6 +397,23 @@ function notificationDataSubmitted(message,outcome) {
       notification.remove();
     });
   }, 4000);
+}
+
+function notifyAllSubmitted() {
+
+  const notifyAllContainer = document.getElementById('all_submitted_notification');
+  const notificationBody = document.createElement('div');
+
+  notificationBody.className = 'notification_green';
+  notificationBody.id = 'all_submitted';
+  notificationBody.innerText = "All objects have been submitted. You may finish the task now by closing this window. You can make changes in your edits and responses and submit them again. Thank you for participation!";
+
+  notifyAllContainer.appendChild(notificationBody);
+
+  // slide-in and stay
+  setTimeout(() => {
+    notificationBody.classList.add('making_visible');
+  }, 10);
 }
 
 function insertAddField(div) {

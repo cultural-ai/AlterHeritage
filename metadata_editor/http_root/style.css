@@ -594,7 +594,7 @@
 
 #notification_submitted {
     position: fixed;
-    top: 12px;
+    top: 112px;
     right: 8px;
     width: fit-content;
     z-index: 1000;
@@ -604,7 +604,7 @@
     position: fixed;
     top: 12px;
     right: 8px;
-    width: fit-content;
+    width: 440px;
     z-index: 1000;
   }
   

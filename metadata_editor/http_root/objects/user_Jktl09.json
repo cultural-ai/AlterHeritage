@@ -228,8 +228,7 @@
           "name": "Onderwerp",
           "property": "empty_keywords",
           "type": "keywords",
-          "value": {
-          }
+          "value": {}
         },
         {
           "name": "Identificatie",
