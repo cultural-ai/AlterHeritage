@@ -599,6 +599,14 @@
     width: fit-content;
     z-index: 1000;
   }
+
+#all_submitted_notification {
+    position: fixed;
+    top: 12px;
+    right: 8px;
+    width: fit-content;
+    z-index: 1000;
+  }
   
 .notification_green {
     font-size: 14px;
@@ -706,7 +714,6 @@
 
 .controls {
     width: 100% !important;
-    margin-bottom: 20px;
     justify-content: center;
 }
 
