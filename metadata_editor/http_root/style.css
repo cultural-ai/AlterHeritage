@@ -365,6 +365,10 @@
 	margin-top: 40px !important;
 }
 
+#field_group_empty_keywords {
+    margin-top: 40px !important;
+}
+
 #subject-terms-container {
 	display: inline-block;
 }
@@ -640,6 +644,7 @@
 
 #instructions_text {
     font-size: 14px !important;
+    margin-bottom: 8px;
 }
 
 .instruction_buttons {
@@ -648,7 +653,7 @@
 }
 
 .instruction_button_text {
-	padding-left: 0px !important;
+	padding: 0px !important;
 }
 
 .instruction_btn {
@@ -743,6 +748,7 @@
 
 .page-link:focus {
 	box-shadow: none !important;
+    background-color: none !important;
 }
 
 .submitted_icon {

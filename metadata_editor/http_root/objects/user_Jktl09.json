@@ -184,6 +184,12 @@
           "by_user": "False"
         },
         {
+          "name": "Onderwerp",
+          "property": "empty_keywords",
+          "type": "keywords",
+          "value": {}
+        },
+        {
           "name": "Identificatie",
           "property": "dc:identifier",
           "value": "RP-P-OB-45.775, http://hdl.handle.net/10934/RM0001.COLLECT.147320",
@@ -217,6 +223,13 @@
           "has_note": "",
           "has_warning": "",
           "by_user": "False"
+        },
+        {
+          "name": "Onderwerp",
+          "property": "empty_keywords",
+          "type": "keywords",
+          "value": {
+          }
         },
         {
           "name": "Identificatie",
