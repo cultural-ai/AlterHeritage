@@ -235,7 +235,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       submitData(submittedFilename, userSubmitted, false); // set objects as submitted, do not notify user
     }
     submitData(responsesFilename, userResponses, false); // submit responses, do not notify user
-    });
+    // check if all objects have been submitted
+    checkAllSubmitted();
+  });
 
   // if the submit button is disabled, show a tooltip
   if (submitButton.disabled) {
@@ -308,16 +310,7 @@ function embedObject(data,objectIndex) {
   loadQuestions(userResponses,objectIndex);
   
   // check if all objects have been submitted, notify users if yes
-  
-  const notificationDiv = document.getElementById('all_submitted');
-  const submittedValues = Object.values(userSubmitted);
-  // if all are true
-  const allTrue = submittedValues.every(value => value === 'True');
-  // notify once
-  if (allTrue && notificationDiv === null) {
-    notifyAllSubmitted();
-  }
-
+  checkAllSubmitted();
 }
 
 async function requestData(path) {
@@ -399,6 +392,18 @@ function notifyDataSubmitted(message,outcome) {
   }, 4000);
 }
 
+function checkAllSubmitted() {
+
+  const notificationDiv = document.getElementById('all_submitted');
+  const submittedValues = Object.values(userSubmitted);
+  // if all are true
+  const allTrue = submittedValues.every(value => value === 'True');
+  // notify once; null means that there's no notification div on the page
+  if (allTrue && notificationDiv === null) {
+    notifyAllSubmitted();
+  }
+}
+
 function notifyAllSubmitted() {
 
   const notifyAllContainer = document.getElementById('all_submitted_notification');
@@ -406,7 +411,7 @@ function notifyAllSubmitted() {
 
   notificationBody.className = 'notification_green';
   notificationBody.id = 'all_submitted';
-  notificationBody.innerText = "All objects have been submitted. You may finish the task now by closing this window. You can make changes in your edits and responses and submit them again. Thank you for participation!";
+  notificationBody.innerText = "All objects have been submitted. You may finish the task now by closing this window. You can make changes in your edits and responses and submit them again. Thank you for your participation!";
 
   notifyAllContainer.appendChild(notificationBody);
 
@@ -794,6 +799,7 @@ function addFieldNote(fieldId, noteValue) {
   const removeNoteButton = document.createElement('button');
   removeNoteButton.className = 'btn btn-outline-secondary btn-sm remove_note_btn'; 
   removeNoteButton.id = `remove_note_btn_${fieldId}`;
+  removeNoteButton.title = 'Remove note';
   removeNoteButton.innerHTML = '<i class="bi bi-x-lg"></i>';
 
   const noteButtonContainer = note.querySelector('.remove_note_col');
@@ -845,6 +851,7 @@ function addFieldWarning(fieldId, warningValue) {
   const removeWarningButton = document.createElement('button');
   removeWarningButton.className = 'btn btn-outline-secondary btn-sm remove_warning_btn'; 
   removeWarningButton.id = `remove_warning_btn_${fieldId}`;
+  removeWarningButton.title = 'Remove warning';
   removeWarningButton.innerHTML = '<i class="bi bi-x-lg"></i>';
 
   const warningButtonContainer = warning.querySelector('.remove_warning_col');
