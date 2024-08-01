@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', async() => {
             <li>we will use your input in our study only with your consent;</li>
             <li>due to the nature of the study, you may encounter offensive content during the task.</li>
           </ol>
-          <p>By pressing the button "Begin", you confirm that you are informed of the points above and provide us with your consent to use your input in out study.<br>
-          For questions, contact email@cwi.nl</p>
+          <p>By pressing the button "Begin", you confirm that you are informed of the points above and provide us with your consent to use your input in our study.<br>
+          For questions, please <a class="consent_screen_link" href="mailto:nesterov@cwi.nl">contact us</a>.</p>
           <button title="Begin" class="btn btn-outline-secondary btn-md consent_btn" type="button" id="consent_btn">Begin</button>
       </div>
     </div>
@@ -411,7 +411,7 @@ function notifyAllSubmitted() {
 
   notificationBody.className = 'notification_green';
   notificationBody.id = 'all_submitted';
-  notificationBody.innerText = "All objects have been submitted. You may finish the task now by closing this window. You can make changes in your edits and responses and submit them again. Thank you for your participation!";
+  notificationBody.innerText = "All objects have been submitted. You may finish the task now by closing this window. Or you can make changes in your edits and responses and submit them again. Thank you for your participation!";
 
   notifyAllContainer.appendChild(notificationBody);
 

@@ -21,6 +21,20 @@
     font-size: 16px;
 }
 
+.consent_screen_link {
+    text-decoration: none;
+	color: black;
+	background-color: #ffffff82;
+	padding: 0px 2px 2px 2px;
+}
+
+.consent_screen_link:hover {
+    text-decoration: none;
+	color: black;
+	background-color: white;
+	padding: 0px 2px 2px 2px;
+}
+
 .task_screen {
     opacity: 0;
     transition: opacity 2s ease-in;
