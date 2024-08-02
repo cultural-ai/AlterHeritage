@@ -1307,7 +1307,7 @@ function loadPaginationButtons(numObjects,userId) {
     pageButton.className = 'page-item page-n';
     if (i === 1) pageButton.classList.add('active'); // the first object is active
     pageButton.innerHTML = `<a class="page-link" href="#${userId}">${i}</a>
-    <i id="submit_icon_${i}" class="bi bi-check-circle-fill submitted_icon" title="Submitted"></i>`;
+    <i id="submit_icon_${i}" class="bi bi-check-circle-fill submitted_icon" title="Ingediend"></i>`;
     paginationContainer.appendChild(pageButton);
     restoreButton.textContent = "Herstellen #1";
     submitButton.textContent = "Indienen #1";
