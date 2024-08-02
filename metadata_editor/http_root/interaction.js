@@ -1445,6 +1445,6 @@ function checkSubmitAllowed() {
       }
   else {
         submitButton.setAttribute('disabled','true');
-        disabledDiv.setAttribute('data-bs-original-title','Answer the mandatory questions below before submitting');
+        disabledDiv.setAttribute('data-bs-original-title','Beantwoord de verplichte vragen hieronder voordat u dit object  indient');
   }
 }
