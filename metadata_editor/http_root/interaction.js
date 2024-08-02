@@ -72,17 +72,16 @@ document.addEventListener('DOMContentLoaded', async() => {
     consentDiv.innerHTML = `
      <div class="row consent_screen" id="consent_block">
       <div class="col-md-12 consent_col">
-        <p>Dear participant,<br> Before you begin the task, we would like to inform you that:<br></p>
+        <p>Beste deelnemer,<br> Voordat je met de taak begint, willen wij je het volgende laten weten:<br></p>
           <ol class="consent_points">
-            <li>we do not collect your personal data during the study;</li>
-            <li>all your input remains confidential;</li>
-            <li>your input is being stored on our server;</li>
-            <li>we will use your input in our study only with your consent;</li>
-            <li>due to the nature of the study, you may encounter offensive content during the task.</li>
+            <li>we verzamelen geen persoonlijke gegevens van je;</li>
+            <li>de gegevens die je invoert tijdens het uitvoeren van de taak worden  opgeslagen op onze server;</li>
+            <li>we gebruiken je invoer alleen voor ons onderzoek en delen dit niet met anderen;</li>
+            <li>vanwege de aard van het onderzoek kun je tijdens het uitvoeren van de taak te maken krijgen met kwetsende of schokkende teksten en beelden.</li>
           </ol>
-          <p>By pressing the button "Begin", you confirm that you are informed of the points above and provide us with your consent to use your input in our study.<br>
-          For questions, please <a class="consent_screen_link" href="mailto:nesterov@cwi.nl">contact us</a>.</p>
-          <button title="Begin" class="btn btn-outline-secondary btn-md consent_btn" type="button" id="consent_btn">Begin</button>
+          <p>Door op de knop "Beginnen" te drukken, bevestig je dat je op de hoogte bent van de bovenstaande punten en geef je ons toestemming om je invoer in ons onderzoek te gebruiken.<br>
+          Voor vragen kun je <a class="consent_screen_link" href="mailto:nesterov@cwi.nl">contact met ons opnemen</a>.</p>
+          <button title="Beginnen" class="btn btn-outline-secondary btn-md consent_btn" type="button" id="consent_btn">Beginnen</button>
       </div>
     </div>
     `
@@ -341,11 +340,11 @@ async function submitData(filename, data, notifyUser) {
   })
   .then(response => {
     if (!response.ok && notifyUser) {
-      error_message = `${error} \n Please contact us`;
+      error_message = `${error} \n Neem contact met ons op`;
       notifyDataSubmitted(error_message,"red"); // a notification pop-up only if *a user* submits the data
     }
     if (response.ok && notifyUser) {
-      notifyDataSubmitted("Submitted successfully","green");
+      notifyDataSubmitted("Met succes ingediend","green");
     }
     if (response.ok) {
       submitSuccess = true;
@@ -353,7 +352,7 @@ async function submitData(filename, data, notifyUser) {
   })
   .catch(error => {
     if (notifyUser){
-      error_message = `${error} \n Please contact us`;
+      error_message = `${error} \n Neem contact met ons op`;
       notifyDataSubmitted(error_message,"red");
     }
   });
@@ -411,7 +410,7 @@ function notifyAllSubmitted() {
 
   notificationBody.className = 'notification_green';
   notificationBody.id = 'all_submitted';
-  notificationBody.innerText = "All objects have been submitted. You may finish the task now by closing this window. Or you can make changes in your edits and responses and submit them again. Thank you for your participation!";
+  notificationBody.innerText = "Alle objecten zijn ingediend. Je kunt de taak nu afronden door dit venster te sluiten. Of je kunt wijzigingen aanbrengen in je bewerkingen en antwoorden en ze opnieuw indienen. Bedankt voor je deelname!";
 
   notifyAllContainer.appendChild(notificationBody);
 
@@ -428,8 +427,8 @@ function insertAddField(div) {
   addFieldButtonDiv.className = 'row add_field';
   addFieldButtonDiv.innerHTML = `
   <div class="col-md-12 add_field_col">
-    <button title="Add a new field" class="btn btn-outline-secondary btn-sm add_field_btn" type="button" id ="add_field_btn">
-      <i class="bi bi-plus-lg"></i> Add a new field
+    <button title="Een nieuw veld toevoegen" class="btn btn-outline-secondary btn-sm add_field_btn" type="button" id ="add_field_btn">
+      <i class="bi bi-plus-lg"></i> Een nieuw veld toevoegen
   </div>`
   div.appendChild(addFieldButtonDiv);
 
@@ -440,7 +439,7 @@ function insertAddField(div) {
   fieldInputGroup.innerHTML = `
     <div class="col-md-2 field_names">
 
-      <input type="text" class="form-control field_name_input" placeholder="Field name">
+      <input type="text" class="form-control field_name_input" placeholder="Veldnaam">
       
     </div>
 
@@ -454,7 +453,7 @@ function insertAddField(div) {
 
     <div class="col-md-2 field_button_input">
 
-      <button title="Add field" class="btn btn-outline-secondary btn-sm check_add_field_btn" type="button" disabled="true">
+      <button title="Een veld toevoegen" class="btn btn-outline-secondary btn-sm check_add_field_btn" type="button" disabled="true">
         <i class="bi bi-check-lg check_add_field_icon"></i>
       </button>
 
@@ -511,11 +510,11 @@ function embedFields(objectFields,div) {
     <div class="col-md-2 field_btns">
       <div class="row upper_btns">
 
-        <button title="Hide ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${field.property}" field-id="${field.property}">
+        <button title="Verbergen ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${field.property}" field-id="${field.property}">
           <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
         </button>
 
-        <button title="Remove ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
+        <button title="Verwijderen ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
           <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
         </button>
 
@@ -523,9 +522,9 @@ function embedFields(objectFields,div) {
 
       <div class="row down_btns">
 
-        <button title="Add a note to ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+        <button title="Een notitie toevoegen toe ann ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
 
-        <button title="Add a warning to ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${field.property}" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+        <button title="Een waarschuwing toevoegen toe aan ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${field.property}" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
 
       </div>
 
@@ -584,7 +583,7 @@ function embedFields(objectFields,div) {
     const addKeywordForm = document.createElement('span');
     addKeywordForm.className = 'add_keyword_tooltip';
     addKeywordForm.innerHTML = `
-    <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="Add a keyword"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
+    <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="Een trefwoord toevoegen"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
     <div class="input-group mb-3 div_hidden" id="keyword_input">
       <input type="text" class="form-control keyword_input_field" id="user_keyword_area" aria-describedby="tooltip_add_btn">
       <button class="btn btn-outline-secondary" type="button" id="tooltip_add_btn" disabled="true"><i class="bi bi-check-lg check_add_keyword"></i></button>
@@ -677,11 +676,11 @@ function addField() {
       <div class="col-md-2 field_btns">
         <div class="row upper_btns">
 
-          <button title="Hide ${fieldName}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${userFieldID}" field-id="${userFieldID}">
+          <button title="Verbergen ${fieldName}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${userFieldID}" field-id="${userFieldID}">
             <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
           </button>
 
-          <button title="Remove ${fieldName}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${userFieldID}">
+          <button title="Verwijderen ${fieldName}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${userFieldID}">
             <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
           </button>
 
@@ -689,9 +688,9 @@ function addField() {
 
         <div class="row down_btns">
 
-          <button title="Add a note to ${fieldName}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+          <button title="Notitie toevoegen toe aan ${fieldName}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
 
-          <button title="Add a warning to ${fieldName}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+          <button title="Waarschuwing toevoegen toe aan ${fieldName}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
 
         </div>
 
@@ -740,11 +739,11 @@ function hideField(fieldId) {
   if (icon.classList.contains('bi-eye-slash-fill')) {
     icon.classList.remove('bi-eye-slash-fill');
     icon.classList.add('bi-eye-fill');
-    button.title = button.title.replace('Hide', 'Show'); 
+    button.title = button.title.replace('Verbergen', 'Tonen'); 
   } else {
     icon.classList.remove('bi-eye-fill');
     icon.classList.add('bi-eye-slash-fill');
-    button.title = button.title.replace('Show', 'Hide'); 
+    button.title = button.title.replace('Tonen', 'Verbergen'); 
   }
 
   if (textarea) {
@@ -790,7 +789,7 @@ function addFieldNote(fieldId, noteValue) {
   note.innerHTML = `
     <div class="col-md-1 note_icon_col"><i class="bi bi-sticky-fill note_icon"></i></div>
     <div class="col-md-10 note_col">
-      <textarea id="${textareaId}" class="note-form form-control" placeholder="Note">${noteValue}</textarea>
+      <textarea id="${textareaId}" class="note-form form-control" placeholder="Notitie">${noteValue}</textarea>
     </div>
     <div class="col-md-1 remove_note_col">
     </div>
@@ -799,7 +798,7 @@ function addFieldNote(fieldId, noteValue) {
   const removeNoteButton = document.createElement('button');
   removeNoteButton.className = 'btn btn-outline-secondary btn-sm remove_note_btn'; 
   removeNoteButton.id = `remove_note_btn_${fieldId}`;
-  removeNoteButton.title = 'Remove note';
+  removeNoteButton.title = 'Een notitie verwijderen';
   removeNoteButton.innerHTML = '<i class="bi bi-x-lg"></i>';
 
   const noteButtonContainer = note.querySelector('.remove_note_col');
@@ -842,7 +841,7 @@ function addFieldWarning(fieldId, warningValue) {
   warning.innerHTML = `
     <div class="col-md-1 warning_icon_col"><i class="bi bi-exclamation-triangle-fill warning_icon"></i></div>
     <div class="col-md-10 warning_col">
-      <textarea id="${textareaId}" class="warning-form form-control" placeholder="Warning">${warningValue}</textarea>
+      <textarea id="${textareaId}" class="warning-form form-control" placeholder="Waarschuwin">${warningValue}</textarea>
     </div>
     <div class="col-md-1 remove_warning_col">
     </div>
@@ -851,7 +850,7 @@ function addFieldWarning(fieldId, warningValue) {
   const removeWarningButton = document.createElement('button');
   removeWarningButton.className = 'btn btn-outline-secondary btn-sm remove_warning_btn'; 
   removeWarningButton.id = `remove_warning_btn_${fieldId}`;
-  removeWarningButton.title = 'Remove warning';
+  removeWarningButton.title = 'Een waarschuwing verwijderen';
   removeWarningButton.innerHTML = '<i class="bi bi-x-lg"></i>';
 
   const warningButtonContainer = warning.querySelector('.remove_warning_col');
@@ -952,7 +951,7 @@ function addKeyword(text,index) {
   const noteButton = addKeywordButtons(noteIcon, 'note-button');
   noteButton.id = `note_button_keyword_${index}`;
   noteButton.setAttribute('keyword-id', `keyword_${index}`);
-  noteButton.title = "Add a note";
+  noteButton.title = "Notitie toevoegen";
   term.appendChild(noteButton);
 
   const noteTooltip = document.createElement('div');
@@ -968,14 +967,14 @@ function addKeyword(text,index) {
   const hideButton = addKeywordButtons(hideIcon, 'hide-button');
   hideButton.id = `hide_button_keyword_${index}`;
   hideButton.setAttribute('keyword-id', `keyword_${index}`);
-  hideButton.title = "Hide keyword";
+  hideButton.title = "Een trefwoord verbergen";
   term.appendChild(hideButton);
 
   //remove button
   const removeButton = addKeywordButtons(removeIcon, 'remove-button');
   removeButton.id = `remove_button_keyword_${index}`;
   removeButton.setAttribute('keyword-id', `keyword_${index}`);
-  removeButton.title = "Remove keyword";
+  removeButton.title = "Een trefwoord verwijderen";
   term.appendChild(removeButton);
 
   const keyword_text = document.createElement('p');
@@ -1028,11 +1027,11 @@ function hideKeyword(kwId) {
   if (icon.classList.contains('bi-eye-slash-fill')) {
     icon.classList.remove('bi-eye-slash-fill');
     icon.classList.add('bi-eye-fill');
-    button.title = button.title.replace('Hide', 'Show'); 
+    button.title = button.title.replace('verbergen', 'tonen'); 
   } else {
     icon.classList.remove('bi-eye-fill');
     icon.classList.add('bi-eye-slash-fill');
-    button.title = button.title.replace('Show', 'Hide'); 
+    button.title = button.title.replace('tonen', 'verbergen'); 
   }
 
   const p_keyword = document.getElementById(kwId);
@@ -1265,10 +1264,10 @@ function setActivePage(pageNumber) {
   const nextButton = paginationContainer.querySelector('.next-b');
 
   const restoreButton = document.getElementById('restore_btn');
-  restoreButton.textContent = `Restore #${pageNumber}`;
+  restoreButton.textContent = `Herstellen #${pageNumber}`;
 
   const submitButton = document.getElementById('submit_btn');
-  submitButton.textContent = `Submit #${pageNumber}`;
+  submitButton.textContent = `Indienen #${pageNumber}`;
 
 
   if (pageNumber === 1) {
@@ -1310,8 +1309,8 @@ function loadPaginationButtons(numObjects,userId) {
     pageButton.innerHTML = `<a class="page-link" href="#${userId}">${i}</a>
     <i id="submit_icon_${i}" class="bi bi-check-circle-fill submitted_icon" title="Submitted"></i>`;
     paginationContainer.appendChild(pageButton);
-    restoreButton.textContent = "Restore #1";
-    submitButton.textContent = "Submit #1";
+    restoreButton.textContent = "Herstellen #1";
+    submitButton.textContent = "Indienen #1";
   }
 
   // next button

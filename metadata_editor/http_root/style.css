@@ -189,10 +189,10 @@
 
 .add_field_btn {
 	width: 100%;
-	background-color: #f2f2f2 !important;
-	border-color: #f2f2f2 !important;
+	background-color: #919191 !important;
+	border-color: #919191 !important;
     border-radius: 4px !important;
-    color: #8a8a8a !important;
+    color: white !important;
 }
 
 .add_field_btn:hover {
@@ -491,9 +491,9 @@
     width: 36px !important;
     height: 36px !important;
     margin-left: 8px;
-    background-color: #f2f2f2 !important;
-	border-color: #f2f2f2 !important;
-    color: #8a8a8a !important;
+    background-color: #919191 !important;
+	border-color: #919191 !important;
+    color: white !important;
 }
 
 .add_keyword_btn:hover {
@@ -723,11 +723,12 @@
 }
 
 .add_field_instruction_btn {
-	width: 110px !important;
-	height: 31px !important;
+	width: 120px !important;
+	height: 40px !important;
 	font-size: 12px !important;
-	background-color: #f2f2f2 !important;
-	border-color: #f2f2f2 !important;
+	background-color: #919191 !important;
+	border-color: #919191!important;
+    color: white !important;
 }
 
 .hide_instruction_btn {
@@ -756,9 +757,9 @@
 }
 
 .add_keyword_instruction_btn {
-    color: #8a8a8a !important;
-    background-color: #f2f2f2 !important;
-    border-color: #f2f2f2 !important;
+    color: white !important;
+    background-color: #919191 !important;
+    border-color: #919191 !important;
 }
 
     /* controls */
