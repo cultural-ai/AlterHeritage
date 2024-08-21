@@ -1,0 +1,360 @@
+[
+  {
+    "@id": "_:b2",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/RijksCollection"
+    ],
+    "http://schemas.delving.eu/nave/terms/rijksCollection": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum/oai-rijksmuseum.nl-RP-F-2007-300",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/coverage": [
+      {
+        "@language": "en",
+        "@value": "first quarter 20st century"
+      },
+      {
+        "@language": "en",
+        "@value": "fourth quarter 19th century"
+      },
+      {
+        "@language": "nl",
+        "@value": "vierde kwart 19e eeuw"
+      },
+      {
+        "@language": "nl",
+        "@value": "eerste kwart 20e eeuw"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@language": "nl",
+        "@value": "anoniem"
+      },
+      {
+        "@language": "en",
+        "@value": "anonymous"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "nl",
+        "@value": "Deze ferrotypieën stammen uit de begintijd van de fotografie. Ze waren relatief goedkoop, en makkelijk en snel te maken. Daardoor kon een grotere groep mensen zich laten afbeelden. Door het ontbreken van negatieven – net als bij polaroids – was het maken van een ferrotypie voor lhbti+ koppels betrekkelijk veilig. Van geen van deze koppels is iets bekend. Of ze verliefd zijn of familie of vrienden weten we dus niet, maar hun poses stralen vaak intimiteit uit."
+      },
+      {
+        "@language": "en",
+        "@value": "Ferrotypes, an early form of photography, were relatively cheap, easy, and quick to make. It allowed a larger group of people to be portrayed. The fact that there was no need for negatives – like polaroids – meant that a tintype was relatively safe for LGBTI+ couples. Little, however, is known of any of these couples. Whether they are in love, or family, or friends – we just don’t know, yet their poses often reveal a sense of intimacy."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "RP-F-2007-300"
+      },
+      {
+        "@value": "http://hdl.handle.net/10934/RM0001.COLLECT.448739"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/publisher": [
+      {
+        "@value": "Rijksmuseum"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/rights": [
+      {
+        "@language": "nl",
+        "@value": "Publiek Domein"
+      },
+      {
+        "@language": "en",
+        "@value": "Public Domain"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "nl",
+        "@value": "Portretten"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/type": [
+      {
+        "@language": "en",
+        "@value": "photograph"
+      },
+      {
+        "@language": "nl",
+        "@value": "foto"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@language": "nl",
+        "@value": "ca.1895 - ca.1910"
+      },
+      {
+        "@language": "en",
+        "@value": "c.1895 - c.1910"
+      }
+    ],
+    "http://purl.org/dc/terms/extent": [
+      {
+        "@language": "en",
+        "@value": "height 85 mm"
+      },
+      {
+        "@language": "nl",
+        "@value": "breedte 59 mm"
+      },
+      {
+        "@language": "en",
+        "@value": "width 59 mm"
+      },
+      {
+        "@language": "nl",
+        "@value": "hoogte 85 mm"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@language": "nl",
+        "@value": "collectie: foto's"
+      }
+    ],
+    "http://purl.org/dc/terms/medium": [
+      {
+        "@language": "en",
+        "@value": "metal"
+      },
+      {
+        "@language": "nl",
+        "@value": "metaal"
+      }
+    ],
+    "http://purl.org/dc/terms/spatial": [
+      {
+        "@language": "nl",
+        "@value": "Verenigde Staten van Amerika"
+      },
+      {
+        "@language": "en",
+        "@value": "United States of America"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/type": [
+      {
+        "@value": "IMAGE"
+      }
+    ]
+  },
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "metaal"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300046300",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "_:b7",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/Place"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "United States of America"
+      },
+      {
+        "@language": "nl",
+        "@value": "Verenigde Staten van Amerika"
+      }
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DcnResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/collectionPart": [
+      {
+        "@language": "nl",
+        "@value": "collectie: foto's"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/province": [
+      {
+        "@value": "Noord-Holland"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/technique": [
+      {
+        "@language": "nl",
+        "@value": "ferrotypie"
+      },
+      {
+        "@id": "http://vocab.getty.edu/aat/300053555"
+      },
+      {
+        "@language": "en",
+        "@value": "ferrotyping"
+      }
+    ]
+  },
+  {
+    "@id": "_:b4",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "metal"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300010900",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "_:b5",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DelvingResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/allowDeepZoom": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowLinkedOpenData": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowSourceDownload": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/featured": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/public": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-F-2007-300",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum/oai-rijksmuseum.nl-RP-F-2007-300"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Rijksmuseum Amsterdam"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/hasView": [
+      {
+        "@id": "https://lh4.ggpht.com/tHPK7Zcp5wl200VQu5d3KALhhd4GXmqqh6bkFnc-4GDQdd_wVJSL-cVALScwozmOMw_TTL6UuZiTIjyfw50nVcHhCKE=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownAt": [
+      {
+        "@id": "http://hdl.handle.net/10934/RM0001.COLLECT.448739"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@id": "https://lh4.ggpht.com/tHPK7Zcp5wl200VQu5d3KALhhd4GXmqqh6bkFnc-4GDQdd_wVJSL-cVALScwozmOMw_TTL6UuZiTIjyfw50nVcHhCKE=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@id": "https://lh4.ggpht.com/tHPK7Zcp5wl200VQu5d3KALhhd4GXmqqh6bkFnc-4GDQdd_wVJSL-cVALScwozmOMw_TTL6UuZiTIjyfw50nVcHhCKE=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b1"
+      },
+      {
+        "@id": "_:b2"
+      },
+      {
+        "@id": "_:b5"
+      }
+    ]
+  },
+  {
+    "@id": "_:b6",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "photograph"
+      }
+    ]
+  },
+  {
+    "@id": "_:b3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "foto"
+      }
+    ]
+  },
+  {
+    "@id": "https://lh4.ggpht.com/tHPK7Zcp5wl200VQu5d3KALhhd4GXmqqh6bkFnc-4GDQdd_wVJSL-cVALScwozmOMw_TTL6UuZiTIjyfw50nVcHhCKE=s0",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/WebResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/resourceSortOrder": [
+      {
+        "@value": "1"
+      }
+    ]
+  }
+]

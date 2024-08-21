@@ -1,0 +1,159 @@
+[
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Nederlands Fotomuseum"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/hasView": [
+      {
+        "@id": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownAt": [
+      {
+        "@value": "http://collectie.nederlandsfotomuseum.nl/collectie/detail/4b3ded58-5167-626d-96ee-05d83df0a6cb"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@id": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@id": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://rightsstatements.org/vocab/InC/1.0/"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b0"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@value": "Ed van der Elsken"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "EVE-1002001-04"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/subject": [
+      {
+        "@value": "travestiet"
+      },
+      {
+        "@value": "portret"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@value": "Travestieten, Old Delhi, India (1977)"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/type": [
+      {
+        "@value": "Diapositief"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@value": "1976"
+      }
+    ],
+    "http://purl.org/dc/terms/extent": [
+      {
+        "@value": "24x36 mm (kb, 35mm)"
+      }
+    ],
+    "http://purl.org/dc/terms/medium": [
+      {
+        "@value": "Acetaat"
+      }
+    ]
+  },
+  {
+    "@id": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/WebResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/resourceSortOrder": [
+      {
+        "@value": "1"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbLarge": [
+      {
+        "@value": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbMedium": [
+      {
+        "@value": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbSmall": [
+      {
+        "@value": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg"
+      }
+    ]
+  },
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DelvingResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/allowDeepZoom": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowLinkedOpenData": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowSourceDownload": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/featured": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/public": [
+      {
+        "@value": "true"
+      }
+    ]
+  }
+]

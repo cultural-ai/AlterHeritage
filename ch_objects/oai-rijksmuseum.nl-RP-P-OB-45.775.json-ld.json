@@ -1,0 +1,330 @@
+[
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-45.775",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-45.775"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Rijksmuseum Amsterdam"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/hasView": [
+      {
+        "@id": "https://lh4.ggpht.com/IwPm7kXQH74rZG_oOx0-CNLE57XaGjJPhqGEonGgl57EMsAnxAyIlePqW0aG0f7rJ1gFU-0V3OlgBc2oj5hYNoEnMKng=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownAt": [
+      {
+        "@id": "http://hdl.handle.net/10934/RM0001.COLLECT.147320"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@id": "https://lh4.ggpht.com/IwPm7kXQH74rZG_oOx0-CNLE57XaGjJPhqGEonGgl57EMsAnxAyIlePqW0aG0f7rJ1gFU-0V3OlgBc2oj5hYNoEnMKng=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@id": "https://lh4.ggpht.com/IwPm7kXQH74rZG_oOx0-CNLE57XaGjJPhqGEonGgl57EMsAnxAyIlePqW0aG0f7rJ1gFU-0V3OlgBc2oj5hYNoEnMKng=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b3"
+      },
+      {
+        "@id": "_:b4"
+      },
+      {
+        "@id": "_:b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:b2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "prent"
+      }
+    ]
+  },
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "papier"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-45.775",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "RP-P-OB-45.775"
+      },
+      {
+        "@value": "http://hdl.handle.net/10934/RM0001.COLLECT.147320"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/publisher": [
+      {
+        "@value": "Rijksmuseum"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/rights": [
+      {
+        "@language": "nl",
+        "@value": "Publiek Domein"
+      },
+      {
+        "@language": "en",
+        "@value": "Public Domain"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "nl",
+        "@value": "Sodomieten met blindheid geslagen"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/type": [
+      {
+        "@language": "en",
+        "@value": "print"
+      },
+      {
+        "@language": "nl",
+        "@value": "prent"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@value": "1712"
+      }
+    ],
+    "http://purl.org/dc/terms/extent": [
+      {
+        "@language": "nl",
+        "@value": "breedte 148 mm"
+      },
+      {
+        "@language": "nl",
+        "@value": "hoogte 116 mm"
+      },
+      {
+        "@language": "en",
+        "@value": "blad width 148 mm"
+      },
+      {
+        "@language": "en",
+        "@value": "blad height 116 mm"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@language": "nl",
+        "@value": "collectie: prenten"
+      },
+      {
+        "@language": "en",
+        "@value": "collection: prints"
+      }
+    ],
+    "http://purl.org/dc/terms/isReferencedBy": [
+      {
+        "@value": "Van Eeghen 4071 "
+      }
+    ],
+    "http://purl.org/dc/terms/medium": [
+      {
+        "@language": "nl",
+        "@value": "papier"
+      },
+      {
+        "@language": "en",
+        "@value": "paper"
+      }
+    ],
+    "http://purl.org/dc/terms/spatial": [
+      {
+        "@language": "en",
+        "@value": "Amsterdam"
+      },
+      {
+        "@language": "nl",
+        "@value": "Amsterdam"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/type": [
+      {
+        "@value": "IMAGE"
+      }
+    ]
+  },
+  {
+    "@id": "_:b7",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "paper"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300041273",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DelvingResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/allowDeepZoom": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowLinkedOpenData": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowSourceDownload": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/featured": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/public": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "_:b4",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/RijksCollection"
+    ],
+    "http://schemas.delving.eu/nave/terms/rijksCollection": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300014109",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "_:b5",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "print"
+      }
+    ]
+  },
+  {
+    "@id": "https://lh4.ggpht.com/IwPm7kXQH74rZG_oOx0-CNLE57XaGjJPhqGEonGgl57EMsAnxAyIlePqW0aG0f7rJ1gFU-0V3OlgBc2oj5hYNoEnMKng=s0",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/WebResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/resourceSortOrder": [
+      {
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:b3",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DcnResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/collectionPart": [
+      {
+        "@language": "en",
+        "@value": "collection: prints"
+      },
+      {
+        "@language": "nl",
+        "@value": "collectie: prenten"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/province": [
+      {
+        "@value": "Noord-Holland"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/technique": [
+      {
+        "@id": "http://browser.aat-ned.nl/300053241"
+      },
+      {
+        "@language": "en",
+        "@value": "etching"
+      },
+      {
+        "@language": "nl",
+        "@value": "etsen"
+      }
+    ]
+  },
+  {
+    "@id": "_:b6",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/Place"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "Amsterdam"
+      },
+      {
+        "@language": "en",
+        "@value": "Amsterdam"
+      }
+    ]
+  }
+]

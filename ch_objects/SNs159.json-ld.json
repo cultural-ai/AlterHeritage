@@ -1,0 +1,228 @@
+[
+  {
+    "@id": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/WebResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/resourceSortOrder": [
+      {
+        "@value": "1"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbLarge": [
+      {
+        "@value": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbMedium": [
+      {
+        "@value": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbSmall": [
+      {
+        "@value": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg"
+      }
+    ]
+  },
+  {
+    "@id": "_:b2",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DelvingResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/allowDeepZoom": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowLinkedOpenData": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowSourceDownload": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/collectionPart": [
+      {
+        "@value": "Klassieke oudheid"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/featured": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/public": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DcnResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/material": [
+      {
+        "@value": "aardewerk ; terracotta"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/province": [
+      {
+        "@value": "Zuid-Holland"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum-van-oudheden/SNs159",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum-van-oudheden/SNs159"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Rijksmuseum van Oudheden"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/hasView": [
+      {
+        "@id": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownAt": [
+      {
+        "@id": "https://hdl.handle.net/21.12126/55293"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@id": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@id": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b2"
+      },
+      {
+        "@id": "_:b0"
+      },
+      {
+        "@id": "_:b1"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum-van-oudheden/SNs159",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/coverage": [
+      {
+        "@value": "Turkije"
+      },
+      {
+        "@value": "Turkije, Izmir, Izmir, Izmir/Smyrna"
+      },
+      {
+        "@value": "Izmir"
+      },
+      {
+        "@value": "Turkije, Klein-Azië, Smyrna"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/date": [
+      {
+        "@value": "hellenistisch 1-150 n.Chr."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "Uit Smyrna. Hellenistische terracotta figurine-fragment van een torso van een hermafrodiet. De himation is over de linkerarm en -schouder gedrapeerd. Het hoofd, de rechterarm en de onderbenen ontbreken."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "SNs 159"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/rights": [
+      {
+        "@value": "Creative Commons By-licensie: bron: Rijksmuseum van Oudheden, Leiden"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/subject": [
+      {
+        "@value": "hermafrodiet ; himation"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@value": "figurine ; fragment"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/type": [
+      {
+        "@value": "figurine ; fragment"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@value": "hellenistisch 1-150 n.Chr."
+      }
+    ],
+    "http://purl.org/dc/terms/extent": [
+      {
+        "@value": "4,9 cm"
+      }
+    ],
+    "http://purl.org/dc/terms/isReferencedBy": [
+      {
+        "@value": "P.G. Leyenaar-Plaisier 1979, Les terres cuites grecques et romaines (TCGR) no. 354"
+      }
+    ],
+    "http://purl.org/dc/terms/medium": [
+      {
+        "@value": "aardewerk ; terracotta"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/type": [
+      {
+        "@value": "IMAGE"
+      }
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/RijksCollection"
+    ],
+    "http://schemas.delving.eu/nave/terms/rijksCollection": [
+      {
+        "@value": "true"
+      }
+    ]
+  }
+]

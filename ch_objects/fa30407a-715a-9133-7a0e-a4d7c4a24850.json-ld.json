@@ -1,0 +1,142 @@
+[
+  {
+    "@id": "http://images.memorix.nl/gam/thumb/500x500/fa30407a-715a-9133-7a0e-a4d7c4a24850.jpg",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/WebResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/resourceSortOrder": [
+      {
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/archief-eemland-beeldbank/fa30407a-715a-9133-7a0e-a4d7c4a24850",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/archief-eemland-beeldbank/fa30407a-715a-9133-7a0e-a4d7c4a24850"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Archief Eemland"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/hasView": [
+      {
+        "@id": "http://images.memorix.nl/gam/thumb/500x500/fa30407a-715a-9133-7a0e-a4d7c4a24850.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownAt": [
+      {
+        "@id": "http://www.archiefeemland.nl/collectie/fotos/detail?id=43dcc58e-dc46-11df-a9e7-7590f0316edd"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@id": "http://images.memorix.nl/gam/thumb/500x500/fa30407a-715a-9133-7a0e-a4d7c4a24850.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@id": "http://images.memorix.nl/gam/thumb/500x500/fa30407a-715a-9133-7a0e-a4d7c4a24850.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://www.europeana.eu/portal/rights/rr-f"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b0"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/archief-eemland-beeldbank/fa30407a-715a-9133-7a0e-a4d7c4a24850",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/coverage": [
+      {
+        "@value": "Amersfoort"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@value": "Loenen, Frans van"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/date": [
+      {
+        "@value": "1982-06-26"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "AFT005000605"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/source": [
+      {
+        "@value": "Politie"
+      },
+      {
+        "@value": "WHAM"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/subject": [
+      {
+        "@value": "Politie"
+      },
+      {
+        "@value": "aktie"
+      },
+      {
+        "@value": "WHAM"
+      },
+      {
+        "@value": "homosexualiteit"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@value": "De manifestatie werd ernstig verstoord door relschoppers. Daarover hebben wij een knipselmap en een DVD (nrs. D5343 en D5345)."
+      },
+      {
+        "@value": "Roze Zaterdag: demonstratiedag voor homosexuelen. Optreden van een wenend \"elfje\"."
+      },
+      {
+        "@value": "bijzonderheden: Deze dag werd bezocht door ruim vierduizend mensen uit het hele land."
+      },
+      {
+        "@value": "(Het Engelse woord voor elfje, 'fairy' betekent tevens: \"flikker\" (beledigend).)"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/type": [
+      {
+        "@value": "IMAGE"
+      }
+    ]
+  },
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DcnResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/province": [
+      {
+        "@value": "Utrecht"
+      }
+    ]
+  }
+]

@@ -1,0 +1,209 @@
+[
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DcnResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/material": [
+      {
+        "@value": "papier"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/province": [
+      {
+        "@value": "Noord-Holland"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/technique": [
+      {
+        "@value": "gefotografeerd"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/joods-historisch/M002915",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/coverage": [
+      {
+        "@value": "Verenigde Staten"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@value": "Grinker, Lori (1957)"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "M002915"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/source": [
+      {
+        "@value": "Joods Museum"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/subject": [
+      {
+        "@value": "oorlog"
+      },
+      {
+        "@value": "dichter"
+      },
+      {
+        "@value": "Grinker, Lori (1957)"
+      },
+      {
+        "@value": "vrouw in jodendom"
+      },
+      {
+        "@value": "homoseksualiteit"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@value": "lesbienne, dichteres, oorlogskind"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/type": [
+      {
+        "@value": "foto"
+      }
+    ],
+    "http://purl.org/dc/terms/alternative": [
+      {
+        "@value": "M002915, foto, Lori Grinker, 1985"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@value": "1985"
+      }
+    ],
+    "http://purl.org/dc/terms/extent": [
+      {
+        "@value": "breedte 35.5 cm"
+      },
+      {
+        "@value": "hoogte 20.5 cm"
+      },
+      {
+        "@value": "breedte 30.5 cm"
+      },
+      {
+        "@value": "hoogte 28.0 cm"
+      }
+    ],
+    "http://purl.org/dc/terms/medium": [
+      {
+        "@value": "papier"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/type": [
+      {
+        "@value": "IMAGE"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/joods-historisch/M002915",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://purl.org/dc/elements/1.1/rights": [
+      {
+        "@value": "© Lori Grinker"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/joods-historisch/M002915"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Joods Historisch Museum"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownAt": [
+      {
+        "@id": "http://data.jck.nl/resource/aggregation/jhm-museum/M002915"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@value": "http://data.jck.nl/thumbnail/jck/joods-historisch/d622/622NM002915/2000"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@value": "http://data.jck.nl/thumbnail/jck/joods-historisch/d622/622NM002915/2000"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://rightsstatements.org/vocab/InC/1.0/"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b2"
+      },
+      {
+        "@id": "_:b0"
+      },
+      {
+        "@id": "_:b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/RijksCollection"
+    ],
+    "http://schemas.delving.eu/nave/terms/rijksCollection": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "_:b2",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DelvingResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/allowDeepZoom": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowLinkedOpenData": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowSourceDownload": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/featured": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/public": [
+      {
+        "@value": "true"
+      }
+    ]
+  }
+]

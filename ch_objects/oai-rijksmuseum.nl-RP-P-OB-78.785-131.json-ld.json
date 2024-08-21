@@ -1,0 +1,409 @@
+[
+  {
+    "@id": "urn:rijksmuseum:thesaurus:RM0001.THESAU.2213",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "_:b2",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "albumblad"
+      }
+    ]
+  },
+  {
+    "@id": "https://lh3.googleusercontent.com/g-TkhjLkZsHX4oV1pq41Ytq0keBfu60rIjujZTr_L4XAxwCB2_CKb7gBrBmR6lsddwfHPhj6W0zL6g4zlOmkR4K_awHh40SKRHWkmDs=s0",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/WebResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/resourceSortOrder": [
+      {
+        "@value": "1"
+      }
+    ]
+  },
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "paper"
+      }
+    ]
+  },
+  {
+    "@id": "_:b7",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DelvingResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/allowDeepZoom": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowLinkedOpenData": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowSourceDownload": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/featured": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/public": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300041273",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "urn:rijksmuseum:thesaurus:",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/Place"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Cologne"
+      },
+      {
+        "@language": "nl",
+        "@value": "Keulen"
+      }
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/RijksCollection"
+    ],
+    "http://schemas.delving.eu/nave/terms/rijksCollection": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "_:b8",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "prent"
+      }
+    ]
+  },
+  {
+    "@id": "_:b4",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "print"
+      }
+    ]
+  },
+  {
+    "@id": "http://vocab.getty.edu/aat/300014109",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-78.785-131",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-78.785-131"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Rijksmuseum Amsterdam"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/hasView": [
+      {
+        "@id": "https://lh3.googleusercontent.com/g-TkhjLkZsHX4oV1pq41Ytq0keBfu60rIjujZTr_L4XAxwCB2_CKb7gBrBmR6lsddwfHPhj6W0zL6g4zlOmkR4K_awHh40SKRHWkmDs=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownAt": [
+      {
+        "@id": "http://hdl.handle.net/10934/RM0001.COLLECT.586333"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@id": "https://lh3.googleusercontent.com/g-TkhjLkZsHX4oV1pq41Ytq0keBfu60rIjujZTr_L4XAxwCB2_CKb7gBrBmR6lsddwfHPhj6W0zL6g4zlOmkR4K_awHh40SKRHWkmDs=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@id": "https://lh3.googleusercontent.com/g-TkhjLkZsHX4oV1pq41Ytq0keBfu60rIjujZTr_L4XAxwCB2_CKb7gBrBmR6lsddwfHPhj6W0zL6g4zlOmkR4K_awHh40SKRHWkmDs=s0"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b1"
+      },
+      {
+        "@id": "_:b7"
+      },
+      {
+        "@id": "_:b5"
+      }
+    ]
+  },
+  {
+    "@id": "urn:rijksmuseum:thesaurus:RM0001.THESAU.1433",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ]
+  },
+  {
+    "@id": "_:b5",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DcnResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/collectionPart": [
+      {
+        "@language": "nl",
+        "@value": "collectie: prenten"
+      },
+      {
+        "@language": "nl",
+        "@value": "collectie: Frederik Muller Historieplaten"
+      },
+      {
+        "@language": "en",
+        "@value": "collection: prints"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/province": [
+      {
+        "@value": "Noord-Holland"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/technique": [
+      {
+        "@id": "http://browser.aat-ned.nl/300053241"
+      },
+      {
+        "@language": "nl",
+        "@value": "etsen"
+      },
+      {
+        "@language": "en",
+        "@value": "etching"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-78.785-131",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@language": "nl",
+        "@value": "Arrestatie van de Franciscaner monniken in een klooster te Brugge op beschuldiging van sodomie, 18 mei 1578. Onder begeleiding van soldaten worden de monniken uit het klooster afgevoerd. Onder hen de beruchte Broer Cornelis van Dordrecht. Met onderschrift van 15 regels in het Duits. Linksonder genummerd: 145. De prent maakt deel uit van een album."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "RP-P-OB-78.785-131"
+      },
+      {
+        "@value": "http://hdl.handle.net/10934/RM0001.COLLECT.586333"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/publisher": [
+      {
+        "@value": "Rijksmuseum"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/rights": [
+      {
+        "@language": "en",
+        "@value": "Public Domain"
+      },
+      {
+        "@language": "nl",
+        "@value": "Publiek Domein"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/subject": [
+      {
+        "@language": "nl",
+        "@value": "1578-05-18 - 1578-05-18"
+      },
+      {
+        "@language": "nl",
+        "@value": "Cornelis, Broer"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@language": "nl",
+        "@value": "Ontdekking van sodomie in een klooster te Brugge, 1578"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/type": [
+      {
+        "@language": "en",
+        "@value": "print"
+      },
+      {
+        "@language": "nl",
+        "@value": "historieprent"
+      },
+      {
+        "@language": "nl",
+        "@value": "prent"
+      },
+      {
+        "@language": "nl",
+        "@value": "albumblad"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@language": "en",
+        "@value": "1581 - c.1585"
+      },
+      {
+        "@language": "nl",
+        "@value": "1581 - ca.1585"
+      }
+    ],
+    "http://purl.org/dc/terms/extent": [
+      {
+        "@language": "nl",
+        "@value": "hoogte 210 mm"
+      },
+      {
+        "@language": "nl",
+        "@value": "breedte 277 mm"
+      },
+      {
+        "@language": "en",
+        "@value": "plaatrand width 277 mm"
+      },
+      {
+        "@language": "en",
+        "@value": "plaatrand height 210 mm"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@language": "nl",
+        "@value": "collectie: prenten"
+      },
+      {
+        "@language": "en",
+        "@value": "collection: prints"
+      },
+      {
+        "@language": "nl",
+        "@value": "collectie: Frederik Muller Historieplaten"
+      }
+    ],
+    "http://purl.org/dc/terms/isReferencedBy": [
+      {
+        "@value": "New Hollstein Dutch B143 2(2)"
+      },
+      {
+        "@value": "Hellwig 200 "
+      },
+      {
+        "@value": "FMH 413.190 "
+      }
+    ],
+    "http://purl.org/dc/terms/medium": [
+      {
+        "@language": "nl",
+        "@value": "papier"
+      },
+      {
+        "@language": "en",
+        "@value": "paper"
+      }
+    ],
+    "http://purl.org/dc/terms/spatial": [
+      {
+        "@language": "nl",
+        "@value": "Keulen"
+      },
+      {
+        "@language": "en",
+        "@value": "Cologne"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/type": [
+      {
+        "@value": "IMAGE"
+      }
+    ]
+  },
+  {
+    "@id": "_:b3",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "historieprent"
+      }
+    ]
+  },
+  {
+    "@id": "_:b6",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "nl",
+        "@value": "papier"
+      }
+    ]
+  }
+]

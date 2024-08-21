@@ -1,0 +1,235 @@
+[
+  {
+    "@id": "https://rkd.nl/explore/artists/23481",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/Agent"
+    ],
+    "http://rdvocab.info/ElementsGr2/dateOfBirth": [
+      {
+        "@value": "1883-08-30"
+      }
+    ],
+    "http://rdvocab.info/ElementsGr2/dateOfDeath": [
+      {
+        "@value": "1931-03-07"
+      }
+    ],
+    "http://rdvocab.info/ElementsGr2/gender": [
+      {
+        "@value": "MALE"
+      }
+    ],
+    "http://rdvocab.info/ElementsGr2/placeOfBirth": [
+      {
+        "@value": "UTRECHT"
+      }
+    ],
+    "http://rdvocab.info/ElementsGr2/placeOfDeath": [
+      {
+        "@value": "Davos"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@value": "Doesburg, Theo van"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/aggregation/rijkscollectie-rce/AB4114-F",
+    "@type": [
+      "http://www.openarchives.org/ore/terms/Aggregation"
+    ],
+    "http://www.europeana.eu/schemas/edm/aggregatedCHO": [
+      {
+        "@id": "http://data.collectienederland.nl/resource/document/rijkscollectie-rce/AB4114-F"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/dataProvider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/hasView": [
+      {
+        "@id": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/isShownBy": [
+      {
+        "@id": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/object": [
+      {
+        "@id": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/provider": [
+      {
+        "@value": "Rijksdienst voor het Cultureel Erfgoed"
+      }
+    ],
+    "http://www.europeana.eu/schemas/edm/rights": [
+      {
+        "@id": "http://rightsstatements.org/vocab/InC/1.0/"
+      }
+    ],
+    "http://www.openarchives.org/ore/terms/aggregates": [
+      {
+        "@id": "_:b0"
+      },
+      {
+        "@id": "_:b1"
+      }
+    ]
+  },
+  {
+    "@id": "http://data.collectienederland.nl/resource/document/rijkscollectie-rce/AB4114-F",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/ProvidedCHO"
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      {
+        "@id": "https://rkd.nl/explore/artists/23481"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/date": [
+      {
+        "@value": "1909"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      {
+        "@value": "Homo vrouw. Schetsboek versozijde AB4114-G."
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      {
+        "@value": "AB4114-F"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      {
+        "@value": "Homo vrouw"
+      }
+    ],
+    "http://purl.org/dc/elements/1.1/type": [
+      {
+        "@value": "krijttekening"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@value": "1909"
+      }
+    ],
+    "http://purl.org/dc/terms/extent": [
+      {
+        "@value": "12 cm"
+      },
+      {
+        "@value": "8 cm"
+      }
+    ],
+    "http://purl.org/dc/terms/medium": [
+      {
+        "@value": "papier"
+      },
+      {
+        "@value": "zwart krijt"
+      }
+    ]
+  },
+  {
+    "@id": "_:b0",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DcnResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/collectionPart": [
+      {
+        "@value": "moderne kunst"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/creatorRole": [
+      {
+        "@value": "inventor/bedenker/ontwerper"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/creatorYearOfBirth": [
+      {
+        "@value": "1883-08-30"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/creatorYearOfDeath": [
+      {
+        "@value": "1931-03-07"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/material": [
+      {
+        "@value": "papier"
+      },
+      {
+        "@value": "zwart krijt"
+      }
+    ]
+  },
+  {
+    "@id": "_:b1",
+    "@type": [
+      "http://schemas.delving.eu/nave/terms/DelvingResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/allowDeepZoom": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowLinkedOpenData": [
+      {
+        "@value": "true"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/allowSourceDownload": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/featured": [
+      {
+        "@value": "false"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/public": [
+      {
+        "@value": "true"
+      }
+    ]
+  },
+  {
+    "@id": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg",
+    "@type": [
+      "http://www.europeana.eu/schemas/edm/WebResource"
+    ],
+    "http://schemas.delving.eu/nave/terms/resourceSortOrder": [
+      {
+        "@value": "1"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbLarge": [
+      {
+        "@value": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbMedium": [
+      {
+        "@value": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg"
+      }
+    ],
+    "http://schemas.delving.eu/nave/terms/thumbSmall": [
+      {
+        "@value": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg"
+      }
+    ]
+  }
+]
