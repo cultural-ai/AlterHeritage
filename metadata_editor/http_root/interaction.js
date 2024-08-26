@@ -223,6 +223,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
+  // image zoom
+  const imageToZoom = document.getElementById('object-image');
+  const panzoom = Panzoom(imageToZoom, {
+        maxScale: 4, // max zoom
+        minScale: 1,
+        contain: 'false'
+    });
+
+  // zoom-in button
+  document.getElementById('zoomin').addEventListener('click', function() {
+    panzoom.zoomIn(); 
+    });
+
+  // zoom-out button
+  document.getElementById('zoomout').addEventListener('click', function() {
+    panzoom.zoomOut();
+    });
+
+  // mouse wheel zooming
+  element.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+
   // submit object
  const submitButton = document.getElementById('submit_btn');
  const disabledDiv = document.getElementById('disabled_tooltip');
@@ -434,29 +455,25 @@ function insertAddField(div) {
 
   // add the field group input
   const fieldInputGroup = document.createElement('div');
-  fieldInputGroup.className = 'row field_input_group div_hidden';
+  fieldInputGroup.className = 'field_input_group div_hidden';
   fieldInputGroup.id = 'add_new_field_group';
   fieldInputGroup.innerHTML = `
-    <div class="col-md-2 field_names">
-
-      <input type="text" class="form-control field_name_input" placeholder="Veldnaam">
-      
+    <div class="row">
+      <div class="col-auto field_names">
+        <input type="text" class="form-control field_name_input" placeholder="Veldnaam">
+      </div>
     </div>
-
-    <div class="col-md-8 field_value_area">
 
     <div class="row">
-      <textarea class="form-control field_value_input"></textarea>
-    </div>
+      <div class="col-md-10 field_value_area">
+        <textarea class="form-control field_value_input"></textarea>
+      </div>
 
-    </div>
-
-    <div class="col-md-2 field_button_input">
-
-      <button title="Een veld toevoegen" class="btn btn-outline-secondary btn-sm check_add_field_btn" type="button" disabled="true">
-        <i class="bi bi-check-lg check_add_field_icon"></i>
-      </button>
-
+      <div class="col-md-2 field_button_input">
+        <button title="Een veld toevoegen" class="btn btn-outline-secondary btn-sm check_add_field_btn" type="button" disabled="true">
+            <i class="bi bi-check-lg check_add_field_icon"></i>
+        </button>
+      </div>
     </div>
       `;
 
@@ -492,39 +509,42 @@ function embedFields(objectFields,div) {
 
   objectFields.forEach(field => {
   const fieldDiv = document.createElement('div');
-  fieldDiv.className = 'row field_group';
+  fieldDiv.className = 'field_group';
   fieldDiv.id = `field_group_${field.property}`;
 
   if (field.type === 'editable' && field.removed === 'False') {
     fieldDiv.innerHTML = `
-    <div class="col-md-2 field_names">
-      <label for="${field.property}">${field.name}</label>
+    <div class="row">
+      <div class="col-auto field_names">
+        <label for="${field.property}">${field.name}</label>
+      </div>
     </div>
 
-    <div class="col-md-8 field_value_area" id="container_${field.property}">
-      <div class="row">
+    <div class="row">
+      <div class="col-md-10 field_value_area" id="container_${field.property}">
         <textarea class="form-control editable_field" id="${field.property}">${field.value}</textarea>
       </div>
-    </div>
-              
-    <div class="col-md-2 field_btns">
-      <div class="row upper_btns">
+                
+      <div class="col-md-2 field_btns">
+        <div class="row upper_btns">
 
-        <button title="Verbergen ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${field.property}" field-id="${field.property}">
-          <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
-        </button>
+          <button title="Verbergen ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${field.property}" field-id="${field.property}">
+            <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
+          </button>
 
-        <button title="Verwijderen ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
-          <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
-        </button>
+          <button title="Verwijderen ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
+            <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
+          </button>
 
-      </div>
+        </div>
 
-      <div class="row down_btns">
+        <div class="row down_btns">
 
-        <button title="Een notitie toevoegen toe ann ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+          <button title="Een notitie toevoegen toe ann ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
 
-        <button title="Een waarschuwing toevoegen toe aan ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${field.property}" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+          <button title="Een waarschuwing toevoegen toe aan ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${field.property}" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+
+        </div>
 
       </div>
 
@@ -548,11 +568,16 @@ function embedFields(objectFields,div) {
 
   if (field.type === 'keywords') {
     fieldDiv.innerHTML = `
-    <div class="col-md-2 field_names">
-      <label for="${field.property}">${field.name}</label>
+    <div class="row">
+      <div class="col-auto field_names">
+        <label for="${field.property}">${field.name}</label>
+      </div>
     </div>
-    <div class="col-md-10 field_value_area">
-      <div id="subject-terms-container"></div>
+
+    <div class="row">
+      <div class="col-md-12 field_value_area">
+        <div id="subject-terms-container"></div>
+      </div>
     </div>
     `
 
@@ -594,11 +619,16 @@ function embedFields(objectFields,div) {
 
   if (field.type === 'non-editable') {
     fieldDiv.innerHTML = `
-    <div class="col-md-2 field_names">
-      <label for="${field.property}">${field.name}</label>
+    <div class="row">
+      <div class="col-auto field_names">
+        <label for="${field.property}">${field.name}</label>
+      </div>
     </div>
-    <div class="col-md-10 field_value_area">
-      <p id="non-editable-field-value">${field.value}</p>
+
+    <div class="row">
+      <div class="col-md-12 field_value_area">
+        <p id="non-editable-field-value">${field.value}</p>
+      </div>
     </div>
     `
     div.appendChild(fieldDiv);
@@ -658,19 +688,21 @@ function addField() {
   const fieldValue = fieldValueInput.value.trim();
 
   const fieldDiv = document.createElement('div');
-  fieldDiv.className = 'row field_group';
+  fieldDiv.className = 'field_group';
   fieldDiv.id = `field_group_${fieldName.replace(' ','').toLowerCase()}${fields_count}`;
   const userFieldID = `${fieldName.replace(' ','').toLowerCase()}${fields_count}`;
 
   fieldDiv.innerHTML = `
-      <div class="col-md-2 field_names">
+    <div class="row">
+      <div class="col-auto field_names">
         <label for="${userFieldID}">${fieldName}</label>
       </div>
+    </div>
 
-      <div class="col-md-8 field_value_area" id="container_${userFieldID}">
-        <div class="row">
+    <div class="row">
+
+      <div class="col-md-10 field_value_area" id="container_${userFieldID}">
           <textarea class="form-control" id="${userFieldID}">${fieldValue}</textarea>
-        </div>
       </div>
                 
       <div class="col-md-2 field_btns">
@@ -695,6 +727,8 @@ function addField() {
         </div>
 
       </div>
+
+    </div>
       `;
 
   objectMetadataContainer.insertBefore(fieldDiv,firstField);
@@ -708,6 +742,8 @@ function addField() {
   fieldNameInput.value = ''; // clearing the filed input field
   fieldValueInput.value = '';
   fields_count += 1;
+
+  fieldGroup.classList.add('div_hidden');
 
   // modify user data
   const userAddedField = {

@@ -122,18 +122,58 @@
     padding-left: 20px !important;
 }
 
-.image-container {
+.img_block {
     margin-bottom: 20px;
-    width: 100% !important;
     background-color: #f2f2f2;
-    justify-content: center;
-    display: flex;
     border: 1px;
     border-radius: 4px;
+    justify-content: end;
+}
+
+.image-container {
+    width: 100% !important;
+    overflow: hidden;
+    justify-content: center !important;
+    display: flex;
   }
 
 .img-fluid{
     max-height: 480px;
+}
+
+.zoom_controls {
+	display: inline-flex !important;
+	width: fit-content !important;
+	align-content: center;
+	margin: -32px 54px 12px 0px !important;
+	padding: 0px !important;
+}
+
+.zoom_btn {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+#zoomin {
+	color: #787878 !important;
+	border: none !important;
+	background-color: rgba(255, 255, 255, 0.76) !important;
+}
+
+#zoomin:hover {
+	color: #222222 !important;
+	background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+#zoomout {
+	color: #787878 !important;
+	border: none !important;
+	background-color: rgba(255, 255, 255, 0.76) !important;
+}
+
+#zoomout:hover {
+	color: #222222 !important;
+	background-color: rgba(255, 255, 255, 0.96) !important;
 }
 
 .object_metadata {
@@ -141,8 +181,7 @@
 }
 
 .field_group {
-    margin-bottom: 20px;
-    margin-top: 20px !important;
+    margin-top: 16px !important;
     transition: opacity 1s ease-out;
     flex-wrap: nowrap !important;
     overflow: hidden;
@@ -153,9 +192,10 @@
 }
 
 .field_names {
-    text-align: end;
-    padding-right: 10px !important;
-    padding-left: 0px !important;
+	padding: 0px 0px 8px 12px !important;
+	font-size: 16px;
+	font-weight: 400;
+	color: #919191;
 }
 
 .form-control {
@@ -189,10 +229,10 @@
 
 .add_field_btn {
 	width: 100%;
-	background-color: #919191 !important;
-	border-color: #919191 !important;
+	background-color: #d3d3d3 !important;
+	border-color: #d3d3d3 !important;
     border-radius: 4px !important;
-    color: white !important;
+    color: #383838 !important;
 }
 
 .add_field_btn:hover {
@@ -291,8 +331,9 @@
 .field_name_input {
     min-height: 32px !important;
     height: 32px !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     padding: 4px !important;
+    color: #919191 !important;
 }
 
 .field_button_input {
@@ -326,9 +367,6 @@
 	padding: 0px !important;
 }
 
-.note_icon_col {
-	padding: 0px 4px 0px 0px !important;
-}
 
 .note_icon {
     font-size: 1.2rem;
@@ -373,10 +411,6 @@
     padding: 0px !important;
 }
 
-.warning_icon_col {
-    padding: 0px 4px 0px 0px !important;
-}
-
 .warning_icon {
     font-size: 1.2rem;
     color: #8c2020;
@@ -412,24 +446,23 @@
 
 /* Keywords */
 
-#field_group_dc\:subject {
-	margin-top: 40px !important;
-}
-
 #field_group_empty_keywords {
     margin-top: 40px !important;
 }
 
 #subject-terms-container {
 	display: inline-block;
+    vertical-align: middle;
+    margin-top: 20px;
 }
 
 .subject-term {
 	display: inline-grid;
-	margin: 0px 16px 30px 6px;
+	margin: 0px 8px 30px 0px;
 	text-align: end;
     transition: opacity 1s ease-out;
     justify-items: end;
+    vertical-align: middle;
 }
 
 .subject-term-button {
@@ -441,8 +474,9 @@
 }
 
 .note-button {
-    position: absolute;
+    position: relative;
     margin-right: 48px;
+    margin-bottom: -8px;
     border-color: blue !important;
     color: blue !important;
 }
@@ -460,8 +494,9 @@
 }
 
 .hide-button {
-    position: absolute;
+    position: relative;
     margin-right: 26px;
+    margin-bottom: -8px;
 }
 
 .hide-button:hover {
@@ -471,8 +506,9 @@
 }
 
 .remove-button {
-    position: absolute;
+    position: relative;
     margin-right: 4px;
+    margin-bottom: -8px;
     border-color: #ef6868 !important;
     color: #ef6868 !important;
 }
@@ -488,12 +524,11 @@
 }
 
 .add_keyword_btn {
-    width: 36px !important;
-    height: 36px !important;
-    margin-left: 8px;
-    background-color: #919191 !important;
-	border-color: #919191 !important;
-    color: white !important;
+    width: 33px !important;
+    height: 33px !important;
+    background-color: #d3d3d3 !important;
+	border-color: #d3d3d3 !important;
+    color: #383838 !important;
 }
 
 .add_keyword_btn:hover {
@@ -506,6 +541,8 @@
 
 .add_keyword_tooltip {
 	display: inline-flex;
+    vertical-align: middle;
+    margin-bottom: 30px;
 }
 
 #keyword_input {
@@ -523,7 +560,7 @@
 
 .keyword_input_field {
     max-width: 82px !important;
-    min-height: 36px !important;
+    min-height: 33px !important;
     padding: 4px !important;
     border-bottom-left-radius: 4px !important;
     border-top-left-radius: 4px !important;
@@ -533,7 +570,7 @@
 }
 
 #tooltip_add_btn {
-	height: 36px !important;
+	height: 33px !important;
 	width: 28px;
 	padding: 0px !important;
     border-bottom-right-radius: 4px;
@@ -709,10 +746,7 @@
 .instruction_buttons {
 	width: fit-content !important;
     margin-bottom: 10px;
-}
-
-.instruction_button_text {
-	padding: 0px !important;
+    padding-right: 0px !important;
 }
 
 .instruction_btn {
@@ -723,12 +757,13 @@
 }
 
 .add_field_instruction_btn {
-	width: 120px !important;
-	height: 40px !important;
+	width: fit-content !important;
+	height: 31px !important;
+    padding: 0px 2px 0px 2px !important;
 	font-size: 12px !important;
-	background-color: #919191 !important;
-	border-color: #919191!important;
-    color: white !important;
+	background-color: #d3d3d3 !important;
+	border-color: #d3d3d3!important;
+    color: #383838 !important;
 }
 
 .hide_instruction_btn {
@@ -757,9 +792,9 @@
 }
 
 .add_keyword_instruction_btn {
-    color: white !important;
-    background-color: #919191 !important;
-    border-color: #919191 !important;
+    color: #383838 !important;
+    background-color: #d3d3d3 !important;
+    border-color: #d3d3d3 !important;
 }
 
     /* controls */
@@ -872,6 +907,15 @@
     vertical-align: super;
 }
 
+.radios {
+    padding-left: 18px !important;
+}
+
+.form-check {
+    padding-left: 12px !important;
+    margin-bottom: 12px !important;
+}
+
 .form-check-inline {
 	display: inline-grid !important;
 	margin-right: 0.6rem !important;
@@ -886,9 +930,9 @@
 }
 
 .form-check-label {
-	position: absolute !important;
-	margin-left: -20px !important;
+	margin: -24px 0px 0px -20px !important;
 	font-size: 12px !important;
+    pointer-events: none !important;
 }
 
 .form-check-input:checked {
