@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
   // mouse wheel zooming
-  element.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+  imageToZoom.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
 
   // submit object
  const submitButton = document.getElementById('submit_btn');
