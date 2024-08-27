@@ -877,7 +877,7 @@ function addFieldWarning(fieldId, warningValue) {
   warning.innerHTML = `
     <div class="col-md-1 warning_icon_col"><i class="bi bi-exclamation-triangle-fill warning_icon"></i></div>
     <div class="col-md-10 warning_col">
-      <textarea id="${textareaId}" class="warning-form form-control" placeholder="Waarschuwin">${warningValue}</textarea>
+      <textarea id="${textareaId}" class="warning-form form-control" placeholder="Waarschuwing">${warningValue}</textarea>
     </div>
     <div class="col-md-1 remove_warning_col">
     </div>
