@@ -345,7 +345,7 @@
  {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2014-05-27T18:56:00.633Z", "type": "non-editable"},
  {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "2018-03-17T14:17:52.966Z", "type": "non-editable"}]},
 
- {"object_id": "https://www.europeana.eu/en/item/9200401/BibliographicResource_1000056256119", "img": "img/SGD_19821983_0001177.jpeg", "fields":
+ {"object_id": "https://www.europeana.eu/en/item/9200401/BibliographicResource_1000056256119", "img": " https://alterheritage.project.cwi.nl/img/SGD_19821983_0001177.jpeg", "fields":
 [{"name": "Title", "property": "europeana_title", "value": " Aanhangsel Tweede Kamer 1982-1983 nummer 506", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
 {"name": "Description", "property": "europeana_description", "value": " Aanhangsel Tweede Kamer 1982-1983 nummer 506", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
  {"name": "Subject", "property": "europeana_subject", "value": {"Tweede Kamer": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"}, "Vragen van de leden Dales en Haas-Berger (beiden P.v.d.A.) over homofiele sollicitanten": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"}},"type": "keywords"},
