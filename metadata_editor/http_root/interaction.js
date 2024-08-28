@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', async() => {
   const body = document.body;
   const firstDiv = body.children[0];
 
+  // loading tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
   // check if user has a consent (to show the consent screen only once)
   if (userConsent[userId] === "False") {
     // creating the consent screen
@@ -105,9 +109,53 @@ document.addEventListener('DOMContentLoaded', async() => {
     content.classList.add('making_visible');
   };
 
-});
+  // questions radio listener
+  const radioInputs = document.querySelectorAll('.form-check-input');
+  radioInputs.forEach(radio => {
+    radio.addEventListener('change', () => {
+      updateRadioInput(radio.id, radio.value);
+      checkSubmitAllowed(); // check if submitting is allowed
+    });
+  });
 
-// Left column: listener for buttons inside 'object_metadata_container'
+  // questions textarea input listener
+  const textareaInputs = document.querySelectorAll('.open_question_input');
+  textareaInputs.forEach(textarea => {
+    textarea.addEventListener('input', () => {
+      updateTextareaResponsesInput(textarea.id, textarea.value.trim());
+      // check if submit allowed only if the textarea belongs to the 3rd question
+      if (textarea.id === `${objectIndex}_q3_text`) {
+        checkSubmitAllowed();
+      }
+    });
+  });
+
+  // submit object
+  const submitButton = document.getElementById('submit_btn');
+  const disabledDiv = document.getElementById('disabled_tooltip');
+  submitButton.addEventListener('click', () => {
+  // first, check if the submission is successful
+  submitSuccessful = submitData(userFilename, userData, true); // true = notify user
+    if (submitSuccessful && userSubmitted[objectId] === "False") {
+      markObjectSubmitted(); // display a corresponding checkmark
+      submitData(submittedFilename, userSubmitted, false); // set objects as submitted, do not notify user
+    }
+    submitData(responsesFilename, userResponses, false); // submit responses, do not notify user
+    // check if all objects have been submitted
+    checkAllSubmitted();
+  });
+
+  // restore object
+  const restoreButton = document.getElementById('restore_btn');
+  restoreButton.addEventListener('click', () => {
+  // ensuring a deep copy of the origianl data
+  userData.objects[objectIndex].fields = JSON.parse(JSON.stringify(originalData.objects[objectIndex].fields));
+  embedObject(userData,objectIndex)
+  });
+    
+  });
+
+// Click listeners for buttons inside 'object_metadata_container'
 
 document.getElementById('object_metadata_container').addEventListener('click', function(event) {
 
@@ -194,86 +242,6 @@ document.getElementById('object_metadata_container').addEventListener('click', f
 
 });
 
-// Right column listeners: controls and questions; saving user data
-
-document.addEventListener('DOMContentLoaded', (event) => {
-
-  // defining tooltips
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
-  // questions radio listener
-  const radioInputs = document.querySelectorAll('.form-check-input');
-  radioInputs.forEach(radio => {
-    radio.addEventListener('change', () => {
-      updateRadioInput(radio.id, radio.value);
-      checkSubmitAllowed(); // check if submitting is allowed
-    });
-  });
-
-  // questions textarea input listener
-  const textareaInputs = document.querySelectorAll('.open_question_input');
-  textareaInputs.forEach(textarea => {
-    textarea.addEventListener('input', () => {
-      updateTextareaResponsesInput(textarea.id, textarea.value.trim());
-      // check if submit allowed only if the textarea belongs to the 3rd question
-      if (textarea.id === `${objectIndex}_q3_text`) {
-        checkSubmitAllowed();
-      }
-    });
-  });
-
-  // image zoom
-  const imageToZoom = document.getElementById('object-image');
-  const panzoom = Panzoom(imageToZoom, {
-        maxScale: 4, // max zoom
-        minScale: 1,
-        contain: 'false'
-    });
-
-  // zoom-in button
-  document.getElementById('zoomin').addEventListener('click', function() {
-    panzoom.zoomIn(); 
-    });
-
-  // zoom-out button
-  document.getElementById('zoomout').addEventListener('click', function() {
-    panzoom.zoomOut();
-    });
-
-  // mouse wheel zooming
-  imageToZoom.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
-
-  // submit object
- const submitButton = document.getElementById('submit_btn');
- const disabledDiv = document.getElementById('disabled_tooltip');
- submitButton.addEventListener('click', () => {
-  // first, check if the submission is successful
-  submitSuccessful = submitData(userFilename, userData, true); // true = notify user
-    if (submitSuccessful && userSubmitted[objectId] === "False") {
-      markObjectSubmitted(); // display a corresponding checkmark
-      submitData(submittedFilename, userSubmitted, false); // set objects as submitted, do not notify user
-    }
-    submitData(responsesFilename, userResponses, false); // submit responses, do not notify user
-    // check if all objects have been submitted
-    checkAllSubmitted();
-  });
-
-  // if the submit button is disabled, show a tooltip
-  if (submitButton.disabled) {
-    disabledDiv.setAttribute('data-bs-original-title','Answer the mandatory questions below before submitting');
-  }
-
-  // restore object
-  const restoreButton = document.getElementById('restore_btn');
-  restoreButton.addEventListener('click', () => {
-    // ensuring a deep copy of the origianl data
-  userData.objects[objectIndex].fields = JSON.parse(JSON.stringify(originalData.objects[objectIndex].fields));
-  embedObject(userData,objectIndex)
-  });
-
-});
-
 // - // - // - FUNCTIONS - // - // - //
 
 function getUserId() {
@@ -298,6 +266,28 @@ function embedObject(data,objectIndex) {
   const imgContainer = document.getElementById('object-image');
   const img_url = data.objects[objectIndex].img;
   imgContainer.src = img_url;
+
+  // image zoom
+  let imageToZoom = document.getElementById('object-image');
+  let panzoom = Panzoom(imageToZoom, {
+        maxScale: 4, // max zoom
+        minScale: 1,
+        contain: 'false'
+    });
+
+  // reset initial zoom
+  panzoom.reset();
+
+  // zoom-in button
+  document.getElementById('zoomin').addEventListener('click', function() {
+    panzoom.zoomIn(); 
+    });
+  // zoom-out button
+  document.getElementById('zoomout').addEventListener('click', function() {
+    panzoom.zoomOut();
+    });
+  // mouse wheel zooming
+  imageToZoom.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
 
   // the main container for object's metadata
   const objectMetadataContainer = document.getElementById('object_metadata_container');
@@ -331,6 +321,10 @@ function embedObject(data,objectIndex) {
   
   // check if all objects have been submitted, notify users if yes
   checkAllSubmitted();
+
+  // defining tooltips
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
 
 async function requestData(path) {
@@ -1274,9 +1268,13 @@ function setPagination(numObjects,userId) {
 
   // setting submitted icons
 
-  Object.entries(userSubmitted).forEach(([key, value], index) => {
+  Object.entries(userSubmitted).forEach(([key, value]) => {
+
+    // get object index (!NB objects in userSubmitted may have different indexes)
+    let object_index = userData.objects.findIndex(obj => obj.object_id === key);
+
     if (value === "True") {
-      const submitIcon = document.getElementById(`submit_icon_${index + 1}`);
+      const submitIcon = document.getElementById(`submit_icon_${object_index + 1}`);
       submitIcon.style.display = "block";
     }
   });
@@ -1320,7 +1318,6 @@ function setActivePage(pageNumber) {
 
   objectIndex = pageNumber - 1;
   embedObject(userData, objectIndex);
-
 }
 
 function loadPaginationButtons(numObjects,userId) {
@@ -1481,6 +1478,7 @@ function checkSubmitAllowed() {
       }
   else {
         submitButton.setAttribute('disabled','true');
-        disabledDiv.setAttribute('data-bs-original-title','Beantwoord de verplichte vragen hieronder voordat u dit object  indient');
+        disabledDiv.setAttribute('data-bs-original-title','Beantwoord de verplichte vragen aan de rechterkant voordat u dit object  indient');
+        disabledDiv.setAttribute('data-bs-placement','right');
   }
 }

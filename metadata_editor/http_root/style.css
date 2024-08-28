@@ -59,9 +59,14 @@
 	border-radius: 4px;
 }
 
+.general_instructions_row {
+    padding-bottom: 6px;
+}
+
 .instructions_text {
     font-size: 14px !important;
     margin-bottom: 8px;
+    padding-left: 0px !important;
 }
 
 .instructions_text a {
@@ -78,21 +83,15 @@
 	padding: 0px 2px 2px 2px;
 }
 
-.text_below_instructions {
-    margin-top:12px !important;
-}
-
 .instructions_icon {
 	font-size: 1.2rem;
 	color: #6c757d;
 }
 
-.left_instructions {
-	margin-right: 72px;
-}
-
 .instr_icon_col {
     padding: 0px !important;
+    margin-top: -2px !important;
+    max-width: fit-content !important;
 }
 
 .accordion {
@@ -116,14 +115,95 @@
 	box-shadow: none !important;
 }
 
-/* Left column: Object annotation */
+/* instructions body */
+
+.instructions_yellow {
+    padding-right: 8px !important;
+}
+
+.instructions_yellow_col {
+	background-color: #fff5d6;
+    border-radius: 4px;
+    padding: 8px 0px 0px 8px;
+    margin: 0px 0px 12px 0px;
+    max-width: fit-content;
+}
+
+.instruction_legend {
+    align-items: center;
+}
+
+.button_explainers {
+    font-size: 12px !important;
+    margin-bottom: 6px;
+}
+
+.instruction_buttons {
+	width: fit-content !important;
+    margin-bottom: 8px;
+    padding-right: 0px !important;
+}
+
+.instruction_btn {
+	width: 32px !important;
+	height: 32px !important;
+	padding: 0px !important;
+    opacity: 1 !important;
+}
+
+.add_field_instruction_btn {
+	width: fit-content !important;
+	height: 31px !important;
+    padding: 0px 2px 0px 2px !important;
+	font-size: 12px !important;
+	background-color: #d3d3d3 !important;
+	border-color: #d3d3d3!important;
+    color: #383838 !important;
+}
+
+.hide_instruction_btn {
+    color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+.show_instruction_btn {
+    color: #6c757d !important;
+    border-color: #6c757d !important;
+}
+
+.remove_instruction_btn {
+    color: #ef6868 !important;
+    border-color: #ef6868 !important;
+}
+
+.note_instruction_btn {
+    color: blue !important;
+    border-color: blue !important;
+}
+
+.warning_instruction_btn {
+    color: darkred !important;
+    border-color: darkred !important;
+}
+
+.add_keyword_instruction_btn {
+    color: #383838 !important;
+    background-color: #d3d3d3 !important;
+    border-color: #d3d3d3 !important;
+}
+
+/* Left column: controls, object annotation */
 
 .annotation_column {
     padding-left: 20px !important;
 }
 
+    /* image and zoom */
+
 .img_block {
-    margin-bottom: 20px;
+    height: 492px;
+    padding: 12px;
+    margin-bottom: 28px;
     background-color: #f2f2f2;
     border: 1px;
     border-radius: 4px;
@@ -132,21 +212,20 @@
 
 .image-container {
     width: 100% !important;
-    overflow: hidden;
+    overflow: hidden !important;
     justify-content: center !important;
-    display: flex;
+    align-content: center !important; 
+    display: grid;
   }
 
-.img-fluid{
-    max-height: 480px;
+.img-fluid {
+    max-height: 468px;
 }
 
 .zoom_controls {
-	display: inline-flex !important;
+    position: absolute;
 	width: fit-content !important;
-	align-content: center;
-	margin: -32px 54px 12px 0px !important;
-	padding: 0px !important;
+	padding: 442px 32px 0px 0px !important;
 }
 
 .zoom_btn {
@@ -174,6 +253,89 @@
 #zoomout:hover {
 	color: #222222 !important;
 	background-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+    /* controls */
+
+.controls {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+.control_buttons {
+    max-width: fit-content !important;
+}
+
+.restore_btn {
+	height: 35px;
+	border-color: #ea9561 !important;
+	background-color: #ea9561 !important;
+	color: white !important;
+    font-size: 14px !important;
+}
+
+.restore_btn:hover {
+	box-shadow: 0 0 0 .25rem rgba(241, 93, 13, 0.15) !important;
+}
+
+.pagination_btns {
+	justify-content: center;
+	display: grid;
+    height: 35px;
+}
+
+.page-link {
+	color: #000 !important;
+    font-size: 14px !important;
+}
+
+.active > .page-link {
+	background-color: #6c757d !important;
+    border-color: #6c757d !important;
+	color: white !important;
+}
+
+.disabled > .page-link {
+        background-color: #d3d3d3 !important;
+}
+
+.page-link:focus {
+	box-shadow: none !important;
+    background-color: none !important;
+}
+
+.submitted_icon {
+    color: #449d5f;
+    position: absolute;
+    padding-left: 8px;
+    font-size: 1rem;
+    display: none;
+}
+
+.submit_btn_place {
+    display: grid;
+    justify-items: end;
+    padding-right: 0px !important;
+}
+
+.submit_btn {
+    height: 35px;
+    border-color: #449d5f !important;
+    background-color: #449d5f !important;
+    color: white !important;
+    font-size: 14px !important;
+}
+
+.submit_btn:hover {
+    box-shadow: 0 0 0 .25rem rgba(68, 157, 95, 0.3) !important;
+}
+
+.disabled_submit_tooltip {
+    --bs-tooltip-bg: #d3d3d3 !important;
+    --bs-tooltip-color: rgb(26, 26, 26) !important;
+    font-size: 12px !important;
+    margin-top: -8px !important;
 }
 
 .object_metadata {
@@ -211,7 +373,7 @@
     border: 1px;
 }
 
-/* Field buttons */
+    /* Field buttons */
 
 .field_btns {
     display: flex;
@@ -453,12 +615,13 @@
 #subject-terms-container {
 	display: inline-block;
     vertical-align: middle;
-    margin-top: 20px;
+    margin-top: 16px;
+    margin-left: 42px;
 }
 
 .subject-term {
 	display: inline-grid;
-	margin: 0px 8px 30px 0px;
+	margin: 0px 8px 28px 0px;
 	text-align: end;
     transition: opacity 1s ease-out;
     justify-items: end;
@@ -542,7 +705,7 @@
 .add_keyword_tooltip {
 	display: inline-flex;
     vertical-align: middle;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 #keyword_input {
@@ -635,8 +798,8 @@
 	display: grid;
 	justify-items: center;
 	align-items: center;
-	margin-right: -32px;
-    width: 180px;
+	margin-right: -12px;
+    width: 140px;
 }
 
 .add_note_tooltip_hidden {
@@ -673,209 +836,13 @@
     --bs-tooltip-bg: #d3d3d3 !important;
     --bs-tooltip-color: rgb(26, 26, 26) !important;
     font-size: 12px !important;
-    margin-top: 4px !important;
+    margin-top: 0px !important;
 }
 
-/* Right column: instructions, controls, questions */
+/* Right column: questions */
 
-    /* notifications */
-
-#notification_submitted {
-    position: fixed;
-    top: 126px;
-    right: 8px;
-    width: fit-content;
-    z-index: 1000;
-  }
-
-#all_submitted_notification {
-    position: fixed;
-    top: 10px;
-    right: 8px;
-    width: 440px;
-    z-index: 1000;
-  }
-  
-.notification_green {
-    font-size: 14px;
-    background-color: #449d5fe3;
-    color: white;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(130, 130, 130, 0.1);
-    transition: opacity 1s ease-in-out;
-    opacity: 0;
-}
-
-.notification_red {
-    font-size: 14px;
-    background-color: #8b0000c0;
-    color: rgb(255, 213, 213);
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(130, 130, 130, 0.1);
-    transition: opacity 1s ease-in-out;
-    opacity: 0;
-}
-
-    /* instructions */
-
-.instructions_column {
+.questions_column {
     padding-left: 28px !important;
-}
-
-.instructions_yellow {
-    padding-right: 8px !important;
-}
-
-.instructions_yellow_col {
-	height:fit-content;
-	background-color: #fff5d6;
-    border-radius: 4px;
-    padding: 12px;
-    margin-bottom: 20px;
-}
-
-.button_explainers {
-    font-size: 12px !important;
-    margin-bottom: 2px;
-}
-
-.instruction_buttons {
-	width: fit-content !important;
-    margin-bottom: 10px;
-    padding-right: 0px !important;
-}
-
-.instruction_btn {
-	width: 32px !important;
-	height: 32px !important;
-	padding: 0px !important;
-    opacity: 1 !important;
-}
-
-.add_field_instruction_btn {
-	width: fit-content !important;
-	height: 31px !important;
-    padding: 0px 2px 0px 2px !important;
-	font-size: 12px !important;
-	background-color: #d3d3d3 !important;
-	border-color: #d3d3d3!important;
-    color: #383838 !important;
-}
-
-.hide_instruction_btn {
-    color: #6c757d !important;
-    border-color: #6c757d !important;
-}
-
-.show_instruction_btn {
-    color: #6c757d !important;
-    border-color: #6c757d !important;
-}
-
-.remove_instruction_btn {
-    color: #ef6868 !important;
-    border-color: #ef6868 !important;
-}
-
-.note_instruction_btn {
-    color: blue !important;
-    border-color: blue !important;
-}
-
-.warning_instruction_btn {
-    color: darkred !important;
-    border-color: darkred !important;
-}
-
-.add_keyword_instruction_btn {
-    color: #383838 !important;
-    background-color: #d3d3d3 !important;
-    border-color: #d3d3d3 !important;
-}
-
-    /* controls */
-
-.controls {
-    width: 100% !important;
-    justify-content: center;
-}
-
-.control_buttons {
-    max-width: fit-content !important;
-}
-
-.restore_btn {
-	height: 38px;
-	border-color: #ea9561 !important;
-	background-color: #ea9561 !important;
-	color: white !important;
-    font-size: 14px !important;
-}
-
-.restore_btn:hover {
-	box-shadow: 0 0 0 .25rem rgba(241, 93, 13, 0.15) !important;
-}
-
-.pagination_btns {
-	justify-content: center;
-	display: grid;
-}
-
-.page-link {
-	color: #000 !important;
-    font-size: 14px !important;
-}
-
-.active > .page-link {
-	background-color: #6c757d !important;
-    border-color: #6c757d !important;
-	color: white !important;
-}
-
-.disabled > .page-link {
-        background-color: #d3d3d3 !important;
-}
-
-.page-link:focus {
-	box-shadow: none !important;
-    background-color: none !important;
-}
-
-.submitted_icon {
-    color: #449d5f;
-    position: absolute;
-    padding-left: 8px;
-    font-size: 1rem;
-    display: none;
-}
-
-.submit_btn_place {
-    display: grid;
-    justify-items: end;
-    padding-right: 0px !important;
-}
-
-.submit_btn {
-    height: 38px;
-    border-color: #449d5f !important;
-    background-color: #449d5f !important;
-    color: white !important;
-    font-size: 14px !important;
-}
-
-.submit_btn:hover {
-    box-shadow: 0 0 0 .25rem rgba(68, 157, 95, 0.3) !important;
-}
-
-.disabled_submit_tooltip {
-    --bs-tooltip-bg: #d3d3d3 !important;
-    --bs-tooltip-color: rgb(26, 26, 26) !important;
-    font-size: 12px !important;
-    margin-top: -8px !important;
 }
 
     /* questions */
@@ -884,10 +851,14 @@
     padding-right: 8px !important;
 }
 
+p.above_questions_text {
+    margin-bottom: 0px !important;
+}
+
 .above_questions_col {
     background-color: #f2f2f2;
     padding: 12px;
-    margin: 16px 0px 10px 0px !important;
+    margin: 0px 0px 12px 0px !important;
     font-size: 14px;
     border-radius: 4px;
 }
@@ -951,4 +922,46 @@
 
 .form-check-input:focus {
 	box-shadow: 0 0 0 .2rem rgba(168, 168, 168, 0.25) !important;
+}
+
+    /* notifications */
+
+#notification_submitted {
+    position: fixed;
+    top: 126px;
+    right: 8px;
+    width: fit-content;
+    z-index: 1000;
+  }
+
+#all_submitted_notification {
+    position: fixed;
+    top: 10px;
+    right: 8px;
+    width: 440px;
+    z-index: 1000;
+  }
+  
+.notification_green {
+    font-size: 14px;
+    background-color: #449d5fe3;
+    color: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(130, 130, 130, 0.1);
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.notification_red {
+    font-size: 14px;
+    background-color: #8b0000c0;
+    color: rgb(255, 213, 213);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(130, 130, 130, 0.1);
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
 }
