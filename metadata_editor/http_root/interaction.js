@@ -1479,6 +1479,6 @@ function checkSubmitAllowed() {
   else {
         submitButton.setAttribute('disabled','true');
         disabledDiv.setAttribute('data-bs-original-title','Beantwoord de verplichte vragen aan de rechterkant voordat u dit object  indient');
-        disabledDiv.setAttribute('data-bs-placement','right');
+        disabledDiv.setAttribute('data-bs-placement','bottom');
   }
 }

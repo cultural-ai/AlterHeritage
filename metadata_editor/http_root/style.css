@@ -335,7 +335,7 @@
     --bs-tooltip-bg: #d3d3d3 !important;
     --bs-tooltip-color: rgb(26, 26, 26) !important;
     font-size: 12px !important;
-    margin-top: -8px !important;
+    margin-top: 4px !important;
 }
 
 .object_metadata {

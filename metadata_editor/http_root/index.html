@@ -33,7 +33,7 @@
 
                   <div class="col-md-1 instr_icon_col"><i class="bi bi-1-square-fill instructions_icon"></i></div>
                   <div class="col-md-11">
-                    <p class="instructions_text">Je krijgt zes archiefobjecten te zien van Nederlandse culturele erfgoedinstellingen. Deze objecten zijn gerelateerd aan LHBTQ+ thema's. Het is jouw taak om de metadata van elk object te beoordelen en te bewerken om ze meer inclusief te maken voor LHBTQ+ personen.
+                    <p class="instructions_text">Je krijgt zes archiefobjecten te zien van Nederlandse culturele erfgoedinstellingen. Deze objecten zijn gerelateerd aan LHBTQ+ thema's. Het is jouw taak om de metadata van elk object te beoordelen en, indien nodig, te bewerken om ze inclusiever te maken.
                     </p>
                   </div>
 
@@ -140,6 +140,26 @@
 
       <div class="col-md-6 annotation_column">
 
+        <div class="row img_block">
+            <div class="image-container">
+                <img src="" class="img-fluid" id="object-image">
+            </div>
+
+            <div class="zoom_controls">
+                <div class="btn-group btn-group-sm zoom_btn" role="group">
+                    <button title="Zoom in" type="button" class="btn btn-outline-primary zoom_in_btn" id="zoomin"><i class="bi bi-zoom-in"></i></button>
+                    <button title="Zoom out" type="button" class="btn btn-outline-primary zoom_out_btn" id="zoomout"><i class="bi bi-zoom-out"></i></button>
+              </div>
+            </div>
+        </div>
+      
+        <div class="object_metadata" id="object_metadata_container">
+        </div>
+
+      </div>
+
+      <div class="col-md-6 questions_column">
+
         <div class="row controls">
 
           <div class="col-md-auto restore_btn_place">
@@ -161,26 +181,6 @@
           </div>
 
         </div>
-
-        <div class="row img_block">
-            <div class="image-container">
-                <img src="" class="img-fluid" id="object-image">
-            </div>
-
-            <div class="zoom_controls">
-                <div class="btn-group btn-group-sm zoom_btn" role="group">
-                    <button title="Zoom in" type="button" class="btn btn-outline-primary zoom_in_btn" id="zoomin"><i class="bi bi-zoom-in"></i></button>
-                    <button title="Zoom out" type="button" class="btn btn-outline-primary zoom_out_btn" id="zoomout"><i class="bi bi-zoom-out"></i></button>
-              </div>
-            </div>
-        </div>
-      
-        <div class="object_metadata" id="object_metadata_container">
-        </div>
-
-      </div>
-
-      <div class="col-md-6 questions_column">
 
         <div class="row above_questions">
           <div class="col-md-12 above_questions_col">
