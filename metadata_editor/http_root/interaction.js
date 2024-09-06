@@ -586,16 +586,17 @@ function embedFields(objectFields,div) {
       if (keyword.removed === 'False') {
         const term = addKeyword(key,index);
         keywordsDiv.appendChild(term);
-      }
-      // check if hidden
-      if (keyword.hidden === 'True') {
-        hideKeyword(kwId);
-      }
-      // check if has a note
-      if (keyword.has_note !== '') {
-        addNoteKeyword(kwId,keyword.has_note);
-      }
 
+        // check if has a note only if not removed
+        if (keyword.has_note !== '') {
+          addNoteKeyword(kwId,keyword.has_note);
+        }
+
+        // check if hidden only if not removed
+        if (keyword.hidden === 'True') {
+          hideKeyword(kwId);
+        }
+      }
     });
 
     // add a keyword button and a tooltip
