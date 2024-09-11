@@ -346,32 +346,34 @@ async function submitData(filename, data, notifyUser) {
 
   let submitSuccess = false;
 
-  fetch(`/save/${filename}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-  .then(response => {
+  try {
+    const response = await fetch(`/save/${filename}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
     if (!response.ok && notifyUser) {
-      error_message = `${error} \n Neem contact met ons op`;
-      notifyDataSubmitted(error_message,"red"); // a notification pop-up only if *a user* submits the data
+      let error_message = `Error: ${response.status} - ${response.statusText}\n Neem contact met ons op`;
+      notifyDataSubmitted(error_message, "red"); // a notification pop-up only if *a user* submits the data
     }
+
     if (response.ok && notifyUser) {
-      notifyDataSubmitted("Met succes ingediend","green");
+      notifyDataSubmitted("Met succes ingediend", "green");
     }
+
     if (response.ok) {
       submitSuccess = true;
     }
-  })
-  .catch(error => {
-    if (notifyUser){
-      error_message = `${error} \n Neem contact met ons op`;
-      notifyDataSubmitted(error_message,"red");
+  } catch (error) {
+    if (notifyUser) {
+      let error_message = `${error.message}\n Neem contact met ons op`;
+      notifyDataSubmitted(error_message, "red");
     }
-  });
-
+  }
+  
   return submitSuccess;
 
 }
