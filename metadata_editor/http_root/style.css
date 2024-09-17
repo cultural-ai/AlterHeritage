@@ -928,18 +928,16 @@ p.above_questions_text {
 
 #notification_submitted {
     position: fixed;
-    top: 126px;
+    top: 8px;
     right: 8px;
     width: fit-content;
     z-index: 1000;
   }
 
 #all_submitted_notification {
-    position: fixed;
-    top: 10px;
-    right: 8px;
-    width: 440px;
-    z-index: 1000;
+    position: relative;
+    padding: 0px !important;
+    width: 100%;
   }
   
 .notification_green {
