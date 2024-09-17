@@ -1,0 +1,28 @@
+{"user_id": "ekaw24demo", "objects": [
+
+    {"object_id": "https://www.europeana.eu/en/item/2051943/data_euscreenXL_EUS_894251F56EEB48CA9591DB72F42548C0",
+        "img": "", "fields":
+[{"name": "Title", "property": "europeana_title", "value": "Homo Marriage", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
+{"name": "Description", "property": "europeana_description", "value": " SERIES TITLE: Report \\n Priests should neither bless nor marry homosexuals. This was claimed by 49 priests in Gothenburg’s diocese, thereby opposing the bishop who had not reacted to what was called a » homosexual marriage«. The bishop on the other hand claims that what had occurred was an »intercession« for a homosexual couple.", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
+ {"name": "Subject", "property": "europeana_subject", "value": {"Religion and belief": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},"Religion & Belief": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"}},
+ "type": "keywords"},
+ {"name": "Contributors", "property": "europeana_contributors", "value": "Carina Eliasson (REPORTER); Tord Nordblom (INTERVIEWEE)", "type": "non-editable"},
+ {"name": "Type of item", "property": "europeana_type", "value": "CLIP; News", "type": "non-editable"},
+ {"name": "Providing institution", "property": "europeana_prov_inst", "value": "National Library of Sweden", "type": "non-editable"},
+ {"name": "Aggregator", "property": "europeana_aggregator", "value": "EUscreen", "type": "non-editable"},
+ {"name": "Rights statement for the media in this item (unless otherwise specified)", "property": "europeana_rights", "value": "http://rightsstatements.org/vocab/InC/1.0/ ", "type": "non-editable"},
+ {"name": "Rights", "property": "europeana_rights_holder", "value": "Copyright SVT", "type": "non-editable"},
+ {"name": "Creation date", "property": "europeana_creation_date", "value": "1995; 1995", "type": "non-editable"},
+{"name": "Issue date", "property": "europeana_issue_date", "value": "01/12/1995; 1995-12-01", "type": "non-editable"},
+ {"name": "Places", "property": "europeana_place", "value": "Sweden", "type": "non-editable"},
+ {"name": "Identifier", "property": "europeana_id", "value": "VA_SLBA2009082418594634; http://mint-projects.image.ntua.gr/data/euscreenXL/EUS_894251F56EEB48CA9591DB72F42548C0", "type": "non-editable"},
+ {"name": "Extent", "property": "europeana_extent", "value": "00:02:01", "type": "non-editable"},
+  {"name": "Format", "property": "europeana_format", "value": "ASPECT RATIO: ; Colour; VIDEO", "type": "non-editable"},
+ {"name": "Language", "property": "europeana_lang", "value": "Swedish; swe", "type": "non-editable"},
+  {"name": "Year", "property": "europeana_year", "value": "1995", "type": "non-editable"},
+ {"name": "Providing country", "property": "europeana_country", "value": "Europe", "type": "non-editable"},
+ {"name": "Collection name", "property": "europeana_collection", "value": "2051943_Ag_EU_OldEUscreen_1025", "type": "non-editable"},
+ {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2023-07-26T13:29:30.239Z", "type": "non-editable"},
+ {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "     2023-07-27T14:19:15.224Z", "type": "non-editable"}]}
+
+]}
