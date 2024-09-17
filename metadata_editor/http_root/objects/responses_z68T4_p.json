@@ -1,44 +1,44 @@
 {
   "http://data.collectienederland.nl/resource/aggregation/nationaal-archief-beeldbank/oai-ac9e773a-d0b4-102d-bcf8-003048976d84-2f7593fe-b9a1-11df-ba8e-03c82bd9ba46": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
-    "q4": "",
-    "q5": ""
+    "q1": "5",
+    "q2": "9",
+    "q3": "\"homo\" klinkt meer denigrerend dan \"homosexueel\"",
+    "q4": "Nee",
+    "q5": "There is a missing \"\"\" - unclear if it should be after heksenjacht or another word further in the sentence.\n\nI would prefer to use the Dutch word for \"banner\""
   },
   "https://www.europeana.eu/en/item/90402/RP_P_OB_68_246": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
-    "q4": "",
-    "q5": ""
+    "q1": "5",
+    "q2": "9",
+    "q3": "Provide an accurate description without using offensive terms.\nHomosexuals were described in a bad light, and so are women.\nOnly include \"sodomy\" in the description if it was used in the text within the artefact.",
+    "q4": "Nee",
+    "q5": "Getting the description and warnings clear about the offensiveness of the text and of the images is tricky."
   },
   "http://data.collectienederland.nl/resource/aggregation/beeldcollectie-niod/niod-844803": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
-    "q4": "",
-    "q5": ""
+    "q1": "9",
+    "q2": "10",
+    "q3": "\"illegaliteit\" is ambigu in deze context.\nMeer prominent homosexualiteit aangeven maakt het makkelijker te vinden",
+    "q4": "Nee",
+    "q5": "Is het een idee om voor alle mensen duidelijk te maken wat hun geslacht is?\nEen homosexualiteit tag maakt het makkelijker om historischse rolmodellen te vinden."
   },
   "https://www.europeana.eu/en/item/180/10622_2111E3F5_1932_473E_89E0_E985CC375524_cho": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
-    "q4": "",
-    "q5": ""
+    "q1": "4",
+    "q2": "9",
+    "q3": "De titel is niet informatief en gebruikt beledigende termen",
+    "q4": "Nee",
+    "q5": "Nice poster! Poster could be from 2024!!"
   },
   "http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
-    "q4": "",
-    "q5": ""
+    "q1": "10",
+    "q2": "10",
+    "q3": "Include a description of the (rather beautiful) portrait.",
+    "q4": "Nee",
+    "q5": "Brilliant photo!"
   },
   "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-78.785-131": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
-    "q4": "",
+    "q1": "1",
+    "q2": "8",
+    "q3": "Uitleg te geven aan een offensieve term.\nEen meer neutraal term te gebruiken in de metadata - vooral om meer objecten te kunnen vinden.\nMisschien is een metadata tag \"LGBTQI+\" or \"queer\" nuttig om erbij te zetten maar misschien is dat te generiek.",
+    "q4": "Nee",
     "q5": ""
   }
 }

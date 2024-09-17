@@ -12,8 +12,8 @@
           "type": "editable",
           "hidden": "False",
           "removed": "False",
-          "has_note": "",
-          "has_warning": "",
+          "has_note": "\"sodomie\" is een bijbelse term dat refereert aan een homosexuele ACT (sorry - ik ken de NLse woord er voor niet)",
+          "has_warning": "Mogelijke offensieve of kwetsende term",
           "by_user": "False"
         },
         {
@@ -165,9 +165,21 @@
             },
             "homos": {
               "hidden": "False",
-              "removed": "False",
+              "removed": "True",
               "has_note": "",
               "by_user": "False"
+            },
+            "homosexuelen": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
+            },
+            "\"banner\"": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
             }
           },
           "type": "keywords"
@@ -251,7 +263,7 @@
           "type": "editable",
           "hidden": "False",
           "removed": "False",
-          "has_note": "",
+          "has_note": "Voeg iets toe bij \"Illegaliteit\".\nVoeg \"Homosexueel\" toe (misschien - zie opmerking over geslacht)",
           "has_warning": "",
           "by_user": "False"
         },
@@ -262,7 +274,7 @@
           "type": "editable",
           "hidden": "False",
           "removed": "False",
-          "has_note": "",
+          "has_note": "Waarvoor was hij terechtgesteld? Homosexualiteit of de aanslag?\n\"Bewust\" vervangen met \"openlijk\"?",
           "has_warning": "",
           "by_user": "False"
         },
@@ -352,7 +364,7 @@
           "type": "editable",
           "hidden": "False",
           "removed": "False",
-          "has_note": "",
+          "has_note": "Titel: \"Evenement poster voor mensen die identificeren als of allies zijn van LGBTQI+. Text is bewust inclusief.\"",
           "has_warning": "",
           "by_user": "False"
         },
@@ -363,7 +375,7 @@
           "type": "editable",
           "hidden": "False",
           "removed": "False",
-          "has_note": "",
+          "has_note": "\"Getekende poaster met een beeld van de torso van een man in hemd en WAISTCOAT. Uitnogigende tekst aan de linker kant\"",
           "has_warning": "",
           "by_user": "False"
         },
@@ -376,6 +388,18 @@
               "removed": "False",
               "has_note": "",
               "by_user": "False"
+            },
+            "queer": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
+            },
+            "inclusief": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
             }
           },
           "type": "keywords"
@@ -471,8 +495,8 @@
           "type": "editable",
           "hidden": "False",
           "removed": "False",
-          "has_note": "",
-          "has_warning": "",
+          "has_note": "If this is a quote \"Tydelyke Straffe voorgesteld ten afschrik aller goddeloze en doemwaardige zondaren\" then put it in quotes.\nBetter would be to give a more modern description in neutral terms of the text.",
+          "has_warning": "The attitude towards homosexuals could be found offensive.\nThe roles of women portrayed in the image could be found offensive.",
           "by_user": "False"
         },
         {
@@ -492,8 +516,8 @@
           "value": {
             "sodomy, sexual contact between men": {
               "hidden": "False",
-              "removed": "False",
-              "has_note": "",
+              "removed": "True",
+              "has_note": "Remove the word sodomy",
               "by_user": "False"
             },
             "law and jurisprudence (+ imprisonment)": {
@@ -531,6 +555,18 @@
               "removed": "False",
               "has_note": "",
               "by_user": "False"
+            },
+            "sexual contact betwen men": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
+            },
+            "woman as mother": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
             }
           },
           "type": "keywords"
@@ -656,6 +692,28 @@
       "img": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg",
       "fields": [
         {
+          "name": "Location",
+          "property": "location101",
+          "value": "New Delhi, India",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "True"
+        },
+        {
+          "name": "Description",
+          "property": "description100",
+          "value": "Two men standing next to each other wearing beautiful traditional clothing and jewellery more often worn by women.",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "True"
+        },
+        {
           "name": "Titel",
           "property": "dc:title",
           "value": "Travestieten, Old Delhi, India (1977)",
@@ -681,6 +739,24 @@
               "removed": "False",
               "has_note": "",
               "by_user": "False"
+            },
+            "men": {
+              "hidden": "False",
+              "removed": "True",
+              "has_note": "",
+              "by_user": "True"
+            },
+            "man": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
+            },
+            "street scene": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "True"
             }
           },
           "type": "keywords"

@@ -1,44 +1,44 @@
 {
-    "http://data.collectienederland.nl/resource/aggregation/nationaal-archief-beeldbank/oai-ac9e773a-d0b4-102d-bcf8-003048976d84-2f7593fe-b9a1-11df-ba8e-03c82bd9ba46": {
-        "q1": "",
-        "q2": "",
-        "q3": "",
-        "q4": "",
-        "q5": ""
-    },
-    "https://www.europeana.eu/en/item/90402/RP_P_OB_68_246": {
-        "q1": "",
-        "q2": "",
-        "q3": "",
-        "q4": "",
-        "q5": ""
-    },
-    "http://data.collectienederland.nl/resource/aggregation/beeldcollectie-niod/niod-844803": {
-        "q1": "",
-        "q2": "",
-        "q3": "",
-        "q4": "",
-        "q5": ""
-    },
-    "https://www.europeana.eu/en/item/180/10622_2111E3F5_1932_473E_89E0_E985CC375524_cho": {
-        "q1": "",
-        "q2": "",
-        "q3": "",
-        "q4": "",
-        "q5": ""
-    },
-    "http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb": {
-        "q1": "",
-        "q2": "",
-        "q3": "",
-        "q4": "",
-        "q5": ""
-    },
-    "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-78.785-131": {
-        "q1": "",
-        "q2": "",
-        "q3": "",
-        "q4": "",
-        "q5": ""
-    }
+  "http://data.collectienederland.nl/resource/aggregation/nationaal-archief-beeldbank/oai-ac9e773a-d0b4-102d-bcf8-003048976d84-2f7593fe-b9a1-11df-ba8e-03c82bd9ba46": {
+    "q1": "9",
+    "q2": "9",
+    "q3": "The terminology is less loaded",
+    "q4": "",
+    "q5": ""
+  },
+  "https://www.europeana.eu/en/item/90402/RP_P_OB_68_246": {
+    "q1": "4",
+    "q2": "4",
+    "q3": "not necessary for me",
+    "q4": "",
+    "q5": "I find it hard to rate the representation of LHBTQ+ people in 1) the object itself and 2) of the metadata  at the same time sometimes conflicting and difficult\n\nI find the object non-inclusive, and the meta-data represetnation inclusive"
+  },
+  "http://data.collectienederland.nl/resource/aggregation/beeldcollectie-niod/niod-844803": {
+    "q1": "4",
+    "q2": "7",
+    "q3": "homofiel -> impliceert een lading aan dat mensen homoseksueel\n\nbewust -> implies guilt",
+    "q4": "soort object - inconsistent with the object type of previous objects?",
+    "q5": "not sure we need to know their sexuality?"
+  },
+  "https://www.europeana.eu/en/item/180/10622_2111E3F5_1932_473E_89E0_E985CC375524_cho": {
+    "q1": "8",
+    "q2": "8",
+    "q3": "keywords incomplete\n\ntitle did not reflect what the object is\n\ndescription did not describe object in more detail. Previous description was confusing without context, but probably stillr elevant",
+    "q4": "",
+    "q5": ""
+  },
+  "http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb": {
+    "q1": "6",
+    "q2": "6",
+    "q3": "-> De titel en de Datering metadata-velden zijn inconsistent, maar ik heb geen expertise om te zeggen welke klopt. \nMetadatveld: verschil maken tussen publish date en foto taken date\n\nIk denk dat er een meer inclusieve uitdrukking is voor travestieten,. maar ik kom niet op het nederlandse woord\n\nKleuren toegevoegd - misschein al geimpliceerd in methdoe",
+    "q4": "No",
+    "q5": "I feel inhibited in making changes because I don't have the expertise - want to avoid adding garbage data"
+  },
+  "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-78.785-131": {
+    "q1": "4",
+    "q2": "4",
+    "q3": "keywords were incomplete description of the",
+    "q4": "Ik begin na te denken over een taxonomie\n    zou het handig zijn om een taxonomie te hebben voor de keywords?",
+    "q5": "van welk album is het deel? \n\nik had de beschrijving en context nodig to know what keywords were necessary\n\nIt depicts a non-inclusive event, but the depiction itself seems inclusive - until you read the german text\n\nthe object was described inclusively, but the object itself is not inclusive"
+  }
 }
