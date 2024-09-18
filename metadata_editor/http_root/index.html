@@ -22,9 +22,7 @@
         <div class="accordion" id="accordionPanelsStayOpenExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                Instructies 
-              </button>
+              <button id="inst_acc_title" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"></button>
             </h2>    
             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
               <div class="accordion-body">
@@ -33,8 +31,7 @@
 
                   <div class="col-md-1 instr_icon_col"><i class="bi bi-1-square-fill instructions_icon"></i></div>
                   <div class="col-md-11">
-                    <p class="instructions_text">Je krijgt zes archiefobjecten te zien van Nederlandse culturele erfgoedinstellingen. Deze objecten zijn gerelateerd aan LHBTQ+ thema's. Het is jouw taak om de metadata van elk object te beoordelen en, indien nodig, te bewerken om ze inclusiever te maken.
-                    </p>
+                    <p id="inst_text_p1" class="instructions_text"></p>
                   </div>
 
                 </div>
@@ -42,14 +39,14 @@
                 <div class="row general_instructions_row">
                   <div class="col-md-1 instr_icon_col"><i class="bi bi-2-square-fill instructions_icon"></i></div>
                   <div class="col-md-11">
-                    <p class="instructions_text">Je kunt meerdere bewerkingsopties kiezen:</p>
+                    <p id="inst_text_p2" class="instructions_text"></p>
                         <div class="instructions_yellow_col">
                           <div class="row instruction_legend">
                             <div class="col-md-3 instruction_buttons">
-                              <button class="btn btn-outline-secondary btn-sm instruction_btn add_field_instruction_btn" type="button" disabled><i class="bi bi-plus-lg"  style="font-size: 0.68rem;"></i> Een nieuw veld toevoegen</button>
+                              <button id="inst_btn_add_field" class="btn btn-outline-secondary btn-sm instruction_btn add_field_instruction_btn" type="button" disabled></button>
                             </div>
                             <div class="col-md-9 instruction_button_text">
-                              <p class="button_explainers">Voeg een nieuw metadataveld toe. Het aangepaste veld moet een naam hebben en tekst bevatten. Meerdere nieuwe velden zijn mogelijk.</p>
+                              <p id="inst_btn_add_field_expl" class="button_explainers"></p>
                             </div>
                           </div>
               
@@ -58,7 +55,7 @@
                               <button class="btn btn-outline-secondary btn-sm instruction_btn add_keyword_instruction_btn" type="button" disabled><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
                             </div>
                             <div class="col-md-10 instruction_button_text">
-                              <p class="button_explainers">Voeg een nieuw trefwoord toe. Meerdere nieuwe trefwoorden zijn mogelijk.</p>
+                              <p id="inst_btn_add_kw_expl" class="button_explainers"></p>
                             </div>
                           </div>
                           
@@ -68,7 +65,7 @@
                               <button class="btn btn-outline-secondary btn-sm instruction_btn show_instruction_btn" type="button" disabled><i class="bi bi-eye-fill"  style="font-size: 1rem;"></i></button>
                             </div>
                             <div class="col-md-10 instruction_button_text">
-                              <p class="button_explainers">Verberg of toon een metadataveld of trefwoord. Als een veld of trefwoord verborgen is, is het niet zichtbaar voor een gebruiker op de website maar blijft het bewaard in de metadata van het archief.</p>
+                              <p id="inst_btn_hode_show_expl" class="button_explainers"></p>
                             </div>
                           </div>
               
@@ -77,7 +74,7 @@
                               <button class="btn btn-outline-secondary btn-sm instruction_btn note_instruction_btn" type="button" disabled><i class="bi bi-pencil" style="font-size: 1rem;"></i></button>
                             </div>
                             <div class="col-md-10 instruction_button_text">
-                              <p class="button_explainers">Voeg een notitie met extra informatie toe aan een veld of trefwoord.</p>
+                              <p id="inst_btn_note_expl" class="button_explainers"></p>
                             </div>
                           </div>
               
@@ -86,7 +83,7 @@
                               <button class="btn btn-outline-secondary btn-sm instruction_btn warning_instruction_btn" type="button" disabled><i class="bi bi-exclamation-triangle-fill" style="font-size: 1rem;"></i></button>
                             </div>
                             <div class="col-md-10 instruction_button_text">
-                              <p class="button_explainers">Voeg een waarschuwing toe aan een veld. Een van de doelen van een waarschuwing is om aanstootgevende inhoud aan te geven.</p>
+                              <p id="inst_btn_warning_expl" class="button_explainers"></p>
                             </div>
                           </div>
               
@@ -95,7 +92,7 @@
                               <button class="btn btn-outline-secondary btn-sm instruction_btn remove_instruction_btn" type="button" disabled><i class="bi bi-x-lg" style="font-size: 1rem;"></i></button>
                             </div>
                             <div class="col-md-10 instruction_button_text">
-                              <p class="button_explainers">Verwijder een veld, trefwoord, notitie of waarschuwing van zowel de webpagina als de metadata.</p>
+                              <p id="inst_btn_remove_expl" class="button_explainers"></p>
                             </div>
                           </div>
 
@@ -108,7 +105,7 @@
 
                   <div class="col-md-1 instr_icon_col"><i class="bi bi-3-square-fill instructions_icon"></i></div>
                   <div class="col-md-11">
-                    <p class="instructions_text">Je kunt de oorspronkelijke metadata van het huidige object herstellen door op "Herstellen" hieronder te klikken. Dit verwijdert de wijzigingen die je hebt gemaakt voor dat object.</p>
+                    <p id="inst_text_p3" class="instructions_text"></p>
                   </div>
 
                 </div>
@@ -117,13 +114,13 @@
 
                   <div class="col-md-1 instr_icon_col"><i class="bi bi-4-square-fill instructions_icon"></i></div>
                   <div class="col-md-11">
-                    <p class="instructions_text">Beantwoord naast de bewerkingen ook de vragen aan de rechterkant van het scherm. Je kunt je bewerkingen pas indienen nadat je de drie verplichte vragen hebt beantwoord. Je bewerkingen en antwoorden worden opgeslagen wanneer je door de objecten heen bladert. De invoer die je hebt ingediend wordt naar onze server gestuurd.</p>
+                    <p id="inst_text_p4" class="instructions_text"></p>
                   </div>
 
                 </div>
 
                 <div class="row text_below_instructions">
-                    <p class="instructions_text">Je input zal ons helpen te begrijpen hoe de metadata van cultureel erfgoed objecten kunnen worden herzien om ze inclusiever te maken. Als u vragen hebt, <a href="mailto:nesterov@cwi.nl">neem dan contact met ons op</a>.</p>
+                    <p id="inst_text_p5" class="instructions_text"></p>
                 </div>
 
               </div>
@@ -140,8 +137,7 @@
       <div class="col-md-6 annotation_column">
 
         <div class="row img_block">
-            <div class="image-container">
-                <img src="" class="img-fluid" id="object-image">
+            <div class="image-container" id="img_div">
             </div>
 
             <div class="zoom_controls">
@@ -185,7 +181,7 @@
           <div class="col-md-12" id="all_submitted_notification"></div>
           <div class="col-md-12 above_questions_col">
             
-            <p class="above_questions_text">Je kunt je bewerkingen indienen nadat je de verplichte <i class="bi bi-asterisk mandatory_q"></i> vragen hieronder hebt beantwoord. </p>
+            <p id="ques_text_above" class="above_questions_text"></p>
           </div>
         </div>
 
@@ -194,7 +190,7 @@
             <div class="q" id="q1">
 
               <div class="row">
-              <p class="q_text">In hoeverre was naar jouw mening de representatie van LHBTQ+ personen in dit object inclusief <b>VOOR</b> je bewerkingen, waarbij 1 volledig niet-inclusief is en 10 volledig inclusief? <i class="bi bi-asterisk mandatory_q"></i></p>
+              <p id="ques_1" class="q_text"></p>
               </div>
 
               <div class="row radios">
@@ -244,7 +240,7 @@
           <div class="q" id="q2">
 
             <div class="row">
-                <p class="q_text">In hoeverre is naar jouw mening de representatie van LHBTQ+ personen in dit object inclusief <b>NA</b> je bewerkingen, waarbij 1 volledig niet inclusief is en 10 volledig inclusief? <i class="bi bi-asterisk mandatory_q"></i></p>
+                <p id="ques_2" class="q_text"></p>
             </div>
 
             <div class="row radios">
@@ -292,17 +288,17 @@
           </div>
 
           <div class="q" id="q3">
-            <p class="q_text">Wat zijn je beweegredenen voor het bewerken van de metadata van dit object? <i class="bi bi-asterisk mandatory_q"></i></p>
+            <p id="ques_3" class="q_text"></p>
             <textarea class="form-control open_question_input" id="q3_1"></textarea>
           </div>
 
           <div class="q" id="q4">
-            <p class="q_text">Wil je andere bewerkingen uitvoeren die niet mogelijk zijn in deze interface? Zo ja, wat zijn deze bewerkingen?</p>
+            <p id="ques_4" class="q_text"></p>
             <textarea class="form-control open_question_input" id="q4_1"></textarea>
           </div>
 
           <div class="q" id="q5">
-            <p class="q_text">Als je nog iets wil delen, laat dit dan hier achter.</p>
+            <p id="ques_5" class="q_text"></p>
             <textarea class="form-control open_question_input" id="q5_1"></textarea>
           </div>
           </div>

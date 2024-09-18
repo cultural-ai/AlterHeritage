@@ -1,5 +1,11 @@
 const path = './objects/';
 
+// store lang data
+let langData;
+
+// default lang is NL
+let lang = 'nl';
+
 // for restoring the original metadata
 let originalData;
 
@@ -37,6 +43,13 @@ document.addEventListener('DOMContentLoaded', async() => {
     return;
   }
 
+  // !NB only for demo: serving EN content based on user ID
+  if(userId === 'ekaw24demo') {
+    lang = 'en';
+  }
+
+  langData = await requestData("lang.json");
+
   const pathOriginalFile = `${path}original_${userId}.json`;
   originalData = await requestData(pathOriginalFile);
 
@@ -67,6 +80,9 @@ document.addEventListener('DOMContentLoaded', async() => {
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+  // loading langData
+  loadLangHTML(langData,lang)
+
   // check if user has a consent (to show the consent screen only once)
   if (userConsent[userId] === "False") {
     // creating the consent screen
@@ -76,16 +92,8 @@ document.addEventListener('DOMContentLoaded', async() => {
     consentDiv.innerHTML = `
      <div class="row consent_screen" id="consent_block">
       <div class="col-md-12 consent_col">
-        <p>Beste deelnemer,<br> Voordat je met de taak begint, willen wij je het volgende laten weten:<br></p>
-          <ol class="consent_points">
-            <li>we verzamelen geen persoonlijke gegevens van je;</li>
-            <li>de gegevens die je invoert tijdens het uitvoeren van de taak worden  opgeslagen op onze server;</li>
-            <li>we gebruiken je invoer alleen voor ons onderzoek en delen dit niet met anderen;</li>
-            <li>vanwege de aard van het onderzoek kun je tijdens het uitvoeren van de taak te maken krijgen met kwetsende of schokkende teksten en beelden.</li>
-          </ol>
-          <p>Door op de knop "Beginnen" te drukken, bevestig je dat je op de hoogte bent van de bovenstaande punten en geef je ons toestemming om je invoer in ons onderzoek te gebruiken.<br>
-          Voor vragen kun je <a class="consent_screen_link" href="mailto:nesterov@cwi.nl">contact met ons opnemen</a>.</p>
-          <button title="Beginnen" class="btn btn-outline-secondary btn-md consent_btn" type="button" id="consent_btn">Beginnen</button>
+        <p>${langData['dynamic']['consent_main'][lang]}</p>
+          <button title="${langData['dynamic']['consent_begin_btn'][lang]}" class="btn btn-outline-secondary btn-md consent_btn" type="button" id="consent_btn">${langData['dynamic']['consent_begin_btn'][lang]}</button>
       </div>
     </div>
     `
@@ -133,12 +141,12 @@ document.addEventListener('DOMContentLoaded', async() => {
   // submit object
   const submitButton = document.getElementById('submit_btn');
   const disabledDiv = document.getElementById('disabled_tooltip');
-  submitButton.addEventListener('click', () => {
+  submitButton.addEventListener('click', async() => {
   // first, check if the submission is successful
-  submitSuccessful = submitData(userFilename, userData, true); // true = notify user
+  const submitSuccessful = await submitData(userFilename, userData, true); // true = notify user
     if (submitSuccessful && userSubmitted[objectId] === "False") {
       markObjectSubmitted(); // display a corresponding checkmark
-      submitData(submittedFilename, userSubmitted, false); // set objects as submitted, do not notify user
+      submitData(submittedFilename, userSubmitted, false); // set object as submitted, do not notify user
     }
     submitData(responsesFilename, userResponses, false); // submit responses, do not notify user
     // check if all objects have been submitted
@@ -260,34 +268,63 @@ function getObjectsN(data) {
   return data.objects.length;
 }
 
+function loadLangHTML(langData,lang) {
+  for (let elementId in langData['html']) {
+    if (langData['html'].hasOwnProperty(elementId)) {
+      let el = document.getElementById(elementId);
+      if (el) {
+        // using inner HTML instead of tinnerText to allow urls and text formatting
+        el.innerHTML = langData['html'][elementId][lang];
+      }
+    }
+  }
+}
+
 function embedObject(data,objectIndex) {
 
   // embed image
-  const imgContainer = document.getElementById('object-image');
+  const imgContainer = document.getElementById('img_div');
   const img_url = data.objects[objectIndex].img;
-  imgContainer.src = img_url;
 
-  // image zoom
-  let imageToZoom = document.getElementById('object-image');
-  let panzoom = Panzoom(imageToZoom, {
-        maxScale: 4, // max zoom
-        minScale: 1,
-        contain: 'false'
-    });
+  // select zoom controls
+  zoomInBtn = document.getElementById('zoomin');
+  zoomOutBtn = document.getElementById('zoomout');
 
-  // reset initial zoom
-  panzoom.reset();
+  // check if there's link to an img
+  if (img_url != "") {
+    imgContainer.innerHTML = `
+    <img src=${img_url} class="img-fluid" id="object-image">
+    `
+    let imageToZoom = document.getElementById('object-image');
+    let panzoom = Panzoom(imageToZoom, {
+      maxScale: 4, // max zoom
+      minScale: 1,
+      contain: false
+  });
 
-  // zoom-in button
-  document.getElementById('zoomin').addEventListener('click', function() {
-    panzoom.zoomIn(); 
-    });
-  // zoom-out button
-  document.getElementById('zoomout').addEventListener('click', function() {
-    panzoom.zoomOut();
-    });
-  // mouse wheel zooming
-  imageToZoom.parentElement.addEventListener('wheel', panzoom.zoomWithWheel);
+    // reset initial zoom
+    panzoom.reset();
+
+    // zoom-in button
+    zoomInBtn.style.display = "";
+    zoomInBtn.addEventListener('click', function() {
+      panzoom.zoomIn(); 
+      });
+    // zoom-out button
+    zoomOutBtn.style.display = "";
+    zoomOutBtn.addEventListener('click', function() {
+      panzoom.zoomOut();
+      });
+
+  }
+  else {
+    imgContainer.innerHTML = `
+    <p>${langData['dynamic']['no_img'][lang]}</p>
+    `
+    // hide zoom controls
+    zoomInBtn.style.display = "none";
+    zoomOutBtn.style.display = "none";
+  }
 
   // the main container for object's metadata
   const objectMetadataContainer = document.getElementById('object_metadata_container');
@@ -344,8 +381,6 @@ async function requestData(path) {
 
 async function submitData(filename, data, notifyUser) {
 
-  let submitSuccess = false;
-
   try {
     const response = await fetch(`/save/${filename}`, {
       method: 'POST',
@@ -356,25 +391,27 @@ async function submitData(filename, data, notifyUser) {
     });
 
     if (!response.ok && notifyUser) {
-      let error_message = `Error: ${response.status} - ${response.statusText}\n Neem contact met ons op`;
+      let error_message = `${langData['dynamic']['notif_error'][lang]}: ${response.status} - ${response.statusText}\n ${langData['dynamic']['notif_contact'][lang]}`;
       notifyDataSubmitted(error_message, "red"); // a notification pop-up only if *a user* submits the data
+      return false;
     }
 
     if (response.ok && notifyUser) {
-      notifyDataSubmitted("Met succes ingediend", "green");
+      notifyDataSubmitted(`${langData['dynamic']['notif_success'][lang]}`, "green");
+      return true; 
     }
 
     if (response.ok) {
-      submitSuccess = true;
+      return true; 
     }
+
   } catch (error) {
     if (notifyUser) {
-      let error_message = `${error.message}\n Neem contact met ons op`;
+      let error_message = `${error.message}\n ${langData['dynamic']['notif_contact'][lang]}`;
       notifyDataSubmitted(error_message, "red");
     }
+    return false; 
   }
-  
-  return submitSuccess;
 
 }
 
@@ -427,7 +464,7 @@ function notifyAllSubmitted() {
 
   notificationBody.className = 'notification_green';
   notificationBody.id = 'all_submitted';
-  notificationBody.innerText = "Alle objecten zijn ingediend. Je kunt de taak nu afronden door dit venster te sluiten. Of je kunt wijzigingen aanbrengen in je bewerkingen en antwoorden en ze opnieuw indienen. Bedankt voor je deelname!";
+  notificationBody.innerText = `${langData['dynamic']['notif_all_submitted'][lang]}`;
 
   notifyAllContainer.appendChild(notificationBody);
 
@@ -444,8 +481,8 @@ function insertAddField(div) {
   addFieldButtonDiv.className = 'row add_field';
   addFieldButtonDiv.innerHTML = `
   <div class="col-md-12 add_field_col">
-    <button title="Een nieuw veld toevoegen" class="btn btn-outline-secondary btn-sm add_field_btn" type="button" id ="add_field_btn">
-      <i class="bi bi-plus-lg"></i> Een nieuw veld toevoegen
+    <button title="${langData['dynamic']['add_field'][lang]}" class="btn btn-outline-secondary btn-sm add_field_btn" type="button" id ="add_field_btn">
+      <i class="bi bi-plus-lg"></i> ${langData['dynamic']['add_field'][lang]}
   </div>`
   div.appendChild(addFieldButtonDiv);
 
@@ -456,7 +493,7 @@ function insertAddField(div) {
   fieldInputGroup.innerHTML = `
     <div class="row">
       <div class="col-auto field_names">
-        <input type="text" class="form-control field_name_input" placeholder="Veldnaam">
+        <input type="text" class="form-control field_name_input" placeholder="${langData['dynamic']['new_fieldname'][lang]}">
       </div>
     </div>
 
@@ -466,7 +503,7 @@ function insertAddField(div) {
       </div>
 
       <div class="col-md-2 field_button_input">
-        <button title="Een veld toevoegen" class="btn btn-outline-secondary btn-sm check_add_field_btn" type="button" disabled="true">
+        <button title="${langData['dynamic']['add_field'][lang]}" class="btn btn-outline-secondary btn-sm check_add_field_btn" type="button" disabled="true">
             <i class="bi bi-check-lg check_add_field_icon"></i>
         </button>
       </div>
@@ -491,7 +528,7 @@ function checkObjectHasKeywords(data) {
    // if there's no field with keywords, add an empty one to user data
    if (!hasKeywords) {
     kwDefault = {
-      "name": "Onderwerp",
+      "name": `${langData['dynamic']['kw_field'][lang]}`,
       "property": "empty_keywords",
       "type": "keywords",
       "value": {}
@@ -524,11 +561,11 @@ function embedFields(objectFields,div) {
       <div class="col-md-2 field_btns">
         <div class="row upper_btns">
 
-          <button title="Verbergen ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${field.property}" field-id="${field.property}">
+          <button title="${langData['dynamic']['btn_hide'][lang]} ${field.name}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${field.property}" field-id="${field.property}">
             <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
           </button>
 
-          <button title="Verwijderen ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
+          <button title="${langData['dynamic']['btn_remove'][lang]} ${field.name}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${field.property}">
             <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
           </button>
 
@@ -536,9 +573,9 @@ function embedFields(objectFields,div) {
 
         <div class="row down_btns">
 
-          <button title="Een notitie toevoegen toe ann ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+          <button title="${langData['dynamic']['btn_add_note'][lang]} ${field.name}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${field.property}" field-id="${field.property}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
 
-          <button title="Een waarschuwing toevoegen toe aan ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${field.property}" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+          <button title="${langData['dynamic']['btn_add_warning'][lang]} ${field.name}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${field.property}" field-id="${field.property}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
 
         </div>
 
@@ -605,7 +642,7 @@ function embedFields(objectFields,div) {
     const addKeywordForm = document.createElement('span');
     addKeywordForm.className = 'add_keyword_tooltip';
     addKeywordForm.innerHTML = `
-    <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="Een trefwoord toevoegen"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
+    <button class="btn btn-outline-secondary btn-sm add_keyword_btn" id="add_keyword_btn" title="${langData['dynamic']['btn_add_kw'][lang]}"><i class="bi bi-plus-lg" style="font-size: 1rem;"></i></button>
     <div class="input-group mb-3 div_hidden" id="keyword_input">
       <input type="text" class="form-control keyword_input_field" id="user_keyword_area" aria-describedby="tooltip_add_btn">
       <button class="btn btn-outline-secondary" type="button" id="tooltip_add_btn" disabled="true"><i class="bi bi-check-lg check_add_keyword"></i></button>
@@ -705,11 +742,11 @@ function addField() {
       <div class="col-md-2 field_btns">
         <div class="row upper_btns">
 
-          <button title="Verbergen ${fieldName}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${userFieldID}" field-id="${userFieldID}">
+          <button title="${langData['dynamic']['btn_hide'][lang]} ${fieldName}" class="btn btn-outline-secondary btn-sm hide_field_btn" type="button" id="hide_field_btn_${userFieldID}" field-id="${userFieldID}">
             <i class="bi bi-eye-slash-fill" style="font-size: 1.2rem;"></i>
           </button>
 
-          <button title="Verwijderen ${fieldName}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${userFieldID}">
+          <button title="${langData['dynamic']['btn_remove'][lang]} ${fieldName}" class="btn btn-outline-secondary btn-sm remove_field_btn" type="button" field-id="${userFieldID}">
             <i class="bi bi-x-lg" style="font-size: 1.2rem;"></i>
           </button>
 
@@ -717,9 +754,9 @@ function addField() {
 
         <div class="row down_btns">
 
-          <button title="Notitie toevoegen toe aan ${fieldName}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
+          <button title="${langData['dynamic']['btn_add_note'][lang]} ${fieldName}" class="btn btn-secondary btn-sm add_note_btn" type="button" id="add_note_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi bi-pencil" style="font-size: 1.2rem;"></i></button>
 
-          <button title="Waarschuwing toevoegen toe aan ${fieldName}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
+          <button title="${langData['dynamic']['btn_add_warning'][lang]} ${fieldName}" class="btn btn-secondary btn-sm add_warning_btn" type="button" id="add_warning_btn_${userFieldID}" field-id="${userFieldID}"><i class="bi bi-exclamation-triangle-fill" style="font-size: 1.2rem;"></i></button>
 
         </div>
 
@@ -772,11 +809,11 @@ function hideField(fieldId) {
   if (icon.classList.contains('bi-eye-slash-fill')) {
     icon.classList.remove('bi-eye-slash-fill');
     icon.classList.add('bi-eye-fill');
-    button.title = button.title.replace('Verbergen', 'Tonen'); 
+    button.title = button.title.replace(`${langData['dynamic']['btn_hide'][lang]}`, `${langData['dynamic']['btn_show'][lang]}`);
   } else {
     icon.classList.remove('bi-eye-fill');
     icon.classList.add('bi-eye-slash-fill');
-    button.title = button.title.replace('Tonen', 'Verbergen'); 
+    button.title = button.title.replace(`${langData['dynamic']['btn_show'][lang]}`, `${langData['dynamic']['btn_hide'][lang]}`);
   }
 
   if (textarea) {
@@ -822,7 +859,7 @@ function addFieldNote(fieldId, noteValue) {
   note.innerHTML = `
     <div class="col-md-1 note_icon_col"><i class="bi bi-sticky-fill note_icon"></i></div>
     <div class="col-md-10 note_col">
-      <textarea id="${textareaId}" class="note-form form-control" placeholder="Notitie">${noteValue}</textarea>
+      <textarea id="${textareaId}" class="note-form form-control" placeholder="${langData['dynamic']['note_placeholder'][lang]}">${noteValue}</textarea>
     </div>
     <div class="col-md-1 remove_note_col">
     </div>
@@ -831,7 +868,7 @@ function addFieldNote(fieldId, noteValue) {
   const removeNoteButton = document.createElement('button');
   removeNoteButton.className = 'btn btn-outline-secondary btn-sm remove_note_btn'; 
   removeNoteButton.id = `remove_note_btn_${fieldId}`;
-  removeNoteButton.title = 'Een notitie verwijderen';
+  removeNoteButton.title = `${langData['dynamic']['btn_remove_note'][lang]}`;
   removeNoteButton.innerHTML = '<i class="bi bi-x-lg"></i>';
 
   const noteButtonContainer = note.querySelector('.remove_note_col');
@@ -874,7 +911,7 @@ function addFieldWarning(fieldId, warningValue) {
   warning.innerHTML = `
     <div class="col-md-1 warning_icon_col"><i class="bi bi-exclamation-triangle-fill warning_icon"></i></div>
     <div class="col-md-10 warning_col">
-      <textarea id="${textareaId}" class="warning-form form-control" placeholder="Waarschuwing">${warningValue}</textarea>
+      <textarea id="${textareaId}" class="warning-form form-control" placeholder="${langData['dynamic']['warning_placeholder'][lang]}">${warningValue}</textarea>
     </div>
     <div class="col-md-1 remove_warning_col">
     </div>
@@ -883,7 +920,7 @@ function addFieldWarning(fieldId, warningValue) {
   const removeWarningButton = document.createElement('button');
   removeWarningButton.className = 'btn btn-outline-secondary btn-sm remove_warning_btn'; 
   removeWarningButton.id = `remove_warning_btn_${fieldId}`;
-  removeWarningButton.title = 'Een waarschuwing verwijderen';
+  removeWarningButton.title = `${langData['dynamic']['btn_remove_warning'][lang]}`;
   removeWarningButton.innerHTML = '<i class="bi bi-x-lg"></i>';
 
   const warningButtonContainer = warning.querySelector('.remove_warning_col');
@@ -984,7 +1021,7 @@ function addKeyword(text,index) {
   const noteButton = addKeywordButtons(noteIcon, 'note-button');
   noteButton.id = `note_button_keyword_${index}`;
   noteButton.setAttribute('keyword-id', `keyword_${index}`);
-  noteButton.title = "Notitie toevoegen";
+  noteButton.title = `${langData['dynamic']['kw_add_note'][lang]}`;
   term.appendChild(noteButton);
 
   const noteTooltip = document.createElement('div');
@@ -1000,14 +1037,14 @@ function addKeyword(text,index) {
   const hideButton = addKeywordButtons(hideIcon, 'hide-button');
   hideButton.id = `hide_button_keyword_${index}`;
   hideButton.setAttribute('keyword-id', `keyword_${index}`);
-  hideButton.title = "Een trefwoord verbergen";
+  hideButton.title = `${langData['dynamic']['kw_hide'][lang]}`;
   term.appendChild(hideButton);
 
   //remove button
   const removeButton = addKeywordButtons(removeIcon, 'remove-button');
   removeButton.id = `remove_button_keyword_${index}`;
   removeButton.setAttribute('keyword-id', `keyword_${index}`);
-  removeButton.title = "Een trefwoord verwijderen";
+  removeButton.title = `${langData['dynamic']['kw_remove'][lang]}`;
   term.appendChild(removeButton);
 
   const keyword_text = document.createElement('p');
@@ -1060,11 +1097,15 @@ function hideKeyword(kwId) {
   if (icon.classList.contains('bi-eye-slash-fill')) {
     icon.classList.remove('bi-eye-slash-fill');
     icon.classList.add('bi-eye-fill');
-    button.title = button.title.replace('verbergen', 'tonen'); 
+    hide_txt = `${langData['dynamic']['btn_hide'][lang]}`;
+    show_txt = `${langData['dynamic']['btn_show'][lang]}`;
+    button.title = button.title.replace(`${hide_txt}`, `${show_txt}`); // if 'Hide keyword'
+    button.title = button.title.replace(`${hide_txt}`.toLowerCase, `${show_txt}`.toLocaleLowerCase); // if '... hide'
   } else {
     icon.classList.remove('bi-eye-fill');
     icon.classList.add('bi-eye-slash-fill');
-    button.title = button.title.replace('tonen', 'verbergen'); 
+    button.title = button.title.replace(`${show_txt}`, `${hide_txt}`); // if 'Hide keyword'
+    button.title = button.title.replace(`${show_txt}`.toLocaleLowerCase, `${hide_txt}`.toLowerCase); // if '... hide'
   }
 
   const p_keyword = document.getElementById(kwId);
@@ -1301,10 +1342,10 @@ function setActivePage(pageNumber) {
   const nextButton = paginationContainer.querySelector('.next-b');
 
   const restoreButton = document.getElementById('restore_btn');
-  restoreButton.textContent = `Herstellen #${pageNumber}`;
+  restoreButton.textContent = `${langData['dynamic']['cntrl_restore'][lang]} #${pageNumber}`;
 
   const submitButton = document.getElementById('submit_btn');
-  submitButton.textContent = `Indienen #${pageNumber}`;
+  submitButton.textContent = `${langData['dynamic']['cntrl_submit'][lang]} #${pageNumber}`;
 
 
   if (pageNumber === 1) {
@@ -1334,7 +1375,7 @@ function loadPaginationButtons(numObjects,userId) {
   // previous button
   const prevButton = document.createElement('li');
   prevButton.className = 'page-item prev-b disabled';
-  prevButton.innerHTML = `<a class="page-link" href="#${userId}" tabindex="-1"><i class="bi bi-chevron-left" title="Previous"></i></a>`;
+  prevButton.innerHTML = `<a class="page-link" href="#${userId}" tabindex="-1"><i class="bi bi-chevron-left" title="${langData['dynamic']['cntrl_prev'][lang]}"></i></a>`;
   paginationContainer.appendChild(prevButton);
 
   // navigation buttons
@@ -1343,16 +1384,16 @@ function loadPaginationButtons(numObjects,userId) {
     pageButton.className = 'page-item page-n';
     if (i === 1) pageButton.classList.add('active'); // the first object is active
     pageButton.innerHTML = `<a class="page-link" href="#${userId}">${i}</a>
-    <i id="submit_icon_${i}" class="bi bi-check-circle-fill submitted_icon" title="Ingediend"></i>`;
+    <i id="submit_icon_${i}" class="bi bi-check-circle-fill submitted_icon" title="${langData['dynamic']['cntrl_submitted_icon'][lang]}"></i>`;
     paginationContainer.appendChild(pageButton);
-    restoreButton.textContent = "Herstellen #1";
-    submitButton.textContent = "Indienen #1";
+    restoreButton.textContent = `${langData['dynamic']['cntrl_restore'][lang]} #1`;
+    submitButton.textContent = `${langData['dynamic']['cntrl_submit'][lang]} #1`;
   }
 
   // next button
   const nextButton = document.createElement('li');
   nextButton.className = 'page-item next-b';
-  nextButton.innerHTML = `<a class="page-link" href="#${userId}"><i class="bi bi-chevron-right" title="Next"></i></a>`;
+  nextButton.innerHTML = `<a class="page-link" href="#${userId}"><i class="bi bi-chevron-right" title="${langData['dynamic']['cntrl_next'][lang]}"></i></a>`;
   paginationContainer.appendChild(nextButton);
 }
 
@@ -1481,7 +1522,7 @@ function checkSubmitAllowed() {
       }
   else {
         submitButton.setAttribute('disabled','true');
-        disabledDiv.setAttribute('data-bs-original-title','Beantwoord de verplichte vragen aan de rechterkant voordat u dit object  indient');
+        disabledDiv.setAttribute('data-bs-original-title',`${langData['dynamic']['tooltip_mandatory_q'][lang]}`);
         disabledDiv.setAttribute('data-bs-placement','bottom');
   }
 }
