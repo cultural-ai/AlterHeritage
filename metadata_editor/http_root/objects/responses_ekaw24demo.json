@@ -1,49 +1,44 @@
 {
-"https://www.europeana.eu/en/item/169/_bn99ps710": {
-    "q1": "",
-    "q2": "",
-    "q3": "",
-    "q4": "",
-    "q5": ""},
-
-"https://www.europeana.eu/en/item/9200579/ky3fv334": {
+  "https://www.europeana.eu/en/item/169/_bn99ps710": {
     "q1": "",
     "q2": "",
     "q3": "",
     "q4": "",
     "q5": ""
-},
-
-"https://www.europeana.eu/en/item/2051943/data_euscreenXL_EUS_894251F56EEB48CA9591DB72F42548C0": {
+  },
+  "https://www.europeana.eu/en/item/9200579/ky3fv334": {
     "q1": "",
     "q2": "",
     "q3": "",
     "q4": "",
     "q5": ""
-},
-
-"https://www.europeana.eu/en/item/1100/5654": {
+  },
+  "https://www.europeana.eu/en/item/2051943/data_euscreenXL_EUS_894251F56EEB48CA9591DB72F42548C0": {
+    "q1": "2",
+    "q2": "5",
+    "q3": "Test",
+    "q4": "",
+    "q5": ""
+  },
+  "https://www.europeana.eu/en/item/1100/5654": {
     "q1": "",
     "q2": "",
     "q3": "",
     "q4": "",
     "q5": ""
-},
-
-"https://www.europeana.eu/en/item/2024907/photography_ProvidedCHO_Generalitat_de_Catalunya__Arxiu_Nacional_de_Catalunya_ANC_1_5_N_4369": {
+  },
+  "https://www.europeana.eu/en/item/2024907/photography_ProvidedCHO_Generalitat_de_Catalunya__Arxiu_Nacional_de_Catalunya_ANC_1_5_N_4369": {
     "q1": "",
     "q2": "",
     "q3": "",
     "q4": "",
     "q5": ""
-},
-
-"https://www.europeana.eu/en/item/9200579/kkj466nz": {
+  },
+  "https://www.europeana.eu/en/item/9200579/kkj466nz": {
     "q1": "",
     "q2": "",
     "q3": "",
     "q4": "",
     "q5": ""
-}
-
+  }
 }
