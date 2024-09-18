@@ -304,25 +304,14 @@
       "img": "",
       "fields": [
         {
-          "name": "Test new field",
-          "property": "testnew field100",
-          "value": "Some text",
+          "name": "Title",
+          "property": "europeana_title",
+          "value": "Homo Marriage",
           "type": "editable",
           "hidden": "False",
           "removed": "False",
           "has_note": "",
           "has_warning": "",
-          "by_user": "True"
-        },
-        {
-          "name": "Title",
-          "property": "europeana_title",
-          "value": "Homo Marriage",
-          "type": "editable",
-          "hidden": "True",
-          "removed": "False",
-          "has_note": "Outdated title",
-          "has_warning": "Contains offensive words",
           "by_user": "False"
         },
         {
@@ -343,20 +332,14 @@
             "Religion and belief": {
               "hidden": "False",
               "removed": "False",
-              "has_note": "note",
+              "has_note": "",
               "by_user": "False"
             },
             "Religion & Belief": {
-              "hidden": "True",
-              "removed": "False",
-              "has_note": "",
-              "by_user": "False"
-            },
-            "new keyword": {
               "hidden": "False",
               "removed": "False",
               "has_note": "",
-              "by_user": "True"
+              "by_user": "False"
             }
           },
           "type": "keywords"
