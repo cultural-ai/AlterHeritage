@@ -1,5 +1,6 @@
 # Alter Heritage
 ### A web app to gather expert knowledge on inclusive cultural heritage metadata
+[![DOI](https://zenodo.org/badge/768123105.svg)](https://zenodo.org/doi/10.5281/zenodo.13793529)
 
 [The live demo for EKAW-24](https://alterheritage.project.cwi.nl/#ekaw24demo)
 
