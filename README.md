@@ -12,7 +12,32 @@ To determine which metadata editing functionality the web app should have, we us
 
 ## Development
 
-Alter Heritage is built with HTML, CSS, and JavaScript, runnin on a Node.js server. It utilises the Fetch API to parse JSON-files with the metadata of artefacts and POST requests to save annotators' edits. See the source code in [metadata_editor/http_root](metadata_editor/http_root).
+Alter Heritage is built with HTML, CSS, and JavaScript, running on a Node.js server. It utilises the Fetch API to parse JSON-files with the metadata of artefacts and POST requests to save annotators' edits. See the source code in [metadata_editor/http_root](metadata_editor/http_root).
+
+### Storing data in JSON-files
+
+There are 5 JSON-files for each user stored on the server:
+
+* consent: stores user’s consent to participate in the study (True/False); rewritten only once when a user gives their consent;
+* original metadata: this file is never rewritten; it is retrieved only when a user wants to restore the original metadata;
+* user modified metadata: loaded into the interface; this file is rewritten with the browser-stored data;
+* responses: user’s responses to questions;
+* submitted: records whether objects were submitted by a user.
+
+A user gets a URL to the annotation containing their unique ID (like https://alterheritage.project.cwi.nl/#ekaw24demo); all files for this user are suffixed with the same user ID (for example, 'consent_ekaw24demo.json');
+
+### The annotation process
+
+* a user consent file is loaded, a user sees a consent screen; without a consent, a user cannot participate; if a user clicks “Begin”, a consent is given, and the process begins; users give their consent only once;
+* a unique user file with 6 objects is loaded;
+* users can navigate across all 6 objects before and after making changes; their changes and responses are stored in a browser;
+* users can submit their edits only after answering obligatory questions;
+* submitted objects are marked both in the interface and on the server (the “submitted” file);
+* users can restore the original metadata; all their edits will be lost, their responses to questions will stay;
+* users will be notified of the task completion once they submit all 6 objects;
+* users can make changes in their edits and responses and resubmit objects multiple times;
+
+If a user closes the app and reopens it, their submitted edits will be saved; the consent screen won’t appear again.
 
 ## License
 
