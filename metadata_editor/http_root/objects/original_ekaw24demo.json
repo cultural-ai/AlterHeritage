@@ -1,141 +1,820 @@
-{"user_id": "ekaw24demo", "objects": [
-
-{"object_id": "https://www.europeana.eu/en/item/169/_bn99ps710",
-    "img": "https://objects.dri.ie/ie.dri.production.bn99ps710/br86qp55v_lightbox_format.jpg?AWSAccessKeyId=FJENBA7D6U3MZ7MBVKHG&Expires=1727262305&Signature=whLZfbInwg7rKiv7Pb6wswa1JfY%3D",
-    "fields":
-[{"name": "Title", "property": "europeana_title", "value": "Friends of Eon Membership Card", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
-{"name": "Description", "property": "europeana_description", "value": "Membership card for the Friends of Eon, an Irish Transgender organisation established in the mid 1970s. Members from all over Ireland and included transexuals, those who were transitioning and transvestites. The Friends of Eon ran a weekly transgender club, Lola's, on Thursday nights in the Parliament Inn in Dublin from 1977-mid 1980s.", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
- {"name": "Subject", "property": "europeana_subject", "value": {"Transgender": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},"Transgender Support Group": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},"Transgender Organisation": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"}}, "type": "keywords"},
- {"name": "Contributors", "property": "europeana_contributors", "value": "Friends of Eon", "type": "non-editable"},
- {"name": "Creator", "property": "europeana_creator", "value": "Friends of Eon", "type": "non-editable"},
- {"name": "Type of item", "property": "europeana_type", "value": "Text; Membership Card", "type": "non-editable"},
-{"name": "Date", "property": "europeana_date", "value": "1979", "type": "non-editable"},
- {"name": "Providing institution", "property": "europeana_prov_inst", "value": "Cork LGBT Archive", "type": "non-editable"},
- {"name": "Aggregator", "property": "europeana_aggregator", "value": "Digital Repository of Ireland", "type": "non-editable"},
- {"name": "Rights statement for the media in this item (unless otherwise specified)", "property": "europeana_rights", "value": "http://creativecommons.org/licenses/by-nc-nd/4.0/", "type": "non-editable"},
- {"name": "Rights", "property": "europeana_rights_holder", "value": "Digitising these community resources in a publicly accessible digital archive can be seen as fair dealing and reasonable use of these materials (as defined in the 2000 Irish Copyright Act) and in keeping with the ethos and purpose with which they were produced. In addition to this, Permission to Use has also been granted by the owners of the collections and by the relevant community organisations. Items in this digital archive are covered by a Creative Commons Attribution Non-commercial No-Derivatives License. Please credit Orla Egan, Cork LGBT Archive and provide a link back to this site", "type": "non-editable"},
-{"name": "Temporal", "property": "europeana_temporal", "value": "1979", "type": "non-editable"},
- {"name": "Places", "property": "europeana_place", "value": "Ireland", "type": "non-editable"},
- {"name": "Source", "property": "europeana_source", "value": "http://corklgbtarchive.com/items/show/155; Sara R Phillips, Irish Trans Archive", "type": "non-editable"},
- {"name": "Identifier", "property": "europeana_id", "value": "#bn99ps710", "type": "non-editable"},
-  {"name": "Format", "property": "europeana_format", "value": "image", "type": "non-editable"},
- {"name": "Language", "property": "europeana_lang", "value": "English; eng", "type": "non-editable"},
- {"name": "Providing country", "property": "europeana_country", "value": "Ireland", "type": "non-editable"},
- {"name": "Collection name", "property": "europeana_collection", "value": "169_DRI_LGBT_Cork", "type": "non-editable"},
- {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2020-02-06T13:11:58.972Z", "type": "non-editable"},
- {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "2020-02-06T13:11:58.972Z", "type": "non-editable"}]},
-
-{"object_id": "https://www.europeana.eu/en/item/9200579/ky3fv334",
-    "img": "https://iiif.wellcomecollection.org/image/L0052403.jpg/full/500,/0/default.jpg", "fields":
-[{"name": "Title", "property": "europeana_title", "value": "A man and woman representing members of the 'Rich White Penis Club', the CIA, with speech bubbles; anti-constitutional protest poster about US Goverment AIDS policies by Enema Productions. Photocopy.", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
-{"name": "Description", "property": "europeana_description", "value": "Lettering: When they get AIDS, we'll get a cure. Send 'em your HIV! Poppy and Nutcracker, 1600 Pennsylvania Avenue, Washington D.C. 20500-0001. Enema Productions. Flushing out the shit of America. Right, George H.W. Bush's speech bubble: \"My wife and I are members of the Rich White Penis Club - and you're not! None of our fellow elitists from Yale, who just doubled their money in the last 10 years at your expense, would be caught dead from AIDS. Hell, we targeted the queers because they were the richest minority population. Killing off niggers, spics, druggies, hemophiliacs, and teenagers enjoying sex was simply an incidental benefit of the biological agent I helped develop at the CIA. We're laughing all the way to the bank - the one that didn't fail.\" Left, Barbara Bush's speech bubble: \"Who the hell cares about 150,000 peasants?! None of my people would ever get a faggot disease. What's important is keeping my lying, thieving sons out of jail. After this gig, I'm going home to strap on my RWP and feel like a real family man. Boy, it's so easy to hoodwink the dumbshits.\"", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
- {"name": "Subject", "property": "europeana_subject", "value": {
-    "AIDS": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "Market": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "AIDS poster": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "AIDS Posters": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "HIV/AIDS": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "Marketplace": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"}},
- "type": "keywords"},
- {"name": "Type of item", "property": "europeana_type", "value": "Photocopies", "type": "non-editable"},
- {"name": "Providing institution", "property": "europeana_prov_inst", "value": "Wellcome Collection", "type": "non-editable"},
- {"name": "Aggregator", "property": "europeana_aggregator", "value": "Wellcome Collection", "type": "non-editable"},
- {"name": "Rights statement for the media in this item (unless otherwise specified)", "property": "europeana_rights", "value": "http://creativecommons.org/licenses/by-nc/4.0/", "type": "non-editable"},
- {"name": "Rights", "property": "europeana_rights_holder", "value": "Credit: Wellcome Collection", "type": "non-editable"},
-{"name": "Source", "property": "europeana_source", "value": "L0052403", "type": "non-editable"},
- {"name": "Identifier", "property": "europeana_id", "value": "L0052403; b1667971; ky3fv334", "type": "non-editable"},
- {"name": "Providing country", "property": "europeana_country", "value": "United Kingdom", "type": "non-editable"},
- {"name": "Collection name", "property": "europeana_collection", "value": "9200579_Ag_UK_WellcomeCollection_IIIF", "type": "non-editable"},
- {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2019-06-09T11:48:10.773Z", "type": "non-editable"},
- {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "2019-06-09T11:48:10.773Z", "type": "non-editable"}]},
-
-{"object_id": "https://www.europeana.eu/en/item/2051943/data_euscreenXL_EUS_894251F56EEB48CA9591DB72F42548C0",
-        "img": "", "fields":
-[{"name": "Title", "property": "europeana_title", "value": "Homo Marriage", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
-{"name": "Description", "property": "europeana_description", "value": "SERIES TITLE: Report \n Priests should neither bless nor marry homosexuals. This was claimed by 49 priests in Gothenburg’s diocese, thereby opposing the bishop who had not reacted to what was called a » homosexual marriage«. The bishop on the other hand claims that what had occurred was an »intercession« for a homosexual couple.", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
- {"name": "Subject", "property": "europeana_subject", "value": {
-    "Religion and belief": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "Religion & Belief": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"}},
- "type": "keywords"},
- {"name": "Contributors", "property": "europeana_contributors", "value": "Carina Eliasson (REPORTER); Tord Nordblom (INTERVIEWEE)", "type": "non-editable"},
- {"name": "Type of item", "property": "europeana_type", "value": "CLIP; News", "type": "non-editable"},
- {"name": "Providing institution", "property": "europeana_prov_inst", "value": "National Library of Sweden", "type": "non-editable"},
- {"name": "Aggregator", "property": "europeana_aggregator", "value": "EUscreen", "type": "non-editable"},
- {"name": "Rights statement for the media in this item (unless otherwise specified)", "property": "europeana_rights", "value": "http://rightsstatements.org/vocab/InC/1.0/ ", "type": "non-editable"},
- {"name": "Rights", "property": "europeana_rights_holder", "value": "Copyright SVT", "type": "non-editable"},
- {"name": "Creation date", "property": "europeana_creation_date", "value": "1995; 1995", "type": "non-editable"},
-{"name": "Issue date", "property": "europeana_issue_date", "value": "01/12/1995; 1995-12-01", "type": "non-editable"},
- {"name": "Places", "property": "europeana_place", "value": "Sweden", "type": "non-editable"},
- {"name": "Identifier", "property": "europeana_id", "value": "VA_SLBA2009082418594634; http://mint-projects.image.ntua.gr/data/euscreenXL/EUS_894251F56EEB48CA9591DB72F42548C0", "type": "non-editable"},
- {"name": "Extent", "property": "europeana_extent", "value": "00:02:01", "type": "non-editable"},
-  {"name": "Format", "property": "europeana_format", "value": "ASPECT RATIO: ; Colour; VIDEO", "type": "non-editable"},
- {"name": "Language", "property": "europeana_lang", "value": "Swedish; swe", "type": "non-editable"},
-  {"name": "Year", "property": "europeana_year", "value": "1995", "type": "non-editable"},
- {"name": "Providing country", "property": "europeana_country", "value": "Europe", "type": "non-editable"},
- {"name": "Collection name", "property": "europeana_collection", "value": "2051943_Ag_EU_OldEUscreen_1025", "type": "non-editable"},
- {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2023-07-26T13:29:30.239Z", "type": "non-editable"},
- {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "     2023-07-27T14:19:15.224Z", "type": "non-editable"}]},
-
-{"object_id": "https://www.europeana.eu/en/item/1100/5654",
-        "img": "https://viewer.cbl.ie/viewer/api/v1/records/WEp_0996/files/images/Wep0996_55326/full/800,/0/default.jpg", "fields":
-[{"name": "Title", "property": "europeana_title", "value": "Blinding of the Sodomites", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
-{"name": "Description", "property": "europeana_description", "value": "Engraving on paper of the Blinding of the Sodomites from a series of Old Testament sinners, engraved and published by Raphael Sadeler (1560/61-1628/32) after a design Nicolaus de Hoey (1631-1679) probably in Antwerp in 1583. Latin verse inscribed below is based on Genesis 19. The men of Sodom are blinded by the two angels who stand in the doorway of Lot’s house.", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
- {"name": "Type of item", "property": "europeana_type", "value": "monographs; Monograph", "type": "non-editable"},
- {"name": "Providing institution", "property": "europeana_prov_inst", "value": "Chester Beatty Library", "type": "non-editable"},
- {"name": "Aggregator", "property": "europeana_aggregator", "value": "MUSEU", "type": "non-editable"},
- {"name": "Rights statement for the media in this item (unless otherwise specified)", "property": "europeana_rights", "value": "http://creativecommons.org/licenses/by/4.0/", "type": "non-editable"},
- {"name": "Rights", "property": "europeana_rights_holder", "value": "Chester Beatty Library", "type": "non-editable"},
- {"name": "Places", "property": "europeana_place", "value": "Antwerp", "type": "non-editable"},
- {"name": "Identifier", "property": "europeana_id", "value": "Wep 0996; 5654", "type": "non-editable"},
- {"name": "Extent", "property": "europeana_extent", "value": "364 mm x 264 mm (height x width)", "type": "non-editable"},
- {"name": "Language", "property": "europeana_lang", "value": "Latin;  lat", "type": "non-editable"},
- {"name": "Providing country", "property": "europeana_country", "value": "Ireland", "type": "non-editable"},
-  {"name": "Relations", "property": "europeana_relations", "value": "Sinners of the Old Testament", "type": "non-editable"},
- {"name": "Collection name", "property": "europeana_collection", "value": "1100_Chester_Beatty_Library", "type": "non-editable"},
- {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2024-04-12T17:35:04.044Z", "type": "non-editable"},
- {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "2024-04-23T10:14:21.451Z", "type": "non-editable"}]},
-
-{"object_id": "https://www.europeana.eu/en/item/2024907/photography_ProvidedCHO_Generalitat_de_Catalunya__Arxiu_Nacional_de_Catalunya_ANC_1_5_N_4369",
-        "img": "https://calaix.gencat.cat/bitstream/handle/10687/335178/ANC_158521_175034.jpg;jsessionid=F7633C7433C88130756B9642119A5C46?sequence=1", "fields":
-[{"name": "Title", "property": "europeana_title", "value": "[Transvestites]", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
-{"name": "Description", "property": "europeana_description", "value": "Transvestites in a street, seen throught the glass of a bar in the fifth district, popularly known as the Chino district in Barcelona.", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
- {"name": "Contributors", "property": "europeana_contributors", "value": "Arxiu Nacional de Catalunya", "type": "non-editable"},
-{"name": "Creator", "property": "europeana_creator", "value": "Gabriel Casas i Galobardes", "type": "non-editable"},
- {"name": "Type of item", "property": "europeana_type", "value": "photographs; Photograph", "type": "non-editable"},
-   {"name": "Date", "property": "europeana_date", "value": "1925-01-01/1935-12-31; 1925-01-01/1935-12-31", "type": "non-editable"},
- {"name": "Providing institution", "property": "europeana_prov_inst", "value": "The Government of Catalonia", "type": "non-editable"},
- {"name": "Aggregator", "property": "europeana_aggregator", "value": "PHOTOCONSORTIUM", "type": "non-editable"},
- {"name": "Rights statement for the media in this item (unless otherwise specified)", "property": "europeana_rights", "value": "http://creativecommons.org/licenses/by-nc-nd/3.0/es/", "type": "non-editable"},
- {"name": "Rights", "property": "europeana_rights_holder", "value": "http://creativecommons.org/licenses/by-nc-nd/3.0/es/;  © Generalitat de Catalunya. Arxiu Nacional de Catalunya", "type": "non-editable"},
-  {"name": "Source", "property": "europeana_source", "value": "http://arxiusenlinia.cultura.gencat.cat/ArxiusEnLinia/fitxaImatgeEuropeana.do?tipusUnitat=1&codiImatge=2493108", "type": "non-editable"},
- {"name": "Identifier", "property": "europeana_id", "value": "http://hdl.handle.net/10687/335178; ANC-1-5-N-4369; http://mint-projects.image.ntua.gr/photography/ProvidedCHO/Generalitat de Catalunya. Arxiu Nacional de Catalunya/ANC-1-5-N-4369", "type": "non-editable"},
- {"name": "Is part of", "property": "europeana_isPartOf", "value": "Europeana XX: Century of Change", "type": "non-editable"},
- {"name": "Providing country", "property": "europeana_country", "value": "Spain", "type": "non-editable"},
- {"name": "Collection name", "property": "europeana_collection", "value": "2024907_Ag_EU_EuropeanaPhotography_Gencat_1062", "type": "non-editable"},
- {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2014-11-04T15:59:03.269Z", "type": "non-editable"},
- {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "2022-01-10T09:33:12.826Z", "type": "non-editable"}]},
-
-{"object_id": "https://www.europeana.eu/en/item/9200579/kkj466nz",
-    "img": "https://iiif.wellcomecollection.org/image/L0007589.jpg/full/512,/0/default.jpg", "fields":
-[{"name": "Title", "property": "europeana_title", "value": "Hermaphrodite twins from De Hermaphroditorum, 1614", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
-{"name": "Description", "property": "europeana_description", "value": "Hermaphrodite twins joined at the back, born at Rorbach near Heidelberg, 1486.", "type": "editable", "hidden": "False", "removed": "False", "has_note": "", "has_warning": "", "by_user": "False"},
- {"name": "Subject", "property": "europeana_subject", "value": {
-    "abnormalities": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "hermaphroditism": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "15th century": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "Twins": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"},
-    "conjoined: 1614": {"hidden": "False", "removed": "False", "has_note": "", "by_user": "False"}},
- "type": "keywords"},
- {"name": "Creator", "property": "europeana_creator", "value": "Theodor de Bry", "type": "non-editable"},
- {"name": "Type of item", "property": "europeana_type", "value": "Book; Book", "type": "non-editable"},
- {"name": "Providing institution", "property": "europeana_prov_inst", "value": "Wellcome Collection", "type": "non-editable"},
- {"name": "Aggregator", "property": "europeana_aggregator", "value": "Wellcome Collection", "type": "non-editable"},
- {"name": "Rights statement for the media in this item (unless otherwise specified)", "property": "europeana_rights", "value": "http://creativecommons.org/licenses/by/4.0/", "type": "non-editable"},
- {"name": "Rights", "property": "europeana_rights_holder", "value": "Credit: Wellcome Collection", "type": "non-editable"},
- {"name": "Identifier", "property": "europeana_id", "value": "L0007589; b1114224; EPB (Wellcome 733); kkj466nz", "type": "non-editable"},
- {"name": "Providing country", "property": "europeana_country", "value": "United Kingdom", "type": "non-editable"},
- {"name": "Collection name", "property": "europeana_collection", "value": "9200579_Ag_UK_WellcomeCollection_IIIF", "type": "non-editable"},
- {"name": "First time published on Europeana", "property": "europeana_first_published", "value": "2019-06-09T12:23:31.907Z", "type": "non-editable"},
- {"name": "Last time updated from providing institution", "property": "europeana_last_updated", "value": "2019-06-09T12:23:31.907Z", "type": "non-editable"}]}
-
-]}
+{
+  "user_id": "ekaw24demo",
+  "objects": [
+    {
+      "object_id": "https://www.europeana.eu/en/item/1100/5654",
+      "img": "https://viewer.cbl.ie/viewer/api/v1/records/WEp_0996/files/images/Wep0996_55326/full/800,/0/default.jpg",
+      "fields": [
+        {
+          "name": "Title",
+          "property": "europeana_title",
+          "value": "Blinding of the Sodomites",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Description",
+          "property": "europeana_description",
+          "value": "Engraving on paper of the Blinding of the Sodomites from a series of Old Testament sinners, engraved and published by Raphael Sadeler (1560/61-1628/32) after a design Nicolaus de Hoey (1631-1679) probably in Antwerp in 1583. Latin verse inscribed below is based on Genesis 19. The men of Sodom are blinded by the two angels who stand in the doorway of Lot’s house.",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Type of item",
+          "property": "europeana_type",
+          "value": "monographs; Monograph",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing institution",
+          "property": "europeana_prov_inst",
+          "value": "Chester Beatty Library",
+          "type": "non-editable"
+        },
+        {
+          "name": "Aggregator",
+          "property": "europeana_aggregator",
+          "value": "MUSEU",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights statement for the media in this item (unless otherwise specified)",
+          "property": "europeana_rights",
+          "value": "http://creativecommons.org/licenses/by/4.0/",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights",
+          "property": "europeana_rights_holder",
+          "value": "Chester Beatty Library",
+          "type": "non-editable"
+        },
+        {
+          "name": "Places",
+          "property": "europeana_place",
+          "value": "Antwerp",
+          "type": "non-editable"
+        },
+        {
+          "name": "Identifier",
+          "property": "europeana_id",
+          "value": "Wep 0996; 5654",
+          "type": "non-editable"
+        },
+        {
+          "name": "Extent",
+          "property": "europeana_extent",
+          "value": "364 mm x 264 mm (height x width)",
+          "type": "non-editable"
+        },
+        {
+          "name": "Language",
+          "property": "europeana_lang",
+          "value": "Latin;  lat",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing country",
+          "property": "europeana_country",
+          "value": "Ireland",
+          "type": "non-editable"
+        },
+        {
+          "name": "Relations",
+          "property": "europeana_relations",
+          "value": "Sinners of the Old Testament",
+          "type": "non-editable"
+        },
+        {
+          "name": "Collection name",
+          "property": "europeana_collection",
+          "value": "1100_Chester_Beatty_Library",
+          "type": "non-editable"
+        },
+        {
+          "name": "First time published on Europeana",
+          "property": "europeana_first_published",
+          "value": "2024-04-12T17:35:04.044Z",
+          "type": "non-editable"
+        },
+        {
+          "name": "Last time updated from providing institution",
+          "property": "europeana_last_updated",
+          "value": "2024-04-23T10:14:21.451Z",
+          "type": "non-editable"
+        }
+      ]
+    },
+    {
+      "object_id": "https://www.europeana.eu/en/item/9200579/kkj466nz",
+      "img": "https://iiif.wellcomecollection.org/image/L0007589.jpg/full/512,/0/default.jpg",
+      "fields": [
+        {
+          "name": "Title",
+          "property": "europeana_title",
+          "value": "Hermaphrodite twins from De Hermaphroditorum, 1614",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Description",
+          "property": "europeana_description",
+          "value": "Hermaphrodite twins joined at the back, born at Rorbach near Heidelberg, 1486.",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Subject",
+          "property": "europeana_subject",
+          "value": {
+            "abnormalities": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "hermaphroditism": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "15th century": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "Twins": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "conjoined: 1614": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            }
+          },
+          "type": "keywords"
+        },
+        {
+          "name": "Creator",
+          "property": "europeana_creator",
+          "value": "Theodor de Bry",
+          "type": "non-editable"
+        },
+        {
+          "name": "Type of item",
+          "property": "europeana_type",
+          "value": "Book; Book",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing institution",
+          "property": "europeana_prov_inst",
+          "value": "Wellcome Collection",
+          "type": "non-editable"
+        },
+        {
+          "name": "Aggregator",
+          "property": "europeana_aggregator",
+          "value": "Wellcome Collection",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights statement for the media in this item (unless otherwise specified)",
+          "property": "europeana_rights",
+          "value": "http://creativecommons.org/licenses/by/4.0/",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights",
+          "property": "europeana_rights_holder",
+          "value": "Credit: Wellcome Collection",
+          "type": "non-editable"
+        },
+        {
+          "name": "Identifier",
+          "property": "europeana_id",
+          "value": "L0007589; b1114224; EPB (Wellcome 733); kkj466nz",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing country",
+          "property": "europeana_country",
+          "value": "United Kingdom",
+          "type": "non-editable"
+        },
+        {
+          "name": "Collection name",
+          "property": "europeana_collection",
+          "value": "9200579_Ag_UK_WellcomeCollection_IIIF",
+          "type": "non-editable"
+        },
+        {
+          "name": "First time published on Europeana",
+          "property": "europeana_first_published",
+          "value": "2019-06-09T12:23:31.907Z",
+          "type": "non-editable"
+        },
+        {
+          "name": "Last time updated from providing institution",
+          "property": "europeana_last_updated",
+          "value": "2019-06-09T12:23:31.907Z",
+          "type": "non-editable"
+        }
+      ]
+    },
+    {
+      "object_id": "https://www.europeana.eu/en/item/169/_bn99ps710",
+      "img": "https://objects.dri.ie/ie.dri.production.bn99ps710/br86qp55v_lightbox_format.jpg?AWSAccessKeyId=FJENBA7D6U3MZ7MBVKHG&Expires=1727262305&Signature=whLZfbInwg7rKiv7Pb6wswa1JfY%3D",
+      "fields": [
+        {
+          "name": "Title",
+          "property": "europeana_title",
+          "value": "Friends of Eon Membership Card",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Description",
+          "property": "europeana_description",
+          "value": "Membership card for the Friends of Eon, an Irish Transgender organisation established in the mid 1970s. Members from all over Ireland and included transexuals, those who were transitioning and transvestites. The Friends of Eon ran a weekly transgender club, Lola's, on Thursday nights in the Parliament Inn in Dublin from 1977-mid 1980s.",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Subject",
+          "property": "europeana_subject",
+          "value": {
+            "Transgender": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "Transgender Support Group": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "Transgender Organisation": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            }
+          },
+          "type": "keywords"
+        },
+        {
+          "name": "Contributors",
+          "property": "europeana_contributors",
+          "value": "Friends of Eon",
+          "type": "non-editable"
+        },
+        {
+          "name": "Creator",
+          "property": "europeana_creator",
+          "value": "Friends of Eon",
+          "type": "non-editable"
+        },
+        {
+          "name": "Type of item",
+          "property": "europeana_type",
+          "value": "Text; Membership Card",
+          "type": "non-editable"
+        },
+        {
+          "name": "Date",
+          "property": "europeana_date",
+          "value": "1979",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing institution",
+          "property": "europeana_prov_inst",
+          "value": "Cork LGBT Archive",
+          "type": "non-editable"
+        },
+        {
+          "name": "Aggregator",
+          "property": "europeana_aggregator",
+          "value": "Digital Repository of Ireland",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights statement for the media in this item (unless otherwise specified)",
+          "property": "europeana_rights",
+          "value": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights",
+          "property": "europeana_rights_holder",
+          "value": "Digitising these community resources in a publicly accessible digital archive can be seen as fair dealing and reasonable use of these materials (as defined in the 2000 Irish Copyright Act) and in keeping with the ethos and purpose with which they were produced. In addition to this, Permission to Use has also been granted by the owners of the collections and by the relevant community organisations. Items in this digital archive are covered by a Creative Commons Attribution Non-commercial No-Derivatives License. Please credit Orla Egan, Cork LGBT Archive and provide a link back to this site",
+          "type": "non-editable"
+        },
+        {
+          "name": "Temporal",
+          "property": "europeana_temporal",
+          "value": "1979",
+          "type": "non-editable"
+        },
+        {
+          "name": "Places",
+          "property": "europeana_place",
+          "value": "Ireland",
+          "type": "non-editable"
+        },
+        {
+          "name": "Source",
+          "property": "europeana_source",
+          "value": "http://corklgbtarchive.com/items/show/155; Sara R Phillips, Irish Trans Archive",
+          "type": "non-editable"
+        },
+        {
+          "name": "Identifier",
+          "property": "europeana_id",
+          "value": "#bn99ps710",
+          "type": "non-editable"
+        },
+        {
+          "name": "Format",
+          "property": "europeana_format",
+          "value": "image",
+          "type": "non-editable"
+        },
+        {
+          "name": "Language",
+          "property": "europeana_lang",
+          "value": "English; eng",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing country",
+          "property": "europeana_country",
+          "value": "Ireland",
+          "type": "non-editable"
+        },
+        {
+          "name": "Collection name",
+          "property": "europeana_collection",
+          "value": "169_DRI_LGBT_Cork",
+          "type": "non-editable"
+        },
+        {
+          "name": "First time published on Europeana",
+          "property": "europeana_first_published",
+          "value": "2020-02-06T13:11:58.972Z",
+          "type": "non-editable"
+        },
+        {
+          "name": "Last time updated from providing institution",
+          "property": "europeana_last_updated",
+          "value": "2020-02-06T13:11:58.972Z",
+          "type": "non-editable"
+        }
+      ]
+    },
+    {
+      "object_id": "https://www.europeana.eu/en/item/9200579/ky3fv334",
+      "img": "https://iiif.wellcomecollection.org/image/L0052403.jpg/full/500,/0/default.jpg",
+      "fields": [
+        {
+          "name": "Title",
+          "property": "europeana_title",
+          "value": "A man and woman representing members of the 'Rich White Penis Club', the CIA, with speech bubbles; anti-constitutional protest poster about US Goverment AIDS policies by Enema Productions. Photocopy.",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Description",
+          "property": "europeana_description",
+          "value": "Lettering: When they get AIDS, we'll get a cure. Send 'em your HIV! Poppy and Nutcracker, 1600 Pennsylvania Avenue, Washington D.C. 20500-0001. Enema Productions. Flushing out the shit of America. Right, George H.W. Bush's speech bubble: \"My wife and I are members of the Rich White Penis Club - and you're not! None of our fellow elitists from Yale, who just doubled their money in the last 10 years at your expense, would be caught dead from AIDS. Hell, we targeted the queers because they were the richest minority population. Killing off niggers, spics, druggies, hemophiliacs, and teenagers enjoying sex was simply an incidental benefit of the biological agent I helped develop at the CIA. We're laughing all the way to the bank - the one that didn't fail.\" Left, Barbara Bush's speech bubble: \"Who the hell cares about 150,000 peasants?! None of my people would ever get a faggot disease. What's important is keeping my lying, thieving sons out of jail. After this gig, I'm going home to strap on my RWP and feel like a real family man. Boy, it's so easy to hoodwink the dumbshits.\"",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Subject",
+          "property": "europeana_subject",
+          "value": {
+            "AIDS": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "Market": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "AIDS poster": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "AIDS Posters": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "HIV/AIDS": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "Marketplace": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            }
+          },
+          "type": "keywords"
+        },
+        {
+          "name": "Type of item",
+          "property": "europeana_type",
+          "value": "Photocopies",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing institution",
+          "property": "europeana_prov_inst",
+          "value": "Wellcome Collection",
+          "type": "non-editable"
+        },
+        {
+          "name": "Aggregator",
+          "property": "europeana_aggregator",
+          "value": "Wellcome Collection",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights statement for the media in this item (unless otherwise specified)",
+          "property": "europeana_rights",
+          "value": "http://creativecommons.org/licenses/by-nc/4.0/",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights",
+          "property": "europeana_rights_holder",
+          "value": "Credit: Wellcome Collection",
+          "type": "non-editable"
+        },
+        {
+          "name": "Source",
+          "property": "europeana_source",
+          "value": "L0052403",
+          "type": "non-editable"
+        },
+        {
+          "name": "Identifier",
+          "property": "europeana_id",
+          "value": "L0052403; b1667971; ky3fv334",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing country",
+          "property": "europeana_country",
+          "value": "United Kingdom",
+          "type": "non-editable"
+        },
+        {
+          "name": "Collection name",
+          "property": "europeana_collection",
+          "value": "9200579_Ag_UK_WellcomeCollection_IIIF",
+          "type": "non-editable"
+        },
+        {
+          "name": "First time published on Europeana",
+          "property": "europeana_first_published",
+          "value": "2019-06-09T11:48:10.773Z",
+          "type": "non-editable"
+        },
+        {
+          "name": "Last time updated from providing institution",
+          "property": "europeana_last_updated",
+          "value": "2019-06-09T11:48:10.773Z",
+          "type": "non-editable"
+        }
+      ]
+    },
+    {
+      "object_id": "https://www.europeana.eu/en/item/2051943/data_euscreenXL_EUS_894251F56EEB48CA9591DB72F42548C0",
+      "img": "",
+      "fields": [
+        {
+          "name": "Title",
+          "property": "europeana_title",
+          "value": "Homo Marriage",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Description",
+          "property": "europeana_description",
+          "value": "SERIES TITLE: Report \n Priests should neither bless nor marry homosexuals. This was claimed by 49 priests in Gothenburg’s diocese, thereby opposing the bishop who had not reacted to what was called a » homosexual marriage«. The bishop on the other hand claims that what had occurred was an »intercession« for a homosexual couple.",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Subject",
+          "property": "europeana_subject",
+          "value": {
+            "Religion and belief": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            },
+            "Religion & Belief": {
+              "hidden": "False",
+              "removed": "False",
+              "has_note": "",
+              "by_user": "False"
+            }
+          },
+          "type": "keywords"
+        },
+        {
+          "name": "Contributors",
+          "property": "europeana_contributors",
+          "value": "Carina Eliasson (REPORTER); Tord Nordblom (INTERVIEWEE)",
+          "type": "non-editable"
+        },
+        {
+          "name": "Type of item",
+          "property": "europeana_type",
+          "value": "CLIP; News",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing institution",
+          "property": "europeana_prov_inst",
+          "value": "National Library of Sweden",
+          "type": "non-editable"
+        },
+        {
+          "name": "Aggregator",
+          "property": "europeana_aggregator",
+          "value": "EUscreen",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights statement for the media in this item (unless otherwise specified)",
+          "property": "europeana_rights",
+          "value": "http://rightsstatements.org/vocab/InC/1.0/ ",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights",
+          "property": "europeana_rights_holder",
+          "value": "Copyright SVT",
+          "type": "non-editable"
+        },
+        {
+          "name": "Creation date",
+          "property": "europeana_creation_date",
+          "value": "1995; 1995",
+          "type": "non-editable"
+        },
+        {
+          "name": "Issue date",
+          "property": "europeana_issue_date",
+          "value": "01/12/1995; 1995-12-01",
+          "type": "non-editable"
+        },
+        {
+          "name": "Places",
+          "property": "europeana_place",
+          "value": "Sweden",
+          "type": "non-editable"
+        },
+        {
+          "name": "Identifier",
+          "property": "europeana_id",
+          "value": "VA_SLBA2009082418594634; http://mint-projects.image.ntua.gr/data/euscreenXL/EUS_894251F56EEB48CA9591DB72F42548C0",
+          "type": "non-editable"
+        },
+        {
+          "name": "Extent",
+          "property": "europeana_extent",
+          "value": "00:02:01",
+          "type": "non-editable"
+        },
+        {
+          "name": "Format",
+          "property": "europeana_format",
+          "value": "ASPECT RATIO: ; Colour; VIDEO",
+          "type": "non-editable"
+        },
+        {
+          "name": "Language",
+          "property": "europeana_lang",
+          "value": "Swedish; swe",
+          "type": "non-editable"
+        },
+        {
+          "name": "Year",
+          "property": "europeana_year",
+          "value": "1995",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing country",
+          "property": "europeana_country",
+          "value": "Europe",
+          "type": "non-editable"
+        },
+        {
+          "name": "Collection name",
+          "property": "europeana_collection",
+          "value": "2051943_Ag_EU_OldEUscreen_1025",
+          "type": "non-editable"
+        },
+        {
+          "name": "First time published on Europeana",
+          "property": "europeana_first_published",
+          "value": "2023-07-26T13:29:30.239Z",
+          "type": "non-editable"
+        },
+        {
+          "name": "Last time updated from providing institution",
+          "property": "europeana_last_updated",
+          "value": "     2023-07-27T14:19:15.224Z",
+          "type": "non-editable"
+        }
+      ]
+    },
+    
+    {
+      "object_id": "https://www.europeana.eu/en/item/2024907/photography_ProvidedCHO_Generalitat_de_Catalunya__Arxiu_Nacional_de_Catalunya_ANC_1_5_N_4369",
+      "img": "https://calaix.gencat.cat/bitstream/handle/10687/335178/ANC_158521_175034.jpg;jsessionid=F7633C7433C88130756B9642119A5C46?sequence=1",
+      "fields": [
+        {
+          "name": "Title",
+          "property": "europeana_title",
+          "value": "[Transvestites]",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Description",
+          "property": "europeana_description",
+          "value": "Transvestites in a street, seen throught the glass of a bar in the fifth district, popularly known as the Chino district in Barcelona.",
+          "type": "editable",
+          "hidden": "False",
+          "removed": "False",
+          "has_note": "",
+          "has_warning": "",
+          "by_user": "False"
+        },
+        {
+          "name": "Contributors",
+          "property": "europeana_contributors",
+          "value": "Arxiu Nacional de Catalunya",
+          "type": "non-editable"
+        },
+        {
+          "name": "Creator",
+          "property": "europeana_creator",
+          "value": "Gabriel Casas i Galobardes",
+          "type": "non-editable"
+        },
+        {
+          "name": "Type of item",
+          "property": "europeana_type",
+          "value": "photographs; Photograph",
+          "type": "non-editable"
+        },
+        {
+          "name": "Date",
+          "property": "europeana_date",
+          "value": "1925-01-01/1935-12-31; 1925-01-01/1935-12-31",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing institution",
+          "property": "europeana_prov_inst",
+          "value": "The Government of Catalonia",
+          "type": "non-editable"
+        },
+        {
+          "name": "Aggregator",
+          "property": "europeana_aggregator",
+          "value": "PHOTOCONSORTIUM",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights statement for the media in this item (unless otherwise specified)",
+          "property": "europeana_rights",
+          "value": "http://creativecommons.org/licenses/by-nc-nd/3.0/es/",
+          "type": "non-editable"
+        },
+        {
+          "name": "Rights",
+          "property": "europeana_rights_holder",
+          "value": "http://creativecommons.org/licenses/by-nc-nd/3.0/es/;  © Generalitat de Catalunya. Arxiu Nacional de Catalunya",
+          "type": "non-editable"
+        },
+        {
+          "name": "Source",
+          "property": "europeana_source",
+          "value": "http://arxiusenlinia.cultura.gencat.cat/ArxiusEnLinia/fitxaImatgeEuropeana.do?tipusUnitat=1&codiImatge=2493108",
+          "type": "non-editable"
+        },
+        {
+          "name": "Identifier",
+          "property": "europeana_id",
+          "value": "http://hdl.handle.net/10687/335178; ANC-1-5-N-4369; http://mint-projects.image.ntua.gr/photography/ProvidedCHO/Generalitat de Catalunya. Arxiu Nacional de Catalunya/ANC-1-5-N-4369",
+          "type": "non-editable"
+        },
+        {
+          "name": "Is part of",
+          "property": "europeana_isPartOf",
+          "value": "Europeana XX: Century of Change",
+          "type": "non-editable"
+        },
+        {
+          "name": "Providing country",
+          "property": "europeana_country",
+          "value": "Spain",
+          "type": "non-editable"
+        },
+        {
+          "name": "Collection name",
+          "property": "europeana_collection",
+          "value": "2024907_Ag_EU_EuropeanaPhotography_Gencat_1062",
+          "type": "non-editable"
+        },
+        {
+          "name": "First time published on Europeana",
+          "property": "europeana_first_published",
+          "value": "2014-11-04T15:59:03.269Z",
+          "type": "non-editable"
+        },
+        {
+          "name": "Last time updated from providing institution",
+          "property": "europeana_last_updated",
+          "value": "2022-01-10T09:33:12.826Z",
+          "type": "non-editable"
+        }
+      ]
+    }
+  ]
+}
