@@ -4,7 +4,8 @@
 metadata_editor/node_modules
 metadata_editor/.vscode
 metadata_editor/http_root/.vscode
-metadata_editor/http_root/objects
+metadata_editor/http_root/objects/*
+!metadata_editor/http_root/objects/*_ekaw24demo*
 metadata_editor/server.js
 metadata_editor/package-lock.json
 metadata_editor/package.json
