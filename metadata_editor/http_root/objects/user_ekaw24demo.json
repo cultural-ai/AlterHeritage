@@ -17,6 +17,12 @@
           "by_user": "False"
         },
         {
+          "name": "Subject",
+          "property": "empty_keywords",
+          "type": "keywords",
+          "value": {}
+        },
+        {
           "name": "Description",
           "property": "europeana_description",
           "value": "Engraving on paper of the Blinding of the Sodomites from a series of Old Testament sinners, engraved and published by Raphael Sadeler (1560/61-1628/32) after a design Nicolaus de Hoey (1631-1679) probably in Antwerp in 1583. Latin verse inscribed below is based on Genesis 19. The men of Sodom are blinded by the two angels who stand in the doorway of Lot’s house.",
@@ -697,7 +703,6 @@
         }
       ]
     },
-    
     {
       "object_id": "https://www.europeana.eu/en/item/2024907/photography_ProvidedCHO_Generalitat_de_Catalunya__Arxiu_Nacional_de_Catalunya_ANC_1_5_N_4369",
       "img": "https://calaix.gencat.cat/bitstream/handle/10687/335178/ANC_158521_175034.jpg;jsessionid=F7633C7433C88130756B9642119A5C46?sequence=1",
