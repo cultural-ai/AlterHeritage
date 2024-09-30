@@ -273,7 +273,7 @@ function loadLangHTML(langData,lang) {
     if (langData['html'].hasOwnProperty(elementId)) {
       let el = document.getElementById(elementId);
       if (el) {
-        // using inner HTML instead of tinnerText to allow urls and text formatting
+        // using inner HTML instead of innerText to allow urls and text formatting
         el.innerHTML = langData['html'][elementId][lang];
       }
     }

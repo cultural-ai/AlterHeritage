@@ -1,0 +1,647 @@
+{
+    "user_id": "9Bd29",
+    "objects": [
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/rijkscollectie-rce/AB4114-F",
+            "img": "https://images.memorix.nl/rce/thumb/fullsize/fc261022-95dc-b071-5db0-ff044a7970b3.jpg",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "Homo vrouw",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Beschrijving",
+                    "property": "dc:description",
+                    "value": "Homo vrouw. Schetsboek versozijde AB4114-G.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Rijksdienst voor het Cultureel Erfgoed",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://rightsstatements.org/vocab/InC/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "krijttekening",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "papier, zwart krijt",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "12 cm, 8 cm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "AB4114-F",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger",
+                    "property": "dc:creator",
+                    "value": "Doesburg, Theo van",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger rol",
+                    "property": "nave:creatorRole",
+                    "value": "inventor/bedenker/ontwerper",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger geboortejaar",
+                    "property": "nave:creatorYearOfBirth",
+                    "value": "1883-08-30",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger jaar van overlijden",
+                    "property": "nave:creatorYearOfDeath",
+                    "value": "1931-03-07",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "1909",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardigingsdatum",
+                    "property": "dc:date",
+                    "value": "1909",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Relaties: Deelcollectie",
+                    "property": "nave:collectionPart",
+                    "value": "moderne kunst",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Materiaal",
+                    "property": "nave:material",
+                    "value": "papier, zwart krijt",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-4b3ded58-5167-626d-96ee-05d83df0a6cb",
+            "img": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/196209ff-8126-4c80-823e-570a45ea9584.jpg",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "Travestieten, Old Delhi, India (1977)",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Wat",
+                    "property": "dc:subject",
+                    "value": {
+                        "travestiet": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "portret": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Nederlands Fotomuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "http://collectie.nederlandsfotomuseum.nl/collectie/detail/4b3ded58-5167-626d-96ee-05d83df0a6cb",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://rightsstatements.org/vocab/InC/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "Diapositief",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "Acetaat",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "24x36 mm (kb, 35mm)",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "EVE-1002001-04",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger",
+                    "property": "dc:creator",
+                    "value": "Ed van der Elsken",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "1976",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-78.785-131",
+            "img": "https://lh3.googleusercontent.com/g-TkhjLkZsHX4oV1pq41Ytq0keBfu60rIjujZTr_L4XAxwCB2_CKb7gBrBmR6lsddwfHPhj6W0zL6g4zlOmkR4K_awHh40SKRHWkmDs=s0",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "Ontdekking van sodomie in een klooster te Brugge, 1578",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Beschrijving",
+                    "property": "dc:description",
+                    "value": "Arrestatie van de Franciscaner monniken in een klooster te Brugge op beschuldiging van sodomie, 18 mei 1578. Onder begeleiding van soldaten worden de monniken uit het klooster afgevoerd. Onder hen de beruchte Broer Cornelis van Dordrecht. Met onderschrift van 15 regels in het Duits. Linksonder genummerd: 145. De prent maakt deel uit van een album.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Wat",
+                    "property": "dc:subject",
+                    "value": {
+                        "1578-05-18\u00a0-\u00a01578-05-18": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Cornelis, Broer": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Rijksmuseum Amsterdam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "http://hdl.handle.net/10934/RM0001.COLLECT.586333",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://creativecommons.org/publicdomain/mark/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Relaties: Deelcollectie",
+                    "property": "nave:collectionPart",
+                    "value": "collectie: prentencollectie: Frederik Muller Historieplaten",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Techniek",
+                    "property": "nave:technique",
+                    "value": "http://browser.aat-ned.nl/300053241, etsen",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Onderwerp: Waar",
+                    "property": "dcterms:spatial",
+                    "value": "Keulen",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "historieprent, prent, albumblad",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "papier",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "hoogte\u00a0210\u00a0mm, breedte\u00a0277\u00a0mm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "RP-P-OB-78.785-131, http://hdl.handle.net/10934/RM0001.COLLECT.586333",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Uitgever",
+                    "property": "dc:publisher",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "1581 - ca.1585",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is deel van",
+                    "property": "dcterms:isPartOf",
+                    "value": "collectie: prenten, collectie: Frederik Muller Historieplaten",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rechthebbende(n)",
+                    "property": "dc:rights",
+                    "value": "Publiek Domein",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Documentatie: Is verwezen door",
+                    "property": "dcterms:isReferencedBy",
+                    "value": "New Hollstein Dutch B143\u00a02(2), Hellwig 200\u00a0, FMH 413.190\u00a0",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/beeldcollectie-niod/niod-844803",
+            "img": "https://images.memorix.nl/niod/download/default/15de4467-b09d-d1ef-9138-06db26795f9a.jpg",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "Arondeus, Willem. Portretten. Sabotage. Verzet - Zie ook: Widerstand, Georganiseerd verzet, Illegaliteit",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Beschrijving",
+                    "property": "dc:description",
+                    "value": "Portret van Willem Arondeus. Willem (Tiky) Arondeus was betrokken bij de aanslag op het Amsterdams bevolkingsregister. Hij was kunstenaar en bewust homofiel. In 1943 is hij terechtgesteld.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Wat",
+                    "property": "dc:subject",
+                    "value": {
+                        "Arondeus, Willem": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Sabotage": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Verzet - Zie ook: Widerstand, Georganiseerd verzet, Illegaliteit": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Portretten": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "IMAGE",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "http://www.beeldbankwo2.nl/detail_no.jsp?action=detail&imid=110132",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardigingsplaats / vindplaats",
+                    "property": " dc:coverage",
+                    "value": "Nederland",
+                    "type": "non-editable"
+                },
+                {
+                    "name": " Verwijzing(en)",
+                    "property": "dc:relation",
+                    "value": "http://www.beeldbankwo2.nl/cgi-bin/frsiserver.dll/thumbnail/110132-thumb.jpg?frskey=110132",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Bron",
+                    "property": "dc:source",
+                    "value": "Verzetsmuseum Amsterdam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Nederlands Instituut voor Oorlogsdocumentatie",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Herkomst",
+                    "property": "dcterms:provenance",
+                    "value": "BBWO2",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/nederlands-fotomuseum/1d59bf74-a57c-11e1-af90-bf6f69fae6b6-f54a0bec-c0a0-0892-cd60-469d9cc39391",
+            "img": "https://images.memorix.nl/nfm/thumb/2000x2000_watermarked/3a1ab45e-36a0-a516-21f3-823094bcb3e5.jpg",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "homo gay flikkers",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Wie",
+                    "property": "nave:subjectDepicted",
+                    "value": "Houwert, Jan",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "Negatief",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "Acetaat",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "6x6 cm, 24x36 mm (kb, 35mm)",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "EDJ-5532-h2",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger",
+                    "property": "dc:creator",
+                    "value": "Eddy de Jongh",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "1981",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Nederlands Fotomuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "http://collectie.nederlandsfotomuseum.nl/collectie/detail/f54a0bec-c0a0-0892-cd60-469d9cc39391",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://rightsstatements.org/vocab/InC/1.0/",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/nationaal-archief-beeldbank/oai-acc82328-d0b4-102d-bcf8-003048976d84-2f7593fe-b9a1-11df-ba8e-03c82bd9ba46",
+            "img": "https://service.archief.nl/gaf/api/file/v1/img/924b19c4-2905-43f5-a581-dbcb787166f1?h=1000",
+            "fields": [
+                {
+                    "name": "Beschrijving",
+                    "property": "dc:description",
+                    "value": "Op het spandoek staat te lezen: \"Gijsen FLIKKER op\"",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Relaties: Deelcollectie",
+                    "property": "nave:collectionPart",
+                    "value": "Fotocollectie Anefo, Homosexuelen demonstreren in Roermond tegen uitlating bisschop Gijsen",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Wat",
+                    "property": "dc:subject",
+                    "value": {
+                        "bisschoppen": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Gijsen, Jo": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "betogingen": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "homoseksuelen": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "spandoeken": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Onderwerp: Waar",
+                    "property": "dcterms:spatial",
+                    "value": "(http://data.beeldengeluid.nl/gtaa/41617,Roermond), (http://data.beeldengeluid.nl/gtaa/38648,Limburg)",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "Negatief (zwart/wit)",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "24 x 36 mm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "4449167a-40e7-11e0-8336-03c8b51fe023 930-2170, acc82328-d0b4-102d-bcf8-003048976d84",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger",
+                    "property": "dc:creator",
+                    "value": "Dijk, Hans van / Anefo",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardigingsdatum",
+                    "property": "dc:date",
+                    "value": "1979-04-14/0000-00-00",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Nationaal Archief",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "https://hdl.handle.net/10648/acc82328-d0b4-102d-bcf8-003048976d84",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://www.europeana.eu/portal/rights/rr-f",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rechthebbende(n)",
+                    "property": "dc:rights",
+                    "value": "https://creativecommons.org/licenses/by/4.0/deed.nl",
+                    "type": "non-editable"
+                }
+            ]
+        }
+    ]
+}

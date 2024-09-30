@@ -1,0 +1,827 @@
+{
+    "user_id": "B73a8",
+    "objects": [
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/joods-historisch/M002915",
+            "img": "http://data.jck.nl/thumbnail/jck/joods-historisch/d622/622NM002915/2000",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "lesbienne, dichteres, oorlogskind",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Wat",
+                    "property": "dc:subject",
+                    "value": {
+                        "oorlog": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "dichter": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Grinker, Lori (1957)": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "vrouw in jodendom": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "homoseksualiteit": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Alternatief",
+                    "property": " dcterms:alternative",
+                    "value": "M002915, foto, Lori Grinker, 1985",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Techniek",
+                    "property": "nave:technique",
+                    "value": "gefotografeerd",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Materiaal",
+                    "property": "nave:material",
+                    "value": "papier",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "foto",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "papier",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "breedte 35.5 cm, hoogte 20.5 cm, breedte 30.5 cm, hoogte 28.0 cm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "M002915",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger",
+                    "property": "dc:creator",
+                    "value": "Grinker, Lori (1957)",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "1985",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Bron",
+                    "property": "dc:source",
+                    "value": "Joods Museum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Joods Historisch Museum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "http://data.jck.nl/resource/aggregation/jhm-museum/M002915",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://rightsstatements.org/vocab/InC/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rechthebbende(n)",
+                    "property": "dc:rights",
+                    "value": "\u00a9 Lori Grinker",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-P-OB-45.775",
+            "img": "https://lh4.ggpht.com/IwPm7kXQH74rZG_oOx0-CNLE57XaGjJPhqGEonGgl57EMsAnxAyIlePqW0aG0f7rJ1gFU-0V3OlgBc2oj5hYNoEnMKng=s0",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "Sodomieten met blindheid geslagen",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Rijksmuseum Amsterdam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "http://hdl.handle.net/10934/RM0001.COLLECT.147320",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://creativecommons.org/publicdomain/mark/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Onderwerp: Waar",
+                    "property": "dcterms:spatial",
+                    "value": "Amsterdam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "prent",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "papier",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "breedte\u00a0148\u00a0mm, hoogte\u00a0116\u00a0mm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "RP-P-OB-45.775, http://hdl.handle.net/10934/RM0001.COLLECT.147320",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Uitgever",
+                    "property": "dc:publisher",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "1712",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is deel van",
+                    "property": "dcterms:isPartOf",
+                    "value": "collectie: prenten",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rechthebbende(n)",
+                    "property": "dc:rights",
+                    "value": "Publiek Domein",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Documentatie: Is verwezen door",
+                    "property": "dcterms:isReferencedBy",
+                    "value": "Van Eeghen 4071\u00a0",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Relaties: Deelcollectie",
+                    "property": "nave:collectionPart",
+                    "value": "collectie: prenten",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Techniek",
+                    "property": "nave:technique",
+                    "value": "http://browser.aat-ned.nl/300053241, etsen",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum-van-oudheden/SNs159",
+            "img": "http://img.rmo.nl/imageproxy/proxy.aspx?maxwidth=500&cache=yes&filename=222873.jpg",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "figurine ; fragment",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Beschrijving",
+                    "property": "dc:description",
+                    "value": "Uit Smyrna. Hellenistische terracotta figurine-fragment van een torso van een hermafrodiet. De himation is over de linkerarm en -schouder gedrapeerd. Het hoofd, de rechterarm en de onderbenen ontbreken.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Wat",
+                    "property": "dc:subject",
+                    "value": {
+                        "hermafrodiet": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "himation": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Materiaal",
+                    "property": "nave:material",
+                    "value": "aardewerk ; terracotta",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Rijksmuseum van Oudheden",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "https://hdl.handle.net/21.12126/55293",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://creativecommons.org/licenses/by/4.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "figurine ; fragment",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "aardewerk ; terracotta",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "4,9 cm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "SNs 159",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "hellenistisch 1-150 n.Chr.",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardigingsdatum",
+                    "property": "dc:date",
+                    "value": "hellenistisch 1-150 n.Chr.",
+                    "type": "non-editable"
+                },
+                {
+                    "name": " Vervaardigingsplaats / vindplaats",
+                    "property": "dc:coverage",
+                    "value": "Izmir, Turkije, Turkije, Izmir, Izmir, Izmir/Smyrna, Turkije, Klein-Azi\u00eb, Smyrna",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rechthebbende(n)",
+                    "property": "dc:rights",
+                    "value": "Creative Commons By-licensie: bron: Rijksmuseum van Oudheden, Leiden",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Documentatie: Is verwezen door",
+                    "property": "dcterms:isReferencedBy",
+                    "value": "P.G. Leyenaar-Plaisier 1979, Les terres cuites grecques et romaines (TCGR) no. 354",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Deelcollectie",
+                    "property": "nave:collectionPart",
+                    "value": "Klassieke oudheid",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "http://data.collectienederland.nl/resource/aggregation/rijksmuseum/oai-rijksmuseum.nl-RP-F-2007-300",
+            "img": "https://lh4.ggpht.com/tHPK7Zcp5wl200VQu5d3KALhhd4GXmqqh6bkFnc-4GDQdd_wVJSL-cVALScwozmOMw_TTL6UuZiTIjyfw50nVcHhCKE=s0",
+            "fields": [
+                {
+                    "name": "Titel",
+                    "property": "dc:title",
+                    "value": "Portretten",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Beschrijving",
+                    "property": "dc:description",
+                    "value": "Deze ferrotypie\u00ebn stammen uit de begintijd van de fotografie. Ze waren relatief goedkoop, en makkelijk en snel te maken. Daardoor kon een grotere groep mensen zich laten afbeelden. Door het ontbreken van negatieven \u2013 net als bij polaroids \u2013 was het maken van een ferrotypie voor lhbti+ koppels betrekkelijk veilig. Van geen van deze koppels is iets bekend. Of ze verliefd zijn of familie of vrienden weten we dus niet, maar hun poses stralen vaak intimiteit uit.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Onderwerp: Waar",
+                    "property": "dcterms:spatial",
+                    "value": "Verenigde Staten van Amerika",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Soort object",
+                    "property": "dc:type",
+                    "value": "foto",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "dcterms:medium",
+                    "value": "metaal",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Afmetingen",
+                    "property": "dcterms:extent",
+                    "value": "breedte\u00a059\u00a0mm, hoogte\u00a085\u00a0mm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identificatie",
+                    "property": "dc:identifier",
+                    "value": "RP-F-2007-300, http://hdl.handle.net/10934/RM0001.COLLECT.448739",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Uitgever",
+                    "property": "dc:publisher",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Vervaardiger",
+                    "property": "dc:creator",
+                    "value": "anoniem",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Datering",
+                    "property": "dcterms:created",
+                    "value": "ca.1895 - ca.1910",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is deel van",
+                    "property": "dcterms:isPartOf",
+                    "value": "collectie: foto's",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rechthebbende(n)",
+                    "property": "dc:rights",
+                    "value": "Publiek Domein",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Relaties: Deelcollectie",
+                    "property": "nave:collectionPart",
+                    "value": "collectie: foto's",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Techniek",
+                    "property": "nave:technique",
+                    "value": "ferrotypie, http://vocab.getty.edu/aat/300053555",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Dataprovider",
+                    "property": "edm:dataProvider",
+                    "value": "Rijksmuseum Amsterdam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Originele context",
+                    "property": "edm:isShownAt",
+                    "value": "http://hdl.handle.net/10934/RM0001.COLLECT.448739",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Gebruiksrecht",
+                    "property": "edm:rights",
+                    "value": "http://creativecommons.org/publicdomain/mark/1.0/",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "https://www.europeana.eu/en/item/90402/RP_P_OB_68_246",
+            "img": "https://lh6.ggpht.com/1cYWyQJH9sDl8oTS6saZoYyCr2EnNGuSlSvQT1PGav0c9muU3lnNde2dUkbXF9qtc9MgnWww1iZspI9_wPO6caFMDR-C=s0",
+            "fields": [
+                {
+                    "name": "Title",
+                    "property": "europeana_title",
+                    "value": "Vervolging en het straffen van homoseksuelen in 1730. Tydelyke Straffe voorgesteld ten afschrik aller goddeloze en doemwaardige zondaren",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": "Vervolging en terechtstelling van homoseksuelen in 1730 (de Utrechtse homoseksuele affaire). Verspreiding van het Crimen nefandum (Sodomie) in Nederland. Allegorie hierop in zes cartouches met verschillende zonden en straffen. Linksboven 1: een vrouw die half mens, half serpent is (de zonde), in een vertrek met mannenbijeenkomst. 2: een vrouw die zichzelf een zwaard door de borst steekt (de wanhoop) met achter haar vrouwen met kinderen die door hun mannen worden verlaten; 3: een zittende vrouw van wie de haren recht overeind staan (de schrik), waarachter de gevangenneming van een man. Onderaan van links naar rechts: 4: in de gevangenis: vrouw met rooster en geketende mannen; 5: de dood als skelet met achter hem een brandstapel en schavot met galgen; 6: voor het stadhuis van Amsterdam een menigte mensen die kijkt naar twee mannen die in een ton worden verdronken. Rechtsvoor zit een engel met vlammend zwaard.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Subject",
+                    "property": "europeana_subject",
+                    "value": {
+                        "sodomy, sexual contact between men": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "law and jurisprudence (+ imprisonment)": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "law and jurisprudence (+ public punishment)": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "man as sinner": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "violent death by hanging": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "drowning, \u2019walking the plank'": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Amsterdam": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Publisher",
+                    "property": "europeana_publisher",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "print; etching",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "     http://creativecommons.org/publicdomain/mark/1.0/; http://creativecommons.org/publicdomain/mark/1.0/ ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights",
+                    "property": "europeana_rights_holder",
+                    "value": "Public Domain; Publiek Domein",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Creation date",
+                    "property": "europeana_creation_date",
+                    "value": "1730; 1730",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "http://hdl.handle.net/10934/RM0001.COLLECT.345470; RP-P-OB-68.246",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Places",
+                    "property": "europeana_place",
+                    "value": "Northern Netherlands; Noordelijke Nederlanden; urn:rijksmuseum:thesaurus:RM0001.THESAU.3671; Amsterdam; Amsterdam; Amsterdam; Amsterdam; Amsterdam; Amsterdam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Extent",
+                    "property": "europeana_extent",
+                    "value": "height 488 mm; width 375 mm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Format",
+                    "property": "europeana_format",
+                    "value": "paper; Paper",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Language",
+                    "property": "europeana_lang",
+                    "value": "nl",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is part of",
+                    "property": "europeana_part_of",
+                    "value": "collectie: prenten: collectie: Frederik Muller Historieplaten",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is referenced by",
+                    "property": "europeana_referenced_by",
+                    "value": "FMH 3715",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Year",
+                    "property": "europeana_year",
+                    "value": "1730",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "90402_M_NL_Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2014-05-27T18:56:00.633Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2018-03-17T14:17:52.966Z",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "https://www.europeana.eu/en/item/9200401/BibliographicResource_1000056256119",
+            "img": " https://alterheritage.project.cwi.nl/img/SGD_19821983_0001177.jpeg",
+            "fields": [
+                {
+                    "name": "Title",
+                    "property": "europeana_title",
+                    "value": " Aanhangsel Tweede Kamer 1982-1983 nummer 506",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": " Aanhangsel Tweede Kamer 1982-1983 nummer 506",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Subject",
+                    "property": "europeana_subject",
+                    "value": {
+                        "Tweede Kamer": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Vragen van de leden Dales en Haas-Berger (beiden P.v.d.A.) over homofiele sollicitanten": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "Aanhangsel",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "KB, National Library of the Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "The European Library",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "          http://creativecommons.org/publicdomain/mark/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights",
+                    "property": "europeana_rights_holder",
+                    "value": "Tweede Kamer der Staten-Generaal",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Temporal",
+                    "property": "europeana_temporal",
+                    "value": "1982_1983",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "SGD:sgd:mpeg21:19821983:0001369",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Extent",
+                    "property": "europeana_extent",
+                    "value": "2",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Language",
+                    "property": "europeana_lang",
+                    "value": "nl",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is part of",
+                    "property": "europeana_part_of",
+                    "value": "Staten-Generaal digitaal; http://data.theeuropeanlibrary.org/Collection/a0026 ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is referenced by",
+                    "property": "europeana_referenced_by",
+                    "value": "FMH 3715",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "9200401_Ag_EU_TEL_ a0026_KB_NL",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2015-02-24T23:33:55.342Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2015-02-24T23:33:55.342Z",
+                    "type": "non-editable"
+                }
+            ]
+        }
+    ]
+}

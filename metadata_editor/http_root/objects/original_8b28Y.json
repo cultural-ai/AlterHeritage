@@ -1,0 +1,845 @@
+{
+    "user_id": "8b28Y",
+    "objects": [
+        {
+            "object_id": "https://www.europeana.eu/en/item/180/10622_2111E3F5_1932_473E_89E0_E985CC375524_cho",
+            "img": "https://search.iisg.amsterdam/Cover/Show?author=&callnumber=BG+C26%2F750&size=small&title=Queer+%3A+a+weekend+in+the+forest+for+the+genderly+confused.+Act+Up+%28Amsterdam%29&pid=N30051002898754&publication=pictoright",
+            "fields": [
+                {
+                    "name": "Title",
+                    "property": "europeana_title",
+                    "value": "Diverse acties: Flikkers en potten",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": "Diverse acties: Flikkers en potten",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Subject",
+                    "property": "europeana_subject",
+                    "value": {
+                        "Gay and lesbian movement": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Contributors",
+                    "property": "europeana_contributors",
+                    "value": "Act Up (Amsterdam); Staatsarchief (Amsterdam),",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "Poster",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "International Institute of Social History",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "International Association of Labour History Institutions",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "http://rightsstatements.org/vocab/InC/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Temporal",
+                    "property": "europeana_temporal",
+                    "value": "1975-1999; 1975/1999",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Places",
+                    "property": "europeana_place",
+                    "value": "Amsterdam (Netherlands); Hilversum (Netherlands); Utrecht (Netherlands)",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "1216716; http://hdl.handle.net/10622/2111E3F5-1932-473E-89E0-E985CC375524#cho",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Language",
+                    "property": "europeana_lang",
+                    "value": "nl; nld",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "180_IALHI_antifa",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2020-03-31T12:04:57.526Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2020-03-31T12:04:57.526Z",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "https://www.europeana.eu/en/item/180/10622_7A3F90D5_7CBA_4D7E_A1A1_19E3556CCF8C_cho",
+            "img": "https://search.iisg.amsterdam/Cover/Show?author=Melo%2C+Jos%C3%A9&callnumber=BG+B17%2F544&size=large&title=Een+groepje+eindhovense+homoseksuelen+nabij+het+Museumplein.+Nieuwe+Linie%2C&pid=N30051000400587&publication=restricted",
+            "fields": [
+                {
+                    "name": "Title",
+                    "property": "europeana_title",
+                    "value": "Een groepje eindhovense homoseksuelen nabij het Museumplein",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": "Een groepje eindhovense homoseksuelen nabij het Museumplein",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Subject",
+                    "property": "europeana_subject",
+                    "value": {
+                        "Gay emancipation": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Internationale Homodemonstratiedag": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Contributors",
+                    "property": "europeana_contributors",
+                    "value": "Nieuwe Linie,",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Creator",
+                    "property": "europeana_creator",
+                    "value": "Melo, Jos\u00e9",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "Photo; Photograph",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "International Institute of Social History",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "International Association of Labour History Institutions",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "http://rightsstatements.org/vocab/InC/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights",
+                    "property": "europeana_rights_holder",
+                    "value": "Melo.",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Issue date",
+                    "property": "europeana_issue_date ",
+                    "value": "1979, 30 juni.",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Temporal",
+                    "property": "europeana_temporal",
+                    "value": "1979-1979; 1979/1979",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Places",
+                    "property": "europeana_place",
+                    "value": "Netherlands; Kingdom of the Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "656483; http://hdl.handle.net/10622/7A3F90D5-7CBA-4D7E-A1A1-19E3556CCF8C#cho",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Language",
+                    "property": "europeana_lang",
+                    "value": "nl; nld",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "180_IALHI_antifa",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2020-03-31T12:04:57.526Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2020-03-31T12:04:57.526Z",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "https://www.europeana.eu/en/item/2021647/beeldbank_weergave_record_id_2c436ca6_c0e3_a708_8514_5409a6984e52",
+            "img": "https://images.memorix.nl/shi/thumb/fullsize/a9a26f73-375c-ff61-6202-8a95f9dc2cb6.jpg",
+            "fields": [
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": "Het Jillis Bruggeman-gedenkteken. Op 9 maart 1803 vond op de Grote Markt te Schiedam de terechtstelling plaats van Jillis Bruggeman. Hij was de laatste in Nederland die vanwege sodomie met de dood gestraft werd. Tekst in de steen: Veroordeeld wegens zijn seksuele identiteit. In herinnering aan Jillis Bruggeman, 9 maart 1803. De Jillis Bruggeman Penning kent de stad toe aan een organisatie of persoon die voorop gaat in de strijd tegen discriminatie en vervolging om seksuele identiteit. In Nederland of ergens anders in de wereld.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Creator",
+                    "property": "europeana_creator",
+                    "value": "Onbekend",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "image",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Date",
+                    "property": "europeana_date",
+                    "value": "2015-03-09; 2015-03-09",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "europeana_medium",
+                    "value": "Foto; Photograph ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "Municipal Archive, Schiedam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "Dutch Collections for Europe",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "http://rightsstatements.org/vocab/InC/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights",
+                    "property": "europeana_rights_holder",
+                    "value": "onbekend",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Places",
+                    "property": "europeana_place",
+                    "value": "Schiedam; Centrum; Grote Markt - ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "47036; http://beeldbank.schiedam.nl/beeldbank/weergave/record?id=2c436ca6-c0e3-a708-8514-5409a6984e52",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "2021647_Ag_NL_DigitaleCollectie_archief_schiedam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2020-09-10T12:49:22.815Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2024-07-26T08:27:15.397Z",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "https://www.europeana.eu/en/item/270/resource_document_jhm_museum_M013692",
+            "img": "http://data.jck.nl/thumbnail/jck/joods-historisch/d729/729NM013692/2000",
+            "fields": [
+                {
+                    "name": "Title",
+                    "property": "europeana_title",
+                    "value": "no title]. M013692, foto, Jenny E. Wesly, 1993-12-11",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": "Twee vrouwen en twee mannen - waarvan een in travestie in een caf\u00e9. De travestiet draagt een donkere pruik en een jurk met pailetten",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Subject",
+                    "property": "europeana_subject",
+                    "value": {
+                        "Poeriem": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Caf\u00e9 l'Opera": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "belangenorganisatie": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Sjalhomo": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "homoseksualiteit": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Amsterdam": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Creator",
+                    "property": "europeana_creator",
+                    "value": "Wesly, Jenny E. (1948-2016)",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "Image",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Date",
+                    "property": "europeana_date",
+                    "value": "1993-12-11; 1993-12-11 ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Medium",
+                    "property": "europeana_medium",
+                    "value": "Foto; Photograph ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "Jewish Historical Museum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "Jewish Heritage Network",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "http://creativecommons.org/publicdomain/mark/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Source",
+                    "property": "europeana_source",
+                    "value": "Joods Historisch Museum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "M013692; http://data.jck.nl/resource/document/jhm-museum/M013692",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "270_Ag_EU_JHN_JewishHistoricalMuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2020-07-23T15:03:39.372Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2022-01-05T08:40:57.804Z",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "https://www.europeana.eu/en/item/90402/RP_P_OB_68_246",
+            "img": "https://lh6.ggpht.com/1cYWyQJH9sDl8oTS6saZoYyCr2EnNGuSlSvQT1PGav0c9muU3lnNde2dUkbXF9qtc9MgnWww1iZspI9_wPO6caFMDR-C=s0",
+            "fields": [
+                {
+                    "name": "Title",
+                    "property": "europeana_title",
+                    "value": "Vervolging en het straffen van homoseksuelen in 1730. Tydelyke Straffe voorgesteld ten afschrik aller goddeloze en doemwaardige zondaren",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": "Vervolging en terechtstelling van homoseksuelen in 1730 (de Utrechtse homoseksuele affaire). Verspreiding van het Crimen nefandum (Sodomie) in Nederland. Allegorie hierop in zes cartouches met verschillende zonden en straffen. Linksboven 1: een vrouw die half mens, half serpent is (de zonde), in een vertrek met mannenbijeenkomst. 2: een vrouw die zichzelf een zwaard door de borst steekt (de wanhoop) met achter haar vrouwen met kinderen die door hun mannen worden verlaten; 3: een zittende vrouw van wie de haren recht overeind staan (de schrik), waarachter de gevangenneming van een man. Onderaan van links naar rechts: 4: in de gevangenis: vrouw met rooster en geketende mannen; 5: de dood als skelet met achter hem een brandstapel en schavot met galgen; 6: voor het stadhuis van Amsterdam een menigte mensen die kijkt naar twee mannen die in een ton worden verdronken. Rechtsvoor zit een engel met vlammend zwaard.",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Subject",
+                    "property": "europeana_subject",
+                    "value": {
+                        "sodomy, sexual contact between men": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "law and jurisprudence (+ imprisonment)": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "law and jurisprudence (+ public punishment)": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "man as sinner": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "violent death by hanging": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "drowning, \u2019walking the plank'": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Amsterdam": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Publisher",
+                    "property": "europeana_publisher",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "print; etching",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "     http://creativecommons.org/publicdomain/mark/1.0/; http://creativecommons.org/publicdomain/mark/1.0/ ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights",
+                    "property": "europeana_rights_holder",
+                    "value": "Public Domain; Publiek Domein",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Creation date",
+                    "property": "europeana_creation_date",
+                    "value": "1730; 1730",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "http://hdl.handle.net/10934/RM0001.COLLECT.345470; RP-P-OB-68.246",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Places",
+                    "property": "europeana_place",
+                    "value": "Northern Netherlands; Noordelijke Nederlanden; urn:rijksmuseum:thesaurus:RM0001.THESAU.3671; Amsterdam; Amsterdam; Amsterdam; Amsterdam; Amsterdam; Amsterdam",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Extent",
+                    "property": "europeana_extent",
+                    "value": "height 488 mm; width 375 mm",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Format",
+                    "property": "europeana_format",
+                    "value": "paper; Paper",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Language",
+                    "property": "europeana_lang",
+                    "value": "nl",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is part of",
+                    "property": "europeana_part_of",
+                    "value": "collectie: prenten: collectie: Frederik Muller Historieplaten",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is referenced by",
+                    "property": "europeana_referenced_by",
+                    "value": "FMH 3715",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Year",
+                    "property": "europeana_year",
+                    "value": "1730",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "90402_M_NL_Rijksmuseum",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2014-05-27T18:56:00.633Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2018-03-17T14:17:52.966Z",
+                    "type": "non-editable"
+                }
+            ]
+        },
+        {
+            "object_id": "https://www.europeana.eu/en/item/9200401/BibliographicResource_1000056256119",
+            "img": " https://alterheritage.project.cwi.nl/img/SGD_19821983_0001177.jpeg",
+            "fields": [
+                {
+                    "name": "Title",
+                    "property": "europeana_title",
+                    "value": " Aanhangsel Tweede Kamer 1982-1983 nummer 506",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Description",
+                    "property": "europeana_description",
+                    "value": " Aanhangsel Tweede Kamer 1982-1983 nummer 506",
+                    "type": "editable",
+                    "hidden": "False",
+                    "removed": "False",
+                    "has_note": "",
+                    "has_warning": "",
+                    "by_user": "False"
+                },
+                {
+                    "name": "Subject",
+                    "property": "europeana_subject",
+                    "value": {
+                        "Tweede Kamer": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        },
+                        "Vragen van de leden Dales en Haas-Berger (beiden P.v.d.A.) over homofiele sollicitanten": {
+                            "hidden": "False",
+                            "removed": "False",
+                            "has_note": "",
+                            "by_user": "False"
+                        }
+                    },
+                    "type": "keywords"
+                },
+                {
+                    "name": "Type of item",
+                    "property": "europeana_type",
+                    "value": "Aanhangsel",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing institution",
+                    "property": "europeana_prov_inst",
+                    "value": "KB, National Library of the Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Aggregator",
+                    "property": "europeana_aggregator",
+                    "value": "The European Library",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights statement for the media in this item (unless otherwise specified)",
+                    "property": "europeana_rights",
+                    "value": "          http://creativecommons.org/publicdomain/mark/1.0/",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Rights",
+                    "property": "europeana_rights_holder",
+                    "value": "Tweede Kamer der Staten-Generaal",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Temporal",
+                    "property": "europeana_temporal",
+                    "value": "1982_1983",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Identifier",
+                    "property": "europeana_id",
+                    "value": "SGD:sgd:mpeg21:19821983:0001369",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Extent",
+                    "property": "europeana_extent",
+                    "value": "2",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Language",
+                    "property": "europeana_lang",
+                    "value": "nl",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is part of",
+                    "property": "europeana_part_of",
+                    "value": "Staten-Generaal digitaal; http://data.theeuropeanlibrary.org/Collection/a0026 ",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Is referenced by",
+                    "property": "europeana_referenced_by",
+                    "value": "FMH 3715",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Providing country",
+                    "property": "europeana_country",
+                    "value": "Netherlands",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Collection name",
+                    "property": "europeana_collection",
+                    "value": "9200401_Ag_EU_TEL_ a0026_KB_NL",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "First time published on Europeana",
+                    "property": "europeana_first_published",
+                    "value": "2015-02-24T23:33:55.342Z",
+                    "type": "non-editable"
+                },
+                {
+                    "name": "Last time updated from providing institution",
+                    "property": "europeana_last_updated",
+                    "value": "2015-02-24T23:33:55.342Z",
+                    "type": "non-editable"
+                }
+            ]
+        }
+    ]
+}
