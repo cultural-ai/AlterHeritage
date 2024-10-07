@@ -1,5 +1,6 @@
 .DS_Store
 /.ipynb_checkpoints
+metadata_editor/node_modules
 metadata_editor/.vscode
 metadata_editor/http_root/.vscode
 metadata_editor/http_root/objects/*
