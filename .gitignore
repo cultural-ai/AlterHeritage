@@ -1,7 +1,5 @@
-
 .DS_Store
 /.ipynb_checkpoints
-metadata_editor/node_modules
 metadata_editor/.vscode
 metadata_editor/http_root/.vscode
 metadata_editor/http_root/objects/*
@@ -9,3 +7,5 @@ metadata_editor/http_root/objects/*
 metadata_editor/server.js
 metadata_editor/package-lock.json
 metadata_editor/package.json
+metadata_editor/.env
+metadata_editor/users.json
