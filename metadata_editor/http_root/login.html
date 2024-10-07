@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login – Alter heritage: towards more LGBTQ+ inclusive metadata of historical records</title>
+  <link rel="stylesheet" href="login_style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jsonld@1.8.1/dist/jsonld.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container-fluid login_form">
+        <img src="clio_login_logo.svg" class="mx-auto d-block clio_logo" alt="The logo of Alter Heritage with Clio, the muse of history in Greek mythology">
+
+        <div class="alert alert-light demo_message" role="alert">
+            <i class="bi bi-info-circle-fill"></i> For demo, use <b>ekaw24demo</b> as both user ID and password
+         </div>
+
+        <form action="/login" method="POST" class="login_submit">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control login_field" id="userID_input" placeholder="" name="username">
+                <label for="userID_input">User ID</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control login_field" id="password_input" placeholder="" name="password">
+                <label for="password_input">Password</label>
+            </div>
+       
+
+        <button id="login_btn" type="submit" class="btn btn-secondary btn-md login_form_btn">Login</button>
+    </form>
+
+    </div>
+
+</body>
+</html>
