@@ -20,7 +20,10 @@
             <i class="bi bi-info-circle-fill"></i> For demo, use <b>ekaw24demo</b> as both user ID and password
          </div>
 
-        <form action="/login" method="POST" class="login_submit">
+         <div id="login_failed" class="alert alert-danger" style="display: none;" role="alert">
+         </div>
+
+        <div class="login_submit">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control login_field" id="userID_input" placeholder="" name="username">
                 <label for="userID_input">User ID</label>
@@ -30,12 +33,38 @@
                 <input type="password" class="form-control login_field" id="password_input" placeholder="" name="password">
                 <label for="password_input">Password</label>
             </div>
-       
 
-        <button id="login_btn" type="submit" class="btn btn-secondary btn-md login_form_btn">Login</button>
-    </form>
+            <button id="login_btn" type="submit" class="btn btn-secondary btn-md login_form_btn">Login</button>
+        </div>
 
     </div>
+
+    <script>
+        document.getElementById('login_btn').addEventListener('click', async function() {
+          const username = document.getElementById('userID_input').value;
+          const password = document.getElementById('password_input').value;
+    
+          const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+          });
+    
+          const result = await response.json();
+    
+          if (!response.ok) {
+            // display the warning block
+            const loginFailedWarning = document.getElementById('login_failed');
+            loginFailedWarning.innerHTML = `<i class="bi bi-key-fill"></i> ${result.message}`
+            loginFailedWarning.style.display = 'block';
+          } else if (result.success) {
+            // redirect
+            window.location.href = result.redirectUrl;
+          }
+        });
+    </script>
 
 </body>
 </html>

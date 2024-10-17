@@ -25,3 +25,9 @@
 	padding: 12px !important;
 	font-size: 14px !important;
 }
+
+#login_failed {
+	margin-top: 1rem !important;
+	padding: 12px !important;
+	font-size: 14px !important;
+}
