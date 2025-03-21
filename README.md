@@ -2,7 +2,7 @@
 ### A web app to gather expert knowledge on inclusive cultural heritage metadata
 [![DOI](https://zenodo.org/badge/768123105.svg)](https://zenodo.org/doi/10.5281/zenodo.13793529)
 
-[The live demo for EKAW-24](https://alterheritage.project.cwi.nl/#ekaw24demo)
+[Paper](https://ir.cwi.nl/pub/34720) | [The live demo for EKAW-24](https://alterheritage.project.cwi.nl/#ekaw24demo)
 
 Alter Heritage allows researchers to collect data on how annotators edit cultural heritage metadata containing cultural biases. This data shows what kind of alterations in metadata can make it more inclusive according to annotators. Using the app, it is also possible to study differences of edits between different annotators and different artefacts' metadata.
 To annotators, Alter Heritage offers an interactive environment for editing metadata. They can perfrom such actions as adding new content (for example, a new metadata field or a keyword), removing content, hiding parts of metadaata from the view, attaching notes and warning to metadata fields and keywords (for example, to signal about the usage of biased terminology). Try out all the functionality in the live demo.
